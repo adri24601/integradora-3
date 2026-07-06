@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "bPwjrVslNAE=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\adria\\Desktop\\integradora bla bla bla - copia\\integra 1.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\adria\\.nuget\\packages\\system.data.oledb\\10.0.9\\system.data.oledb.10.0.9.nupkg.sha512"
+  ],
+  "logs": []
+}
