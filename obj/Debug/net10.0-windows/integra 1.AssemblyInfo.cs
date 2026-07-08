@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("integra 1")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b16c3c9a3a26f83713204b952243b901d2d2a54a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+25bf085be3b7d1a6bcc48fd4d56fbb8c10764b9d")]
 [assembly: System.Reflection.AssemblyProductAttribute("integra 1")]
 [assembly: System.Reflection.AssemblyTitleAttribute("integra 1")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

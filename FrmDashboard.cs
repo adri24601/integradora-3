@@ -105,5 +105,20 @@ namespace integra_1
 
             this.Hide();
         }
+
+        private void FrmDashboard_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

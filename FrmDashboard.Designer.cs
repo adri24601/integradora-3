@@ -32,20 +32,23 @@
             btnProveedores = new Button();
             btnVentas = new Button();
             btnCerrar_Sesion = new Button();
-            label1 = new Label();
-            panelContenido = new Panel();
             btnMenu_Inicio = new Button();
             btnInventario = new Button();
             btnReportes = new Button();
+            panel1 = new Panel();
+            panel2 = new Panel();
+            panelContenido = new Panel();
             pictureBox1 = new PictureBox();
+            panel1.SuspendLayout();
+            panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // btnProductos
             // 
-            btnProductos.Location = new Point(22, 178);
+            btnProductos.Location = new Point(65, 221);
             btnProductos.Name = "btnProductos";
-            btnProductos.Size = new Size(114, 32);
+            btnProductos.Size = new Size(141, 47);
             btnProductos.TabIndex = 0;
             btnProductos.Text = "Productos";
             btnProductos.UseVisualStyleBackColor = true;
@@ -53,9 +56,9 @@
             // 
             // btnProveedores
             // 
-            btnProveedores.Location = new Point(10, 272);
+            btnProveedores.Location = new Point(65, 348);
             btnProveedores.Name = "btnProveedores";
-            btnProveedores.Size = new Size(131, 35);
+            btnProveedores.Size = new Size(141, 47);
             btnProveedores.TabIndex = 1;
             btnProveedores.Text = "Proveedores";
             btnProveedores.UseVisualStyleBackColor = true;
@@ -63,9 +66,9 @@
             // 
             // btnVentas
             // 
-            btnVentas.Location = new Point(10, 335);
+            btnVentas.Location = new Point(48, 425);
             btnVentas.Name = "btnVentas";
-            btnVentas.Size = new Size(131, 34);
+            btnVentas.Size = new Size(141, 47);
             btnVentas.TabIndex = 3;
             btnVentas.Text = "Ventas";
             btnVentas.UseVisualStyleBackColor = true;
@@ -73,35 +76,19 @@
             // 
             // btnCerrar_Sesion
             // 
-            btnCerrar_Sesion.Location = new Point(10, 491);
+            btnCerrar_Sesion.Location = new Point(65, 525);
             btnCerrar_Sesion.Name = "btnCerrar_Sesion";
-            btnCerrar_Sesion.Size = new Size(131, 60);
+            btnCerrar_Sesion.Size = new Size(141, 47);
             btnCerrar_Sesion.TabIndex = 4;
             btnCerrar_Sesion.Text = "Cerrar sesion";
             btnCerrar_Sesion.UseVisualStyleBackColor = true;
             btnCerrar_Sesion.Click += btnCerrar_Sesion_Click;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(22, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(129, 25);
-            label1.TabIndex = 5;
-            label1.Text = "Menu principal";
-            // 
-            // panelContenido
-            // 
-            panelContenido.Location = new Point(159, 37);
-            panelContenido.Name = "panelContenido";
-            panelContenido.Size = new Size(997, 547);
-            panelContenido.TabIndex = 6;
-            // 
             // btnMenu_Inicio
             // 
-            btnMenu_Inicio.Location = new Point(22, 138);
+            btnMenu_Inicio.Location = new Point(65, 170);
             btnMenu_Inicio.Name = "btnMenu_Inicio";
-            btnMenu_Inicio.Size = new Size(112, 34);
+            btnMenu_Inicio.Size = new Size(141, 47);
             btnMenu_Inicio.TabIndex = 0;
             btnMenu_Inicio.Text = "Inicio";
             btnMenu_Inicio.UseVisualStyleBackColor = true;
@@ -109,9 +96,9 @@
             // 
             // btnInventario
             // 
-            btnInventario.Location = new Point(22, 216);
+            btnInventario.Location = new Point(67, 259);
             btnInventario.Name = "btnInventario";
-            btnInventario.Size = new Size(112, 34);
+            btnInventario.Size = new Size(141, 47);
             btnInventario.TabIndex = 1;
             btnInventario.Text = "Inventario";
             btnInventario.UseVisualStyleBackColor = true;
@@ -119,44 +106,71 @@
             // 
             // btnReportes
             // 
-            btnReportes.Location = new Point(12, 396);
+            btnReportes.Location = new Point(65, 465);
             btnReportes.Name = "btnReportes";
-            btnReportes.Size = new Size(112, 34);
+            btnReportes.Size = new Size(141, 47);
             btnReportes.TabIndex = 2;
             btnReportes.Text = "Reportes";
             btnReportes.UseVisualStyleBackColor = true;
             btnReportes.Click += btnReportes_Click;
             // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(13, 71, 161);
+            panel1.Controls.Add(btnMenu_Inicio);
+            panel1.Controls.Add(btnProductos);
+            panel1.Controls.Add(btnCerrar_Sesion);
+            panel1.Controls.Add(btnReportes);
+            panel1.Controls.Add(btnInventario);
+            panel1.Controls.Add(btnProveedores);
+            panel1.Controls.Add(btnVentas);
+            panel1.Location = new Point(0, 1);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(252, 616);
+            panel1.TabIndex = 8;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.FromArgb(49, 6, 158);
+            panel2.Controls.Add(pictureBox1);
+            panel2.Location = new Point(251, 1);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(906, 132);
+            panel2.TabIndex = 9;
+            panel2.Paint += panel2_Paint;
+            // 
+            // panelContenido
+            // 
+            panelContenido.Location = new Point(397, 204);
+            panelContenido.Name = "panelContenido";
+            panelContenido.Size = new Size(437, 259);
+            panelContenido.TabIndex = 10;
+            // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.IMG_20260609_WA0004__1_;
-            pictureBox1.Location = new Point(12, 37);
+            pictureBox1.Image = Properties.Resources.APARTADOS;
+            pictureBox1.Location = new Point(51, 30);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(129, 95);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 7;
+            pictureBox1.Size = new Size(63, 67);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 11;
             pictureBox1.TabStop = false;
             // 
             // FrmDashboard
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1157, 584);
-            Controls.Add(pictureBox1);
-            Controls.Add(btnReportes);
+            ClientSize = new Size(1157, 617);
             Controls.Add(panelContenido);
-            Controls.Add(btnInventario);
-            Controls.Add(label1);
-            Controls.Add(btnMenu_Inicio);
-            Controls.Add(btnCerrar_Sesion);
-            Controls.Add(btnVentas);
-            Controls.Add(btnProveedores);
-            Controls.Add(btnProductos);
+            Controls.Add(panel2);
+            Controls.Add(panel1);
             Name = "FrmDashboard";
             Text = "Inicio";
+            Load += FrmDashboard_Load;
+            panel1.ResumeLayout(false);
+            panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -165,11 +179,12 @@
         private Button btnProveedores;
         private Button btnVentas;
         private Button btnCerrar_Sesion;
-        private Label label1;
-        private Panel panelContenido;
         private Button btnMenu_Inicio;
         private Button btnInventario;
         private Button btnReportes;
+        private Panel panel1;
+        private Panel panel2;
+        private Panel panelContenido;
         private PictureBox pictureBox1;
     }
 }

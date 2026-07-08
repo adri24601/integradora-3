@@ -60,3 +60,34 @@ C:\Users\adria\Desktop\integradora bla bla bla - copia\obj\Debug\net10.0-windows
 C:\Users\adria\Desktop\integradora bla bla bla - copia\obj\Debug\net10.0-windows\integra 1.pdb
 C:\Users\adria\Desktop\integradora bla bla bla - copia\obj\Debug\net10.0-windows\integra 1.genruntimeconfig.cache
 C:\Users\adria\Desktop\integradora bla bla bla - copia\obj\Debug\net10.0-windows\ref\integra 1.dll
+C:\Users\LPC\Desktop\REPOSITORIO 3\bin\Debug\net10.0-windows\integra 1.exe
+C:\Users\LPC\Desktop\REPOSITORIO 3\bin\Debug\net10.0-windows\integradora boceto.accdb
+C:\Users\LPC\Desktop\REPOSITORIO 3\bin\Debug\net10.0-windows\integra 1.deps.json
+C:\Users\LPC\Desktop\REPOSITORIO 3\bin\Debug\net10.0-windows\integra 1.runtimeconfig.json
+C:\Users\LPC\Desktop\REPOSITORIO 3\bin\Debug\net10.0-windows\integra 1.dll
+C:\Users\LPC\Desktop\REPOSITORIO 3\bin\Debug\net10.0-windows\integra 1.pdb
+C:\Users\LPC\Desktop\REPOSITORIO 3\bin\Debug\net10.0-windows\System.Data.OleDb.dll
+C:\Users\LPC\Desktop\REPOSITORIO 3\bin\Debug\net10.0-windows\runtimes\win\lib\net10.0\System.Data.OleDb.dll
+C:\Users\LPC\Desktop\REPOSITORIO 3\obj\Debug\net10.0-windows\integra 1.csproj.AssemblyReference.cache
+C:\Users\LPC\Desktop\REPOSITORIO 3\obj\Debug\net10.0-windows\integra_1.Form1.resources
+C:\Users\LPC\Desktop\REPOSITORIO 3\obj\Debug\net10.0-windows\integra_1.FrmAgregarProductos.resources
+C:\Users\LPC\Desktop\REPOSITORIO 3\obj\Debug\net10.0-windows\integra_1.FrmAgregarProveedores.resources
+C:\Users\LPC\Desktop\REPOSITORIO 3\obj\Debug\net10.0-windows\integra_1.FrmDashboard.resources
+C:\Users\LPC\Desktop\REPOSITORIO 3\obj\Debug\net10.0-windows\integra_1.FrmInventario.resources
+C:\Users\LPC\Desktop\REPOSITORIO 3\obj\Debug\net10.0-windows\integra_1.FrmProductos.resources
+C:\Users\LPC\Desktop\REPOSITORIO 3\obj\Debug\net10.0-windows\integra_1.FrmProveedores.resources
+C:\Users\LPC\Desktop\REPOSITORIO 3\obj\Debug\net10.0-windows\integra_1.FrmReportes.resources
+C:\Users\LPC\Desktop\REPOSITORIO 3\obj\Debug\net10.0-windows\integra_1.FrmVentas.resources
+C:\Users\LPC\Desktop\REPOSITORIO 3\obj\Debug\net10.0-windows\integra_1.Properties.Resources.resources
+C:\Users\LPC\Desktop\REPOSITORIO 3\obj\Debug\net10.0-windows\integra 1.csproj.GenerateResource.cache
+C:\Users\LPC\Desktop\REPOSITORIO 3\obj\Debug\net10.0-windows\integra 1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LPC\Desktop\REPOSITORIO 3\obj\Debug\net10.0-windows\integra 1.AssemblyInfoInputs.cache
+C:\Users\LPC\Desktop\REPOSITORIO 3\obj\Debug\net10.0-windows\integra 1.AssemblyInfo.cs
+C:\Users\LPC\Desktop\REPOSITORIO 3\obj\Debug\net10.0-windows\integra 1.csproj.CoreCompileInputs.cache
+C:\Users\LPC\Desktop\REPOSITORIO 3\obj\Debug\net10.0-windows\integra 1.sourcelink.json
+C:\Users\LPC\Desktop\REPOSITORIO 3\obj\Debug\net10.0-windows\integra 1.csproj.Up2Date
+C:\Users\LPC\Desktop\REPOSITORIO 3\obj\Debug\net10.0-windows\integra 1.dll
+C:\Users\LPC\Desktop\REPOSITORIO 3\obj\Debug\net10.0-windows\refint\integra 1.dll
+C:\Users\LPC\Desktop\REPOSITORIO 3\obj\Debug\net10.0-windows\integra 1.pdb
+C:\Users\LPC\Desktop\REPOSITORIO 3\obj\Debug\net10.0-windows\integra 1.genruntimeconfig.cache
+C:\Users\LPC\Desktop\REPOSITORIO 3\obj\Debug\net10.0-windows\ref\integra 1.dll
