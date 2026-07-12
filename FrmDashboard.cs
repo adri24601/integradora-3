@@ -35,7 +35,6 @@ namespace integra_1
             FrmDashboard menu = new FrmDashboard();
             menu.Show();
 
-            this.Hide();
         }
 
         private void btnInventario_Click(object sender, EventArgs e)
