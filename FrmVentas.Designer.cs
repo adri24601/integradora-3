@@ -32,6 +32,7 @@
             btnImprimir_Ticket = new Button();
             txtAgregar_Id_Producto = new TextBox();
             dgvCarrito = new DataGridView();
+            Id_Producto = new DataGridViewTextBoxColumn();
             Nombre = new DataGridViewTextBoxColumn();
             Precio = new DataGridViewTextBoxColumn();
             Cantidad = new DataGridViewTextBoxColumn();
@@ -42,7 +43,7 @@
             // 
             // btnAgregar_Venta
             // 
-            btnAgregar_Venta.Location = new Point(352, 9);
+            btnAgregar_Venta.Location = new Point(432, 268);
             btnAgregar_Venta.Name = "btnAgregar_Venta";
             btnAgregar_Venta.Size = new Size(112, 34);
             btnAgregar_Venta.TabIndex = 0;
@@ -52,7 +53,7 @@
             // 
             // btnImprimir_Ticket
             // 
-            btnImprimir_Ticket.Location = new Point(167, 359);
+            btnImprimir_Ticket.Location = new Point(543, 487);
             btnImprimir_Ticket.Name = "btnImprimir_Ticket";
             btnImprimir_Ticket.Size = new Size(150, 69);
             btnImprimir_Ticket.TabIndex = 1;
@@ -62,7 +63,7 @@
             // 
             // txtAgregar_Id_Producto
             // 
-            txtAgregar_Id_Producto.Location = new Point(178, 12);
+            txtAgregar_Id_Producto.Location = new Point(179, 180);
             txtAgregar_Id_Producto.Name = "txtAgregar_Id_Producto";
             txtAgregar_Id_Producto.Size = new Size(150, 31);
             txtAgregar_Id_Producto.TabIndex = 2;
@@ -70,12 +71,22 @@
             // dgvCarrito
             // 
             dgvCarrito.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvCarrito.Columns.AddRange(new DataGridViewColumn[] { Nombre, Precio, Cantidad, Subtotal });
-            dgvCarrito.Location = new Point(194, 64);
+            dgvCarrito.Columns.AddRange(new DataGridViewColumn[] { Id_Producto, Nombre, Precio, Cantidad, Subtotal });
+            dgvCarrito.Location = new Point(316, 348);
             dgvCarrito.Name = "dgvCarrito";
             dgvCarrito.RowHeadersWidth = 62;
-            dgvCarrito.Size = new Size(391, 273);
+            dgvCarrito.Size = new Size(664, 66);
             dgvCarrito.TabIndex = 3;
+            dgvCarrito.CellContentClick += dgvCarrito_CellContentClick;
+            // 
+            // Id_Producto
+            // 
+            Id_Producto.HeaderText = "Id";
+            Id_Producto.MinimumWidth = 8;
+            Id_Producto.Name = "Id_Producto";
+            Id_Producto.ReadOnly = true;
+            Id_Producto.Visible = false;
+            Id_Producto.Width = 150;
             // 
             // Nombre
             // 
@@ -108,7 +119,7 @@
             // lblTotal_a_Pagar
             // 
             lblTotal_a_Pagar.AutoSize = true;
-            lblTotal_a_Pagar.Location = new Point(608, 18);
+            lblTotal_a_Pagar.Location = new Point(774, 277);
             lblTotal_a_Pagar.Name = "lblTotal_a_Pagar";
             lblTotal_a_Pagar.Size = new Size(114, 25);
             lblTotal_a_Pagar.TabIndex = 4;
@@ -118,7 +129,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1157, 631);
             Controls.Add(lblTotal_a_Pagar);
             Controls.Add(dgvCarrito);
             Controls.Add(txtAgregar_Id_Producto);
@@ -143,5 +154,6 @@
         private DataGridViewTextBoxColumn Precio;
         private DataGridViewTextBoxColumn Cantidad;
         private DataGridViewTextBoxColumn Subtotal;
+        private DataGridViewTextBoxColumn Id_Producto;
     }
 }

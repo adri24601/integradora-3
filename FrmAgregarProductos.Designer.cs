@@ -53,10 +53,10 @@
             btnInventario = new Button();
             btnProveedores = new Button();
             panel2 = new Panel();
+            pictureBox1 = new PictureBox();
             label10 = new Label();
             label9 = new Label();
             label8 = new Label();
-            pictureBox1 = new PictureBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -257,6 +257,7 @@
             btnMenu_Inicio.TabIndex = 20;
             btnMenu_Inicio.Text = "Inicio";
             btnMenu_Inicio.UseVisualStyleBackColor = true;
+            btnMenu_Inicio.Click += btnMenu_Inicio_Click;
             // 
             // btnReportes
             // 
@@ -311,8 +312,18 @@
             panel2.Controls.Add(label9);
             panel2.Location = new Point(251, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(892, 119);
+            panel2.Size = new Size(907, 119);
             panel2.TabIndex = 19;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.APARTADOS;
+            pictureBox1.Location = new Point(50, 18);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(63, 61);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 21;
+            pictureBox1.TabStop = false;
             // 
             // label10
             // 
@@ -346,16 +357,6 @@
             label8.Size = new Size(342, 45);
             label8.TabIndex = 20;
             label8.Text = "Registro de Producto";
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = Properties.Resources.APARTADOS;
-            pictureBox1.Location = new Point(50, 18);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(63, 61);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 21;
-            pictureBox1.TabStop = false;
             // 
             // FrmAgregarProductos
             // 

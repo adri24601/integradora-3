@@ -17,90 +17,51 @@ namespace integra_1
 
         private void btnProductos_Click(object sender, EventArgs e)
         {
-            panelContenido.Controls.Clear();
-
             FrmProductos frm = new FrmProductos();
-
-            frm.TopLevel = false;
-            frm.FormBorderStyle = FormBorderStyle.None;
-            frm.Dock = DockStyle.Fill;
-
-            panelContenido.Controls.Add(frm);
-
             frm.Show();
+            this.Hide();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            FrmDashboard menu = new FrmDashboard();
-            menu.Show();
-
+            FrmDashboard frm = new FrmDashboard();
+            frm.Show();
+            this.Hide();
         }
 
         private void btnInventario_Click(object sender, EventArgs e)
         {
-            panelContenido.Controls.Clear();
-
             FrmInventario frm = new FrmInventario();
-
-            frm.TopLevel = false;
-            frm.FormBorderStyle = FormBorderStyle.None;
-            frm.Dock = DockStyle.Fill;
-
-            panelContenido.Controls.Add(frm);
-
             frm.Show();
+            this.Hide();
         }
 
         private void btnProveedores_Click(object sender, EventArgs e)
         {
-            panelContenido.Controls.Clear();
-
             FrmProveedores frm = new FrmProveedores();
-
-            frm.TopLevel = false;
-            frm.FormBorderStyle = FormBorderStyle.None;
-            frm.Dock = DockStyle.Fill;
-
-            panelContenido.Controls.Add(frm);
-
             frm.Show();
+            this.Hide();
         }
 
         private void btnVentas_Click(object sender, EventArgs e)
         {
-            panelContenido.Controls.Clear();
-
             FrmVentas frm = new FrmVentas();
-
-            frm.TopLevel = false;
-            frm.FormBorderStyle = FormBorderStyle.None;
-            frm.Dock = DockStyle.Fill;
-
-            panelContenido.Controls.Add(frm);
-
             frm.Show();
+            this.Hide();
+
         }
 
         private void btnReportes_Click(object sender, EventArgs e)
         {
-            panelContenido.Controls.Clear();
-
             FrmReportes frm = new FrmReportes();
-
-            frm.TopLevel = false;
-            frm.FormBorderStyle = FormBorderStyle.None;
-            frm.Dock = DockStyle.Fill;
-
-            panelContenido.Controls.Add(frm);
-
             frm.Show();
+            this.Hide();
         }
 
         private void btnCerrar_Sesion_Click(object sender, EventArgs e)
         {
-            Form1 menu = new Form1();
-            menu.Show();
+            Form1 frm = new Form1();
+            frm.Show();
 
             this.Hide();
         }
@@ -116,6 +77,16 @@ namespace integra_1
         }
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }

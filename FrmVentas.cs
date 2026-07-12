@@ -26,7 +26,14 @@ namespace integra_1
                 return;
             }
 
-            string cadenaConexion = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\adria\Desktop\integradora00\integradora avanzada media\integradora boceto.accdb;";
+            // RUTA DE LA BASE DE DATSO
+            // Cualquier miembro puede visualizar la tabla
+
+            string ruta = Path.Combine(Application.StartupPath, "integradora boceto.accdb");
+
+            string cadenaConexion = $@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={ruta}";
+
+
             // Configurar la impresión nativa de Windows
             System.Drawing.Printing.PrintDocument pd = new System.Drawing.Printing.PrintDocument();
             pd.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(CrearTicket);
@@ -49,7 +56,7 @@ namespace integra_1
                     string nombreProducto = fila.Cells["Nombre"].Value.ToString();
                     int cantidadVendida = Convert.ToInt32(fila.Cells["Cantidad"].Value);
 
-                    string consultaRestar = "UPDATE Productos SET Cantidad_Producto = Cantidad_Producto - ? WHERE Nombre_Producto = ?";
+                    string consultaRestar = "UPDATE Productos SET Cantidad_Producto = Cantidad_Producto - ? WHERE Id_Producto = ?";
 
                     using (OleDbConnection conexion = new OleDbConnection(cadenaConexion))
                     {
@@ -144,7 +151,7 @@ namespace integra_1
 
             // 2. Tu ruta de la base de datos fija
             string cadenaConexion = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\adria\Desktop\integradora00\integradora avanzada media\integradora boceto.accdb;";
-            string consulta = "SELECT Nombre_Producto, Precio_Producto, Cantidad_Producto FROM Productos WHERE Id = @id";
+            string consulta = "SELECT Nombre_Producto, Precio_Producto, Cantidad_Producto FROM Productos WHERE Id_Producto = ?";
 
             using (OleDbConnection conexion = new OleDbConnection(cadenaConexion))
             {
@@ -207,6 +214,11 @@ namespace integra_1
         }
 
         private void FrmVentas_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvCarrito_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

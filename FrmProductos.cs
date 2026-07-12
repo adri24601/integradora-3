@@ -24,10 +24,10 @@ namespace integra_1
 
         private void FrmProductos_Load(object sender, EventArgs e)
         {
-            //ruta 
-            string cadenaConexion = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\adria\Desktop\integradora00\integradora avanzada media\integradora boceto.accdb;";
-            //consulta a SQL para traer los "productos"
-            // En lugar de usar el asterisco (*), escribe las columnas de texto y números separadas por comas
+            string ruta = Path.Combine(Application.StartupPath, "integradora boceto.accdb");
+
+            string cadenaConexion = $@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={ruta}";
+
             string consulta = "SELECT * FROM Productos";
 
             try
@@ -103,6 +103,57 @@ namespace integra_1
         private void dgvProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+
+        private void btnMenu_Inicio_Click(object sender, EventArgs e)
+        {
+            FrmDashboard frm = new FrmDashboard();
+            frm.Show();
+            this.Hide();
+        }
+
+        private void btnProductos_Click(object sender, EventArgs e)
+        {
+            FrmProductos frm = new FrmProductos();
+            frm.Show();
+            this.Hide();
+        }
+
+        private void btnInventario_Click(object sender, EventArgs e)
+        {
+            FrmInventario frm = new FrmInventario();
+            frm.Show();
+            this.Hide();
+        }
+
+        private void btnProveedores_Click(object sender, EventArgs e)
+        {
+            FrmProveedores frm = new FrmProveedores();
+            frm.Show();
+            this.Hide();
+        }
+
+        private void btnVentas_Click(object sender, EventArgs e)
+        {
+            FrmVentas frm = new FrmVentas();
+            frm.Show();
+            this.Hide();
+        }
+
+        private void btnReportes_Click(object sender, EventArgs e)
+        {
+            FrmReportes frm = new FrmReportes();
+            frm.Show();
+            this.Hide();
+        }
+
+        private void btnCerrar_Sesion_Click(object sender, EventArgs e)
+        {
+            Form1 frm = new Form1();
+            frm.Show();
+
+            this.Hide();
         }
     }
 }
