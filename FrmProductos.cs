@@ -24,6 +24,7 @@ namespace integra_1
 
         private void FrmProductos_Load(object sender, EventArgs e)
         {
+            // RUTA BASE DE DATOS
             string ruta = Path.Combine(Application.StartupPath, "integradora boceto.accdb");
 
             string cadenaConexion = $@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={ruta}";
@@ -74,6 +75,8 @@ namespace integra_1
 
         private void btnModificarProducto_Click(object sender, EventArgs e)
         {
+            
+            
             // 1. Validamos que haya una fila seleccionada en tu tabla
             if (dgvProductos.CurrentRow != null)
             {
@@ -120,12 +123,7 @@ namespace integra_1
             this.Hide();
         }
 
-        private void btnInventario_Click(object sender, EventArgs e)
-        {
-            FrmInventario frm = new FrmInventario();
-            frm.Show();
-            this.Hide();
-        }
+
 
         private void btnProveedores_Click(object sender, EventArgs e)
         {
@@ -151,6 +149,14 @@ namespace integra_1
         private void btnCerrar_Sesion_Click(object sender, EventArgs e)
         {
             Form1 frm = new Form1();
+            frm.Show();
+
+            this.Hide();
+        }
+
+        private void btnAyuda_Click(object sender, EventArgs e)
+        {
+            FrmAyuda frm = new FrmAyuda();
             frm.Show();
 
             this.Hide();

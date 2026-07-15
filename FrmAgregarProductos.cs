@@ -6,6 +6,7 @@ using System.Data.OleDb;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.IO;
 
 namespace integra_1
 {
@@ -16,7 +17,7 @@ namespace integra_1
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)  // Boton Guardar
         {
             // 1. Validar que no dejen ningún campo vacío
             if (string.IsNullOrEmpty(txtNombre_Producto.Text) || string.IsNullOrEmpty(txtMarca_Producto.Text) ||
@@ -26,8 +27,9 @@ namespace integra_1
                 return;
             }
 
-            // 2. Tu ruta absoluta que ya está probada
-            string cadenaConexion = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\adria\Desktop\integradora00\integradora avanzada media\integradora boceto.accdb;";
+            // 2. Establecer ruta
+            string ruta = Path.Combine(Application.StartupPath, "integradora boceto.accdb");
+            string cadenaConexion = $@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={ruta}";
 
             // 3. Consulta SQL completa con los 4 campos (los signos '?' se sustituyen en orden exacto abajo)
             string consulta = "INSERT INTO Productos (Id_Producto, Nombre_Producto, Marca_Producto, Precio_Producto, Imagen_Producto) VALUES (?, ?, ?, ?, ?)";
@@ -69,12 +71,13 @@ namespace integra_1
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)  // Boton eliminar
         {
             DialogResult respuesta = MessageBox.Show("¿Seguro que quieres eliminar este producto de la base de datos?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (respuesta == DialogResult.No) return;
 
-            string cadenaConexion = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\adria\Desktop\integradora00\integradora avanzada media\integradora boceto.accdb;";
+            string ruta = Path.Combine(Application.StartupPath, "integradora boceto.accdb");
+            string cadenaConexion = $@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={ruta}";
             string consulta = "DELETE FROM Productos WHERE Id_Producto = ?";
 
             try
@@ -109,18 +112,60 @@ namespace integra_1
 
         }
 
-        private void btnCerrar_Sesion_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void pictureBox1_Click(object sender, EventArgs e)
         {
         }
 
         private void btnMenu_Inicio_Click(object sender, EventArgs e)
         {
+            FrmDashboard frm = new FrmDashboard();
+            frm.Show();
+            this.Hide();
+        }
 
+        private void btnProductos_Click(object sender, EventArgs e)
+        {
+            FrmProductos frm = new FrmProductos();
+            frm.Show();
+            this.Hide();
+        }
+
+
+        private void btnProveedores_Click(object sender, EventArgs e)
+        {
+            FrmProveedores frm = new FrmProveedores();
+            frm.Show();
+            this.Hide();
+        }
+
+        private void btnVentas_Click(object sender, EventArgs e)
+        {
+            FrmVentas frm = new FrmVentas();
+            frm.Show();
+            this.Hide();
+        }
+
+        private void btnReportes_Click(object sender, EventArgs e)
+        {
+            FrmReportes frm = new FrmReportes();
+            frm.Show();
+            this.Hide();
+        }
+
+        private void btnAyuda_Click(object sender, EventArgs e)
+        {
+            FrmAyuda frm = new FrmAyuda();
+            frm.Show();
+
+            this.Hide();
+        }
+
+        private void btnCerrar_Sesion_Click(object sender, EventArgs e)
+        {
+            Form1 frm = new Form1();
+            frm.Show();
+
+            this.Hide();
         }
     }
 }

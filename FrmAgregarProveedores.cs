@@ -28,8 +28,12 @@ namespace integra_1
                 return;
             }
 
-            // 2. Tu ruta absoluta que ya está probada
-            string cadenaConexion = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\adria\Desktop\integradora00\integradora avanzada media\integradora boceto.accdb;";
+            // RUTA DE BASE DE DATOS
+
+            string ruta = Path.Combine(Application.StartupPath, "integradora boceto.accdb");
+
+            string cadenaConexion = $@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={ruta}";
+
 
             // 3. Consulta SQL completa con los 4 campos (los signos '?' se sustituyen en orden exacto abajo)
             string consulta = "INSERT INTO Proveedores ([Id_Proveedor], [Proveedor_Nombre], [Proveedor_Empresa], [Proveedor_Telefono], [Proveedor_Correo], [Proveedor_Direccion], [Id_Producto]) VALUES (?, ?, ?, ?, ?, ?, ?);";
@@ -66,7 +70,7 @@ namespace integra_1
 
         private void btnModificarProveedor_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void btnProveedor_Click(object sender, EventArgs e)
@@ -74,7 +78,12 @@ namespace integra_1
             DialogResult respuesta = MessageBox.Show("¿Seguro que quieres eliminar este producto de la base de datos?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (respuesta == DialogResult.No) return;
 
-            string cadenaConexion = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\adria\Desktop\integradora00\integradora avanzada media\integradora boceto.accdb;";
+            // RUTA DE BASE DE DATOS
+            
+            string ruta = Path.Combine(Application.StartupPath, "integradora boceto.accdb");
+
+            string cadenaConexion = $@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={ruta}";
+
             string consulta = "DELETE FROM Proveedores WHERE Id_Proveedor = ?";
 
             try
@@ -103,6 +112,59 @@ namespace integra_1
         private void FrmAgregarProveedores_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Form1 frm = new Form1();
+            frm.Show();
+
+            this.Hide();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            FrmProveedores frm = new FrmProveedores();
+            frm.Show();
+            this.Hide();
+        }
+
+        private void btnInicio_Click(object sender, EventArgs e)
+        {
+            FrmDashboard frm = new FrmDashboard();
+            frm.Show();
+            this.Hide();
+        }
+
+        private void btnProductos_Click(object sender, EventArgs e)
+        {
+            FrmProductos frm = new FrmProductos();
+            frm.Show();
+            this.Hide();
+        }
+
+
+        private void btnVentas_Click(object sender, EventArgs e)
+        {
+            FrmVentas frm = new FrmVentas();
+            frm.Show();
+            this.Hide();
+        }
+
+        private void btnReportes_Click(object sender, EventArgs e)
+        {
+            FrmReportes frm = new FrmReportes();
+            frm.Show();
+            this.Hide();
+
+        }
+
+        private void btnAyuda_Click(object sender, EventArgs e)
+        {
+            FrmAyuda frm = new FrmAyuda();
+            frm.Show();
+
+            this.Hide();
         }
     }
 }

@@ -30,7 +30,7 @@
         {
             txtNombre_Producto = new TextBox();
             txtId_Producto = new TextBox();
-            button1 = new Button();
+            btnGuardar = new Button();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -39,24 +39,24 @@
             txtMarca_Producto = new TextBox();
             txtPrecio_Producto = new TextBox();
             label6 = new Label();
-            button2 = new Button();
-            button3 = new Button();
+            btnEliminar = new Button();
+            btnModificar = new Button();
             label7 = new Label();
             textBox1 = new TextBox();
             txtImagen = new TextBox();
             panel1 = new Panel();
+            btnAyuda = new Button();
             btnCerrar_Sesion = new Button();
             btnMenu_Inicio = new Button();
             btnReportes = new Button();
             btnProductos = new Button();
             btnVentas = new Button();
-            btnInventario = new Button();
             btnProveedores = new Button();
             panel2 = new Panel();
             pictureBox1 = new PictureBox();
             label10 = new Label();
             label9 = new Label();
-            label8 = new Label();
+            lbInformacionProd = new Label();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -78,19 +78,19 @@
             txtId_Producto.Size = new Size(240, 31);
             txtId_Producto.TabIndex = 1;
             // 
-            // button1
+            // btnGuardar
             // 
-            button1.BackColor = Color.FromArgb(68, 192, 95);
-            button1.Font = new Font("Segoe UI Historic", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(342, 536);
-            button1.Margin = new Padding(4, 5, 4, 5);
-            button1.Name = "button1";
-            button1.Size = new Size(183, 50);
-            button1.TabIndex = 2;
-            button1.Text = "Guardar";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            btnGuardar.BackColor = Color.FromArgb(68, 192, 95);
+            btnGuardar.Font = new Font("Segoe UI Historic", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnGuardar.ForeColor = Color.White;
+            btnGuardar.Location = new Point(342, 536);
+            btnGuardar.Margin = new Padding(4, 5, 4, 5);
+            btnGuardar.Name = "btnGuardar";
+            btnGuardar.Size = new Size(183, 50);
+            btnGuardar.TabIndex = 2;
+            btnGuardar.Text = "Guardar";
+            btnGuardar.UseVisualStyleBackColor = false;
+            btnGuardar.Click += button1_Click;
             // 
             // label1
             // 
@@ -173,31 +173,31 @@
             label6.Text = "Precio de Venta";
             label6.Click += label6_Click;
             // 
-            // button2
+            // btnEliminar
             // 
-            button2.BackColor = Color.FromArgb(253, 77, 77);
-            button2.Font = new Font("Segoe UI Historic", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(816, 536);
-            button2.Name = "button2";
-            button2.Size = new Size(183, 50);
-            button2.TabIndex = 12;
-            button2.Text = "Eliminar ";
-            button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click;
+            btnEliminar.BackColor = Color.FromArgb(253, 77, 77);
+            btnEliminar.Font = new Font("Segoe UI Historic", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnEliminar.ForeColor = Color.White;
+            btnEliminar.Location = new Point(816, 536);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(183, 50);
+            btnEliminar.TabIndex = 12;
+            btnEliminar.Text = "Eliminar ";
+            btnEliminar.UseVisualStyleBackColor = false;
+            btnEliminar.Click += button2_Click;
             // 
-            // button3
+            // btnModificar
             // 
-            button3.BackColor = Color.FromArgb(94, 167, 239);
-            button3.Font = new Font("Segoe UI Historic", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button3.ForeColor = Color.White;
-            button3.Location = new Point(582, 536);
-            button3.Name = "button3";
-            button3.Size = new Size(183, 50);
-            button3.TabIndex = 13;
-            button3.Text = "Modificar";
-            button3.UseVisualStyleBackColor = false;
-            button3.Click += button3_Click;
+            btnModificar.BackColor = Color.FromArgb(94, 167, 239);
+            btnModificar.Font = new Font("Segoe UI Historic", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnModificar.ForeColor = Color.White;
+            btnModificar.Location = new Point(582, 536);
+            btnModificar.Name = "btnModificar";
+            btnModificar.Size = new Size(183, 50);
+            btnModificar.TabIndex = 13;
+            btnModificar.Text = "Modificar";
+            btnModificar.UseVisualStyleBackColor = false;
+            btnModificar.Click += button3_Click;
             // 
             // label7
             // 
@@ -227,21 +227,31 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(13, 71, 161);
+            panel1.Controls.Add(btnAyuda);
             panel1.Controls.Add(btnCerrar_Sesion);
             panel1.Controls.Add(btnMenu_Inicio);
             panel1.Controls.Add(btnReportes);
             panel1.Controls.Add(btnProductos);
             panel1.Controls.Add(btnVentas);
-            panel1.Controls.Add(btnInventario);
             panel1.Controls.Add(btnProveedores);
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(252, 632);
             panel1.TabIndex = 18;
             // 
+            // btnAyuda
+            // 
+            btnAyuda.Location = new Point(57, 490);
+            btnAyuda.Name = "btnAyuda";
+            btnAyuda.Size = new Size(154, 49);
+            btnAyuda.TabIndex = 21;
+            btnAyuda.Text = "Ayuda";
+            btnAyuda.UseVisualStyleBackColor = true;
+            btnAyuda.Click += btnAyuda_Click;
+            // 
             // btnCerrar_Sesion
             // 
-            btnCerrar_Sesion.Location = new Point(57, 495);
+            btnCerrar_Sesion.Location = new Point(57, 548);
             btnCerrar_Sesion.Name = "btnCerrar_Sesion";
             btnCerrar_Sesion.Size = new Size(141, 57);
             btnCerrar_Sesion.TabIndex = 25;
@@ -267,6 +277,7 @@
             btnReportes.TabIndex = 24;
             btnReportes.Text = "Reportes";
             btnReportes.UseVisualStyleBackColor = true;
+            btnReportes.Click += btnReportes_Click;
             // 
             // btnProductos
             // 
@@ -276,6 +287,7 @@
             btnProductos.TabIndex = 20;
             btnProductos.Text = "Productos";
             btnProductos.UseVisualStyleBackColor = true;
+            btnProductos.Click += btnProductos_Click;
             // 
             // btnVentas
             // 
@@ -285,15 +297,7 @@
             btnVentas.TabIndex = 23;
             btnVentas.Text = "Ventas";
             btnVentas.UseVisualStyleBackColor = true;
-            // 
-            // btnInventario
-            // 
-            btnInventario.Location = new Point(57, 241);
-            btnInventario.Name = "btnInventario";
-            btnInventario.Size = new Size(141, 47);
-            btnInventario.TabIndex = 21;
-            btnInventario.Text = "Inventario";
-            btnInventario.UseVisualStyleBackColor = true;
+            btnVentas.Click += btnVentas_Click;
             // 
             // btnProveedores
             // 
@@ -303,6 +307,7 @@
             btnProveedores.TabIndex = 22;
             btnProveedores.Text = "Proveedores";
             btnProveedores.UseVisualStyleBackColor = true;
+            btnProveedores.Click += btnProveedores_Click;
             // 
             // panel2
             // 
@@ -347,30 +352,30 @@
             label9.TabIndex = 0;
             label9.Text = "Gestión de Producto";
             // 
-            // label8
+            // lbInformacionProd
             // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI Symbol", 16F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.ForeColor = Color.FromArgb(49, 62, 200);
-            label8.Location = new Point(301, 166);
-            label8.Name = "label8";
-            label8.Size = new Size(342, 45);
-            label8.TabIndex = 20;
-            label8.Text = "Registro de Producto";
+            lbInformacionProd.AutoSize = true;
+            lbInformacionProd.Font = new Font("Segoe UI Symbol", 16F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbInformacionProd.ForeColor = Color.FromArgb(49, 62, 200);
+            lbInformacionProd.Location = new Point(301, 166);
+            lbInformacionProd.Name = "lbInformacionProd";
+            lbInformacionProd.Size = new Size(342, 45);
+            lbInformacionProd.TabIndex = 20;
+            lbInformacionProd.Text = "Registro de Producto";
             // 
             // FrmAgregarProductos
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1157, 631);
-            Controls.Add(label8);
+            Controls.Add(lbInformacionProd);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(txtImagen);
             Controls.Add(textBox1);
             Controls.Add(label7);
-            Controls.Add(button3);
-            Controls.Add(button2);
+            Controls.Add(btnModificar);
+            Controls.Add(btnEliminar);
             Controls.Add(label6);
             Controls.Add(txtPrecio_Producto);
             Controls.Add(txtMarca_Producto);
@@ -379,7 +384,7 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(button1);
+            Controls.Add(btnGuardar);
             Controls.Add(txtId_Producto);
             Controls.Add(txtNombre_Producto);
             Margin = new Padding(4, 5, 4, 5);
@@ -395,15 +400,15 @@
         }
 
         #endregion
-        private Button button1;
+        private Button btnGuardar;
         private Label label1;
         private Label label2;
         private Label label3;
         private Label label4;
         private Label label5;
         private Label label6;
-        private Button button2;
-        private Button button3;
+        private Button btnEliminar;
+        private Button btnModificar;
         private Label label7;
         private TextBox textBox1;
         public TextBox txtNombre_Producto;
@@ -415,14 +420,14 @@
         private Panel panel2;
         private Button btnMenu_Inicio;
         private Button btnProductos;
-        private Button btnInventario;
         private Button btnProveedores;
         private Button btnVentas;
         private Button btnReportes;
         private Button btnCerrar_Sesion;
-        private Label label8;
+        private Label lbInformacionProd;
         private Label label10;
         private Label label9;
         private PictureBox pictureBox1;
+        private Button btnAyuda;
     }
 }

@@ -32,11 +32,11 @@
             dgvProductos = new DataGridView();
             btnModificarProducto = new Button();
             panel1 = new Panel();
+            btnAyuda = new Button();
             btnCerrar_Sesion = new Button();
             btnReportes = new Button();
             btnVentas = new Button();
             btnProveedores = new Button();
-            btnInventario = new Button();
             btnProductos = new Button();
             btnMenu_Inicio = new Button();
             panel2 = new Panel();
@@ -62,7 +62,7 @@
             // dgvProductos
             // 
             dgvProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvProductos.Location = new Point(332, 269);
+            dgvProductos.Location = new Point(311, 242);
             dgvProductos.Name = "dgvProductos";
             dgvProductos.RowHeadersWidth = 62;
             dgvProductos.Size = new Size(749, 311);
@@ -83,17 +83,27 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(13, 71, 161);
+            panel1.Controls.Add(btnAyuda);
             panel1.Controls.Add(btnCerrar_Sesion);
             panel1.Controls.Add(btnReportes);
             panel1.Controls.Add(btnVentas);
             panel1.Controls.Add(btnProveedores);
-            panel1.Controls.Add(btnInventario);
             panel1.Controls.Add(btnProductos);
             panel1.Controls.Add(btnMenu_Inicio);
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(252, 632);
             panel1.TabIndex = 5;
+            // 
+            // btnAyuda
+            // 
+            btnAyuda.Location = new Point(92, 440);
+            btnAyuda.Name = "btnAyuda";
+            btnAyuda.Size = new Size(130, 34);
+            btnAyuda.TabIndex = 7;
+            btnAyuda.Text = "Ayuda";
+            btnAyuda.UseVisualStyleBackColor = true;
+            btnAyuda.Click += btnAyuda_Click;
             // 
             // btnCerrar_Sesion
             // 
@@ -134,16 +144,6 @@
             btnProveedores.Text = "Proveedores";
             btnProveedores.UseVisualStyleBackColor = true;
             btnProveedores.Click += btnProveedores_Click;
-            // 
-            // btnInventario
-            // 
-            btnInventario.Location = new Point(82, 232);
-            btnInventario.Name = "btnInventario";
-            btnInventario.Size = new Size(140, 43);
-            btnInventario.TabIndex = 7;
-            btnInventario.Text = "Inventario";
-            btnInventario.UseVisualStyleBackColor = true;
-            btnInventario.Click += btnInventario_Click;
             // 
             // btnProductos
             // 
@@ -241,10 +241,10 @@
         private Label label2;
         private Button btnVentas;
         private Button btnProveedores;
-        private Button btnInventario;
         private Button btnProductos;
         private Button btnMenu_Inicio;
         private Button btnReportes;
         private Button btnCerrar_Sesion;
+        private Button btnAyuda;
     }
 }

@@ -150,7 +150,11 @@ namespace integra_1
             }
 
             // 2. Tu ruta de la base de datos fija
-            string cadenaConexion = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\adria\Desktop\integradora00\integradora avanzada media\integradora boceto.accdb;";
+        
+            string ruta = Path.Combine(Application.StartupPath, "integradora boceto.accdb");
+
+            string cadenaConexion = $@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={ruta}";
+
             string consulta = "SELECT Nombre_Producto, Precio_Producto, Cantidad_Producto FROM Productos WHERE Id_Producto = ?";
 
             using (OleDbConnection conexion = new OleDbConnection(cadenaConexion))
@@ -221,6 +225,64 @@ namespace integra_1
         private void dgvCarrito_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void txtAgregar_Id_Producto_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnMenu_Inicio_Click(object sender, EventArgs e)
+        {
+            FrmDashboard frm = new FrmDashboard();
+            frm.Show();
+            this.Hide();
+        }
+
+        private void btnProductos_Click(object sender, EventArgs e)
+        {
+            FrmProductos frm = new FrmProductos();
+            frm.Show();
+            this.Hide();
+        }
+
+
+
+        private void btnProveedores_Click(object sender, EventArgs e)
+        {
+            FrmProveedores frm = new FrmProveedores();
+            frm.Show();
+            this.Hide();
+        }
+
+        private void btnVentas_Click(object sender, EventArgs e)
+        {
+            FrmVentas frm = new FrmVentas();
+            frm.Show();
+            this.Hide();
+        }
+
+        private void btnReportes_Click(object sender, EventArgs e)
+        {
+            FrmReportes frm = new FrmReportes();
+            frm.Show();
+            this.Hide();
+        }
+
+        private void btnCerrar_Sesion_Click(object sender, EventArgs e)
+        {
+            Form1 frm = new Form1();
+            frm.Show();
+
+            this.Hide();
+        }
+
+        private void btnAyuda_Click(object sender, EventArgs e)
+        {
+            FrmAyuda frm = new FrmAyuda();
+            frm.Show();
+
+            this.Hide();
         }
     }
 }
