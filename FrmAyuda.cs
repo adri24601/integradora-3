@@ -67,5 +67,10 @@ namespace integra_1
 
             this.Hide();
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

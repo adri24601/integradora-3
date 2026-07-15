@@ -123,7 +123,7 @@
             // 
             // txtProveedor_Telefono
             // 
-            txtProveedor_Telefono.Location = new Point(1068, 723);
+            txtProveedor_Telefono.Location = new Point(1056, 596);
             txtProveedor_Telefono.Name = "txtProveedor_Telefono";
             txtProveedor_Telefono.Size = new Size(297, 31);
             txtProveedor_Telefono.TabIndex = 6;
@@ -180,7 +180,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI Historic", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.FromArgb(49, 62, 200);
-            label4.Location = new Point(1068, 676);
+            label4.Location = new Point(1056, 555);
             label4.Name = "label4";
             label4.Size = new Size(134, 38);
             label4.TabIndex = 12;
@@ -220,7 +220,7 @@
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI Historic", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label7.ForeColor = Color.FromArgb(49, 62, 200);
-            label7.Location = new Point(1040, 462);
+            label7.Location = new Point(1040, 451);
             label7.Name = "label7";
             label7.Size = new Size(171, 38);
             label7.TabIndex = 16;
