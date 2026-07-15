@@ -41,19 +41,17 @@
             btnMenu_Inicio = new Button();
             panel2 = new Panel();
             label2 = new Label();
-            pictureBox1 = new PictureBox();
             label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvProductos).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // button1
             // 
-            button1.Location = new Point(779, 177);
+            button1.Location = new Point(925, 240);
             button1.Name = "button1";
-            button1.Size = new Size(221, 38);
+            button1.Size = new Size(230, 58);
             button1.TabIndex = 0;
             button1.Text = "Agregar Producto";
             button1.UseVisualStyleBackColor = true;
@@ -62,19 +60,19 @@
             // dgvProductos
             // 
             dgvProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvProductos.Location = new Point(311, 242);
+            dgvProductos.Location = new Point(509, 353);
             dgvProductos.Name = "dgvProductos";
             dgvProductos.RowHeadersWidth = 62;
-            dgvProductos.Size = new Size(749, 311);
+            dgvProductos.Size = new Size(944, 530);
             dgvProductos.TabIndex = 3;
             dgvProductos.CellContentClick += dgvProductos_CellContentClick;
             dgvProductos.DataError += dgvProductos_DataError;
             // 
             // btnModificarProducto
             // 
-            btnModificarProducto.Location = new Point(332, 164);
+            btnModificarProducto.Location = new Point(509, 240);
             btnModificarProducto.Name = "btnModificarProducto";
-            btnModificarProducto.Size = new Size(203, 34);
+            btnModificarProducto.Size = new Size(301, 58);
             btnModificarProducto.TabIndex = 4;
             btnModificarProducto.Text = "Modificar Producto";
             btnModificarProducto.UseVisualStyleBackColor = true;
@@ -92,14 +90,14 @@
             panel1.Controls.Add(btnMenu_Inicio);
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(252, 632);
+            panel1.Size = new Size(386, 1024);
             panel1.TabIndex = 5;
             // 
             // btnAyuda
             // 
-            btnAyuda.Location = new Point(92, 440);
+            btnAyuda.Location = new Point(67, 755);
             btnAyuda.Name = "btnAyuda";
-            btnAyuda.Size = new Size(130, 34);
+            btnAyuda.Size = new Size(239, 53);
             btnAyuda.TabIndex = 7;
             btnAyuda.Text = "Ayuda";
             btnAyuda.UseVisualStyleBackColor = true;
@@ -107,9 +105,9 @@
             // 
             // btnCerrar_Sesion
             // 
-            btnCerrar_Sesion.Location = new Point(63, 530);
+            btnCerrar_Sesion.Location = new Point(67, 830);
             btnCerrar_Sesion.Name = "btnCerrar_Sesion";
-            btnCerrar_Sesion.Size = new Size(149, 62);
+            btnCerrar_Sesion.Size = new Size(239, 53);
             btnCerrar_Sesion.TabIndex = 7;
             btnCerrar_Sesion.Text = "Cerrar Sesión";
             btnCerrar_Sesion.UseVisualStyleBackColor = true;
@@ -117,9 +115,9 @@
             // 
             // btnReportes
             // 
-            btnReportes.Location = new Point(76, 395);
+            btnReportes.Location = new Point(67, 672);
             btnReportes.Name = "btnReportes";
-            btnReportes.Size = new Size(125, 39);
+            btnReportes.Size = new Size(239, 53);
             btnReportes.TabIndex = 7;
             btnReportes.Text = "Reportes";
             btnReportes.UseVisualStyleBackColor = true;
@@ -127,9 +125,9 @@
             // 
             // btnVentas
             // 
-            btnVentas.Location = new Point(85, 338);
+            btnVentas.Location = new Point(67, 590);
             btnVentas.Name = "btnVentas";
-            btnVentas.Size = new Size(117, 41);
+            btnVentas.Size = new Size(239, 53);
             btnVentas.TabIndex = 7;
             btnVentas.Text = "Ventas";
             btnVentas.UseVisualStyleBackColor = true;
@@ -137,9 +135,9 @@
             // 
             // btnProveedores
             // 
-            btnProveedores.Location = new Point(76, 281);
+            btnProveedores.Location = new Point(67, 509);
             btnProveedores.Name = "btnProveedores";
-            btnProveedores.Size = new Size(146, 39);
+            btnProveedores.Size = new Size(239, 53);
             btnProveedores.TabIndex = 7;
             btnProveedores.Text = "Proveedores";
             btnProveedores.UseVisualStyleBackColor = true;
@@ -147,9 +145,9 @@
             // 
             // btnProductos
             // 
-            btnProductos.Location = new Point(86, 173);
+            btnProductos.Location = new Point(67, 427);
             btnProductos.Name = "btnProductos";
-            btnProductos.Size = new Size(136, 42);
+            btnProductos.Size = new Size(239, 53);
             btnProductos.TabIndex = 7;
             btnProductos.Text = "Productos";
             btnProductos.UseVisualStyleBackColor = true;
@@ -157,9 +155,9 @@
             // 
             // btnMenu_Inicio
             // 
-            btnMenu_Inicio.Location = new Point(90, 133);
+            btnMenu_Inicio.Location = new Point(67, 347);
             btnMenu_Inicio.Name = "btnMenu_Inicio";
-            btnMenu_Inicio.Size = new Size(112, 34);
+            btnMenu_Inicio.Size = new Size(239, 53);
             btnMenu_Inicio.TabIndex = 7;
             btnMenu_Inicio.Text = "Inicio";
             btnMenu_Inicio.UseVisualStyleBackColor = true;
@@ -169,11 +167,10 @@
             // 
             panel2.BackColor = Color.FromArgb(49, 6, 158);
             panel2.Controls.Add(label2);
-            panel2.Controls.Add(pictureBox1);
             panel2.Controls.Add(label1);
-            panel2.Location = new Point(250, 0);
+            panel2.Location = new Point(384, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(907, 119);
+            panel2.Size = new Size(1517, 186);
             panel2.TabIndex = 6;
             // 
             // label2
@@ -181,30 +178,20 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Historic", 12F, FontStyle.Italic, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(131, 64);
+            label2.Location = new Point(138, 105);
             label2.Name = "label2";
             label2.Size = new Size(257, 32);
             label2.TabIndex = 8;
             label2.Text = "Productos Registrados ";
             // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = Properties.Resources.APARTADOS;
-            pictureBox1.Location = new Point(38, 12);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(75, 63);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 7;
-            pictureBox1.TabStop = false;
-            // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Historic", 20F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Segoe UI Historic", 26F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(119, 21);
+            label1.Location = new Point(125, 35);
             label1.Name = "label1";
-            label1.Size = new Size(423, 54);
+            label1.Size = new Size(536, 70);
             label1.TabIndex = 7;
             label1.Text = "Gestión de Productos";
             // 
@@ -212,7 +199,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1157, 631);
+            ClientSize = new Size(1898, 968);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(btnModificarProducto);
@@ -225,7 +212,6 @@
             panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -236,7 +222,6 @@
         private Button btnModificarProducto;
         private Panel panel1;
         private Panel panel2;
-        private PictureBox pictureBox1;
         private Label label1;
         private Label label2;
         private Button btnVentas;

@@ -49,7 +49,7 @@
             // 
             // btnModificarProveedores
             // 
-            btnModificarProveedores.Location = new Point(438, 246);
+            btnModificarProveedores.Location = new Point(534, 332);
             btnModificarProveedores.Name = "btnModificarProveedores";
             btnModificarProveedores.Size = new Size(112, 34);
             btnModificarProveedores.TabIndex = 1;
@@ -59,9 +59,9 @@
             // 
             // btnAgregarProveedor
             // 
-            btnAgregarProveedor.Location = new Point(769, 246);
+            btnAgregarProveedor.Location = new Point(932, 332);
             btnAgregarProveedor.Name = "btnAgregarProveedor";
-            btnAgregarProveedor.Size = new Size(112, 34);
+            btnAgregarProveedor.Size = new Size(239, 53);
             btnAgregarProveedor.TabIndex = 2;
             btnAgregarProveedor.Text = "Agregar";
             btnAgregarProveedor.UseVisualStyleBackColor = true;
@@ -70,7 +70,7 @@
             // dgvProveedores
             // 
             dgvProveedores.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvProveedores.Location = new Point(423, 338);
+            dgvProveedores.Location = new Point(672, 414);
             dgvProveedores.Name = "dgvProveedores";
             dgvProveedores.RowHeadersWidth = 62;
             dgvProveedores.Size = new Size(567, 202);
@@ -88,14 +88,15 @@
             panel1.Controls.Add(btnProveedores);
             panel1.Location = new Point(1, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(252, 632);
+            panel1.Size = new Size(386, 1024);
             panel1.TabIndex = 3;
+            panel1.Paint += panel1_Paint;
             // 
             // btnCerrar_Sesion
             // 
-            btnCerrar_Sesion.Location = new Point(67, 464);
+            btnCerrar_Sesion.Location = new Point(67, 825);
             btnCerrar_Sesion.Name = "btnCerrar_Sesion";
-            btnCerrar_Sesion.Size = new Size(112, 34);
+            btnCerrar_Sesion.Size = new Size(239, 53);
             btnCerrar_Sesion.TabIndex = 12;
             btnCerrar_Sesion.Text = "Cerrar Sesión";
             btnCerrar_Sesion.UseVisualStyleBackColor = true;
@@ -103,9 +104,9 @@
             // 
             // btnMenu_Inicio
             // 
-            btnMenu_Inicio.Location = new Point(67, 184);
+            btnMenu_Inicio.Location = new Point(67, 350);
             btnMenu_Inicio.Name = "btnMenu_Inicio";
-            btnMenu_Inicio.Size = new Size(112, 34);
+            btnMenu_Inicio.Size = new Size(239, 53);
             btnMenu_Inicio.TabIndex = 5;
             btnMenu_Inicio.Text = "Inicio";
             btnMenu_Inicio.UseVisualStyleBackColor = true;
@@ -113,9 +114,9 @@
             // 
             // btnAyuda
             // 
-            btnAyuda.Location = new Point(67, 424);
+            btnAyuda.Location = new Point(67, 752);
             btnAyuda.Name = "btnAyuda";
-            btnAyuda.Size = new Size(112, 34);
+            btnAyuda.Size = new Size(239, 53);
             btnAyuda.TabIndex = 11;
             btnAyuda.Text = "Ayuda";
             btnAyuda.UseVisualStyleBackColor = true;
@@ -123,9 +124,9 @@
             // 
             // btnProductos
             // 
-            btnProductos.Location = new Point(67, 224);
+            btnProductos.Location = new Point(67, 433);
             btnProductos.Name = "btnProductos";
-            btnProductos.Size = new Size(112, 34);
+            btnProductos.Size = new Size(239, 53);
             btnProductos.TabIndex = 6;
             btnProductos.Text = "Productos";
             btnProductos.UseVisualStyleBackColor = true;
@@ -133,9 +134,9 @@
             // 
             // btnReportes
             // 
-            btnReportes.Location = new Point(67, 384);
+            btnReportes.Location = new Point(67, 674);
             btnReportes.Name = "btnReportes";
-            btnReportes.Size = new Size(112, 34);
+            btnReportes.Size = new Size(239, 53);
             btnReportes.TabIndex = 10;
             btnReportes.Text = "Reportes";
             btnReportes.UseVisualStyleBackColor = true;
@@ -143,9 +144,9 @@
             // 
             // btnVentas
             // 
-            btnVentas.Location = new Point(67, 344);
+            btnVentas.Location = new Point(67, 597);
             btnVentas.Name = "btnVentas";
-            btnVentas.Size = new Size(112, 34);
+            btnVentas.Size = new Size(239, 53);
             btnVentas.TabIndex = 9;
             btnVentas.Text = "Ventas";
             btnVentas.UseVisualStyleBackColor = true;
@@ -153,9 +154,9 @@
             // 
             // btnProveedores
             // 
-            btnProveedores.Location = new Point(67, 304);
+            btnProveedores.Location = new Point(67, 516);
             btnProveedores.Name = "btnProveedores";
-            btnProveedores.Size = new Size(112, 34);
+            btnProveedores.Size = new Size(239, 53);
             btnProveedores.TabIndex = 8;
             btnProveedores.Text = "Proveedores";
             btnProveedores.UseVisualStyleBackColor = true;
@@ -166,9 +167,9 @@
             panel2.BackColor = Color.FromArgb(49, 6, 158);
             panel2.Controls.Add(label2);
             panel2.Controls.Add(label1);
-            panel2.Location = new Point(250, 0);
+            panel2.Location = new Point(387, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(906, 132);
+            panel2.Size = new Size(1518, 186);
             panel2.TabIndex = 4;
             // 
             // label2
@@ -176,7 +177,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Historic", 12F, FontStyle.Italic, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(128, 72);
+            label2.Location = new Point(133, 102);
             label2.Name = "label2";
             label2.Size = new Size(149, 32);
             label2.TabIndex = 6;
@@ -185,11 +186,11 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Historic", 20F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Segoe UI Historic", 26F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(110, 18);
+            label1.Location = new Point(95, 45);
             label1.Name = "label1";
-            label1.Size = new Size(466, 54);
+            label1.Size = new Size(591, 70);
             label1.TabIndex = 5;
             label1.Text = "Gestión de Proveedores";
             // 
@@ -197,7 +198,7 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1157, 631);
+            ClientSize = new Size(1898, 968);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(dgvProveedores);
