@@ -40,9 +40,9 @@
             txtPrecio_Producto = new TextBox();
             label6 = new Label();
             btnEliminar = new Button();
-            btnModificar = new Button();
+            btnModificar_Producto = new Button();
             label7 = new Label();
-            textBox1 = new TextBox();
+            txtCantidad_Producto = new TextBox();
             txtImagen = new TextBox();
             panel1 = new Panel();
             btnAyuda = new Button();
@@ -56,9 +56,8 @@
             label10 = new Label();
             label9 = new Label();
             lbInformacionProd = new Label();
-            lbId_Proveedor = new Label();
-            textBox2 = new TextBox();
             label8 = new Label();
+            txtId_Proveedor = new TextBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
@@ -84,7 +83,7 @@
             btnGuardar.BackColor = Color.FromArgb(68, 192, 95);
             btnGuardar.Font = new Font("Segoe UI Historic", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnGuardar.ForeColor = Color.White;
-            btnGuardar.Location = new Point(605, 825);
+            btnGuardar.Location = new Point(609, 825);
             btnGuardar.Margin = new Padding(4, 5, 4, 5);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(220, 92);
@@ -187,18 +186,18 @@
             btnEliminar.UseVisualStyleBackColor = false;
             btnEliminar.Click += button2_Click;
             // 
-            // btnModificar
+            // btnModificar_Producto
             // 
-            btnModificar.BackColor = Color.FromArgb(94, 167, 239);
-            btnModificar.Font = new Font("Segoe UI Historic", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnModificar.ForeColor = Color.White;
-            btnModificar.Location = new Point(869, 825);
-            btnModificar.Name = "btnModificar";
-            btnModificar.Size = new Size(220, 92);
-            btnModificar.TabIndex = 13;
-            btnModificar.Text = "Modificar";
-            btnModificar.UseVisualStyleBackColor = false;
-            btnModificar.Click += button3_Click;
+            btnModificar_Producto.BackColor = Color.FromArgb(94, 167, 239);
+            btnModificar_Producto.Font = new Font("Segoe UI Historic", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnModificar_Producto.ForeColor = Color.White;
+            btnModificar_Producto.Location = new Point(869, 825);
+            btnModificar_Producto.Name = "btnModificar_Producto";
+            btnModificar_Producto.Size = new Size(220, 92);
+            btnModificar_Producto.TabIndex = 13;
+            btnModificar_Producto.Text = "Modificar";
+            btnModificar_Producto.UseVisualStyleBackColor = false;
+            btnModificar_Producto.Click += button3_Click;
             // 
             // label7
             // 
@@ -211,13 +210,13 @@
             label7.TabIndex = 15;
             label7.Text = "Stock ";
             // 
-            // textBox1
+            // txtCantidad_Producto
             // 
-            textBox1.Location = new Point(469, 566);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(288, 31);
-            textBox1.TabIndex = 16;
-            textBox1.TextChanged += textBox1_TextChanged;
+            txtCantidad_Producto.Location = new Point(469, 566);
+            txtCantidad_Producto.Name = "txtCantidad_Producto";
+            txtCantidad_Producto.Size = new Size(288, 31);
+            txtCantidad_Producto.TabIndex = 16;
+            txtCantidad_Producto.TextChanged += textBox1_TextChanged;
             // 
             // txtImagen
             // 
@@ -354,50 +353,38 @@
             lbInformacionProd.TabIndex = 20;
             lbInformacionProd.Text = "Registro de Producto";
             // 
-            // lbId_Proveedor
-            // 
-            lbId_Proveedor.AutoSize = true;
-            lbId_Proveedor.Font = new Font("Segoe UI Historic", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lbId_Proveedor.ForeColor = Color.FromArgb(49, 62, 200);
-            lbId_Proveedor.Location = new Point(954, 638);
-            lbId_Proveedor.Name = "lbId_Proveedor";
-            lbId_Proveedor.Size = new Size(191, 38);
-            lbId_Proveedor.TabIndex = 21;
-            lbId_Proveedor.Text = "ID Proveedor";
-            lbId_Proveedor.Click += lbId_Proveedor_Click;
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(965, 699);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(335, 31);
-            textBox2.TabIndex = 22;
-            // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(1288, 594);
+            label8.Font = new Font("Segoe UI Historic", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label8.ForeColor = Color.FromArgb(49, 62, 200);
+            label8.Location = new Point(1041, 627);
             label8.Name = "label8";
-            label8.Size = new Size(324, 25);
-            label8.TabIndex = 23;
-            label8.Text = "Falta agregar ID PROVEDOR A LA BASE";
-            label8.Click += label8_Click;
+            label8.Size = new Size(191, 38);
+            label8.TabIndex = 21;
+            label8.Text = "Id_Proveedor";
+            // 
+            // txtId_Proveedor
+            // 
+            txtId_Proveedor.Location = new Point(1017, 699);
+            txtId_Proveedor.Name = "txtId_Proveedor";
+            txtId_Proveedor.Size = new Size(329, 31);
+            txtId_Proveedor.TabIndex = 22;
             // 
             // FrmAgregarProductos
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1898, 968);
+            Controls.Add(txtId_Proveedor);
             Controls.Add(label8);
-            Controls.Add(textBox2);
-            Controls.Add(lbId_Proveedor);
             Controls.Add(lbInformacionProd);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(txtImagen);
-            Controls.Add(textBox1);
+            Controls.Add(txtCantidad_Producto);
             Controls.Add(label7);
-            Controls.Add(btnModificar);
+            Controls.Add(btnModificar_Producto);
             Controls.Add(btnEliminar);
             Controls.Add(label6);
             Controls.Add(txtPrecio_Producto);
@@ -430,9 +417,8 @@
         private Label label5;
         private Label label6;
         private Button btnEliminar;
-        private Button btnModificar;
+        private Button btnModificar_Producto;
         private Label label7;
-        private TextBox textBox1;
         public TextBox txtNombre_Producto;
         public TextBox txtId_Producto;
         public TextBox txtMarca_Producto;
@@ -450,8 +436,8 @@
         private Label label10;
         private Label label9;
         private Button btnAyuda;
-        private Label lbId_Proveedor;
-        private TextBox textBox2;
+        public TextBox txtCantidad_Producto;
         private Label label8;
+        public TextBox txtId_Proveedor;
     }
 }

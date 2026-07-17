@@ -22,9 +22,10 @@ namespace integra_1
 
         }
 
-        private void FrmProductos_Load(object sender, EventArgs e)
+        // CREACIÓN DE "METODO" PARA CARGAR PRODUCTO
+        private void CargarProducto()
         {
-            // RUTA BASE DE DATOS
+            // ESTRABLECER RUTA BASE DE DATOS (NO FIJA)
             string ruta = Path.Combine(Application.StartupPath, "integradora boceto.accdb");
 
             string cadenaConexion = $@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={ruta}";
@@ -54,7 +55,12 @@ namespace integra_1
             {
                 MessageBox.Show("Error al cargar productos:  " + ex.Message);
             }
+        }
 
+
+        private void FrmProductos_Load(object sender, EventArgs e)
+        {
+            CargarProducto(); // METODO
         }
 
         private void dgvProductos_DataError(object sender, DataGridViewDataErrorEventArgs e)
@@ -63,7 +69,7 @@ namespace integra_1
             e.ThrowException = false;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)  // FrmAgregarProducto
         {
             // Asegúrate de que el nombre coincida letra por letra con tu nuevo Form
             FrmAgregarProductos ventanaAgregar = new FrmAgregarProductos();
@@ -71,37 +77,94 @@ namespace integra_1
 
             // Si ya tienes el método para actualizar la tabla, llámalo aquí abajo:
 
+            CargarProducto();
+
         }
 
         private void btnModificarProducto_Click(object sender, EventArgs e)
         {
-            
-            
-            // 1. Validamos que haya una fila seleccionada en tu tabla
-            if (dgvProductos.CurrentRow != null)
+            if (dgvProductos.CurrentRow == null)
             {
-                // 2. Creamos la instancia usando el nombre real de tu ventana
-                FrmAgregarProductos ventanaEdicion = new FrmAgregarProductos();
-
-                // 3. Rellenamos los campos de la ventana emergente con lo seleccionado en la tabla
-                // (Revisa que los nombres de las celdas ["Id_Producto"], etc., sean exactamente los de tu Access)
-                ventanaEdicion.txtId_Producto.Text = dgvProductos.CurrentRow.Cells["Id_Producto"].Value.ToString();
-                ventanaEdicion.txtNombre_Producto.Text = dgvProductos.CurrentRow.Cells["Nombre_Producto"].Value.ToString();
-                ventanaEdicion.txtMarca_Producto.Text = dgvProductos.CurrentRow.Cells["Marca_Producto"].Value.ToString();
-                ventanaEdicion.txtPrecio_Producto.Text = dgvProductos.CurrentRow.Cells["Precio_Producto"].Value.ToString();
-                ventanaEdicion.txtImagen.Text = dgvProductos.CurrentRow.Cells["Imagen_Producto"].Value.ToString();
-
-                // 4. Mostramos la ventana llena con los datos
-                ventanaEdicion.ShowDialog();
-
-                // 5. Al cerrarse, refresca la tabla automáticamente para ver los cambios
-
+                MessageBox.Show("Seleccione un producto.");
+                return;
             }
-            else
-            {
-                MessageBox.Show("Por favor, selecciona primero un producto de la tabla gris.");
-            }
+
+            FrmAgregarProductos ventana = new FrmAgregarProductos();
+
+            // Indicar que es una modificación
+            ventana.EsEdicion = true;
+
+            // Pasar los datos al formulario
+            ventana.txtId_Producto.Text = dgvProductos.CurrentRow.Cells["Id_Producto"].Value.ToString();
+            ventana.txtNombre_Producto.Text = dgvProductos.CurrentRow.Cells["Nombre_Producto"].Value.ToString();
+            ventana.txtMarca_Producto.Text = dgvProductos.CurrentRow.Cells["Marca_Producto"].Value.ToString();
+            ventana.txtPrecio_Producto.Text = dgvProductos.CurrentRow.Cells["Precio_Producto"].Value.ToString();
+            ventana.txtCantidad_Producto.Text = dgvProductos.CurrentRow.Cells["Cantidad_Producto"].Value.ToString();
+            ventana.txtImagen.Text = dgvProductos.CurrentRow.Cells["Imagen_Producto"].Value.ToString();
+            ventana.txtId_Proveedor.Text = dgvProductos.CurrentRow.Cells["Id_Proveedor"].Value.ToString();
+            ventana.ShowDialog();
+
+            // Recargar la tabla
+            CargarProducto();
+
         }
+
+        private void btnEliminarProducto_Click(object sender, EventArgs e)
+        {
+
+            // Se asegura de que el produto haya sido seleccionado al precionar el boton
+            // Se ejucuta si el producto no se ha seleccionado
+            if(dgvProductos.CurrentRow == null)
+            {
+                MessageBox.Show("Seleccione un producto");
+                return;
+            }
+
+
+            // Pregunta si desea eliminar el producto
+            DialogResult respuesta = MessageBox.Show("¿Desea eliminar este producto?", "Eliminar", MessageBoxButtons.YesNo);
+           
+
+
+            // Al seleccionar "SI"
+            if(respuesta == DialogResult.Yes)
+            {
+                // 1. Establecer ruta de la base de datos 
+                string ruta = Path.Combine(Application.StartupPath, "integradora boceto.accdb");
+
+                // 2. Realizar conexión con ACESS con la ruta
+                string cadenaConexion = $@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={ruta}";
+
+                MessageBox.Show(ruta);
+
+                // 3. Establece donde se encuentra la base de datos
+                using (OleDbConnection conexion = new OleDbConnection(cadenaConexion))
+                {
+                    // 4. Abre la conexión
+                    conexion.Open();
+
+                    // 4. Se establece la variable consulta para eliminar producto de la base de datos (consultando la tabla usando la Id_Producto)
+                    string consulta = " DELETE FROM Productos WHERE Id_Producto = ? ";
+
+                    // 5. Ejecuta la consulta
+                    OleDbCommand comando = new OleDbCommand(consulta, conexion);
+
+                    // 6. Toma la Id del producto a eliminar
+                    comando.Parameters.AddWithValue("Id_Producto",dgvProductos.CurrentRow.Cells["Id_Producto"].Value);
+
+                    // 7. Ejecuta la eliminación
+                    comando.ExecuteNonQuery();
+                }
+
+                // Confirmación de eliminación
+                MessageBox.Show("Producto eliminado del sistema");
+
+                CargarProducto();
+            }
+
+
+        }
+
 
         private void dgvProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -161,5 +224,7 @@ namespace integra_1
 
             this.Hide();
         }
+
+
     }
 }

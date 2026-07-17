@@ -43,7 +43,7 @@
             // 
             // btnInicio
             // 
-            btnInicio.Location = new Point(401, 637);
+            btnInicio.Location = new Point(407, 581);
             btnInicio.Name = "btnInicio";
             btnInicio.Size = new Size(150, 58);
             btnInicio.TabIndex = 0;

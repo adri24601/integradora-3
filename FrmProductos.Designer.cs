@@ -42,6 +42,7 @@
             panel2 = new Panel();
             label2 = new Label();
             label1 = new Label();
+            btnEliminarProducto = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvProductos).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -49,7 +50,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(925, 240);
+            button1.Location = new Point(921, 240);
             button1.Name = "button1";
             button1.Size = new Size(230, 58);
             button1.TabIndex = 0;
@@ -63,7 +64,7 @@
             dgvProductos.Location = new Point(509, 353);
             dgvProductos.Name = "dgvProductos";
             dgvProductos.RowHeadersWidth = 62;
-            dgvProductos.Size = new Size(944, 530);
+            dgvProductos.Size = new Size(1259, 393);
             dgvProductos.TabIndex = 3;
             dgvProductos.CellContentClick += dgvProductos_CellContentClick;
             dgvProductos.DataError += dgvProductos_DataError;
@@ -195,11 +196,22 @@
             label1.TabIndex = 7;
             label1.Text = "Gestión de Productos";
             // 
+            // btnEliminarProducto
+            // 
+            btnEliminarProducto.Location = new Point(1387, 245);
+            btnEliminarProducto.Name = "btnEliminarProducto";
+            btnEliminarProducto.Size = new Size(207, 53);
+            btnEliminarProducto.TabIndex = 7;
+            btnEliminarProducto.Text = "Eliminar Producto";
+            btnEliminarProducto.UseVisualStyleBackColor = true;
+            btnEliminarProducto.Click += btnEliminarProducto_Click;
+            // 
             // FrmProductos
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1898, 968);
+            Controls.Add(btnEliminarProducto);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(btnModificarProducto);
@@ -231,5 +243,6 @@
         private Button btnReportes;
         private Button btnCerrar_Sesion;
         private Button btnAyuda;
+        private Button btnEliminarProducto;
     }
 }

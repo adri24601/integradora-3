@@ -420,5 +420,6 @@
         private Button btnVentas;
         private Button btnProveedores;
         private Button btnCerrar_Sesion;
+        private PictureBox pictureBox1;
     }
 }

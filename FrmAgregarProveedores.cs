@@ -79,7 +79,7 @@ namespace integra_1
             if (respuesta == DialogResult.No) return;
 
             // RUTA DE BASE DE DATOS
-            
+
             string ruta = Path.Combine(Application.StartupPath, "integradora boceto.accdb");
 
             string cadenaConexion = $@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={ruta}";
@@ -165,6 +165,11 @@ namespace integra_1
             frm.Show();
 
             this.Hide();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
