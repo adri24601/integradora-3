@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             btnModificarProveedor = new Button();
-            btnProveedor = new Button();
+            btnProveedor_Eliminar = new Button();
             btnGuardarProveedor = new Button();
             txtId_Proveedor = new TextBox();
             txtProveedor_Nombre = new TextBox();
@@ -43,8 +43,6 @@
             label4 = new Label();
             label5 = new Label();
             label6 = new Label();
-            txtId_Producto2 = new TextBox();
-            label7 = new Label();
             panel1 = new Panel();
             btnCerrar_Sesion = new Button();
             btnInicio = new Button();
@@ -74,18 +72,18 @@
             btnModificarProveedor.UseVisualStyleBackColor = false;
             btnModificarProveedor.Click += btnModificarProveedor_Click;
             // 
-            // btnProveedor
+            // btnProveedor_Eliminar
             // 
-            btnProveedor.BackColor = Color.FromArgb(253, 77, 77);
-            btnProveedor.Font = new Font("Segoe UI Historic", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnProveedor.ForeColor = Color.White;
-            btnProveedor.Location = new Point(1326, 826);
-            btnProveedor.Name = "btnProveedor";
-            btnProveedor.Size = new Size(220, 92);
-            btnProveedor.TabIndex = 1;
-            btnProveedor.Text = "Eliminar";
-            btnProveedor.UseVisualStyleBackColor = false;
-            btnProveedor.Click += btnProveedor_Click;
+            btnProveedor_Eliminar.BackColor = Color.FromArgb(253, 77, 77);
+            btnProveedor_Eliminar.Font = new Font("Segoe UI Historic", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnProveedor_Eliminar.ForeColor = Color.White;
+            btnProveedor_Eliminar.Location = new Point(1326, 826);
+            btnProveedor_Eliminar.Name = "btnProveedor_Eliminar";
+            btnProveedor_Eliminar.Size = new Size(220, 92);
+            btnProveedor_Eliminar.TabIndex = 1;
+            btnProveedor_Eliminar.Text = "Eliminar";
+            btnProveedor_Eliminar.UseVisualStyleBackColor = false;
+            btnProveedor_Eliminar.Click += btnProveedor_Click;
             // 
             // btnGuardarProveedor
             // 
@@ -123,7 +121,7 @@
             // 
             // txtProveedor_Telefono
             // 
-            txtProveedor_Telefono.Location = new Point(1056, 596);
+            txtProveedor_Telefono.Location = new Point(1011, 500);
             txtProveedor_Telefono.Name = "txtProveedor_Telefono";
             txtProveedor_Telefono.Size = new Size(297, 31);
             txtProveedor_Telefono.TabIndex = 6;
@@ -137,7 +135,7 @@
             // 
             // txtProveedor_Direccion
             // 
-            txtProveedor_Direccion.Location = new Point(483, 599);
+            txtProveedor_Direccion.Location = new Point(483, 588);
             txtProveedor_Direccion.Name = "txtProveedor_Direccion";
             txtProveedor_Direccion.Size = new Size(508, 31);
             txtProveedor_Direccion.TabIndex = 8;
@@ -180,7 +178,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI Historic", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.FromArgb(49, 62, 200);
-            label4.Location = new Point(1056, 555);
+            label4.Location = new Point(993, 451);
             label4.Name = "label4";
             label4.Size = new Size(134, 38);
             label4.TabIndex = 12;
@@ -202,29 +200,11 @@
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI Historic", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.FromArgb(49, 62, 200);
-            label6.Location = new Point(483, 555);
+            label6.Location = new Point(483, 547);
             label6.Name = "label6";
             label6.Size = new Size(143, 38);
             label6.TabIndex = 14;
             label6.Text = "Direccion";
-            // 
-            // txtId_Producto2
-            // 
-            txtId_Producto2.Location = new Point(1040, 500);
-            txtId_Producto2.Name = "txtId_Producto2";
-            txtId_Producto2.Size = new Size(249, 31);
-            txtId_Producto2.TabIndex = 15;
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI Historic", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.ForeColor = Color.FromArgb(49, 62, 200);
-            label7.Location = new Point(1040, 451);
-            label7.Name = "label7";
-            label7.Size = new Size(171, 38);
-            label7.TabIndex = 16;
-            label7.Text = "Id Producto";
             // 
             // panel1
             // 
@@ -362,8 +342,6 @@
             Controls.Add(label8);
             Controls.Add(panel2);
             Controls.Add(panel1);
-            Controls.Add(label7);
-            Controls.Add(txtId_Producto2);
             Controls.Add(label6);
             Controls.Add(label5);
             Controls.Add(label4);
@@ -377,7 +355,7 @@
             Controls.Add(txtProveedor_Nombre);
             Controls.Add(txtId_Proveedor);
             Controls.Add(btnGuardarProveedor);
-            Controls.Add(btnProveedor);
+            Controls.Add(btnProveedor_Eliminar);
             Controls.Add(btnModificarProveedor);
             Name = "FrmAgregarProveedores";
             Text = "Form2";
@@ -392,7 +370,7 @@
         #endregion
 
         private Button btnModificarProveedor;
-        private Button btnProveedor;
+        private Button btnProveedor_Eliminar;
         private Button btnGuardarProveedor;
         private Label label1;
         private Label label2;
@@ -400,14 +378,12 @@
         private Label label4;
         private Label label5;
         private Label label6;
-        private Label label7;
         public TextBox txtId_Proveedor;
         public TextBox txtProveedor_Nombre;
         public TextBox txtProveedor_Empresa;
         public TextBox txtProveedor_Telefono;
         public TextBox txtProveedor_Correo;
         public TextBox txtProveedor_Direccion;
-        public TextBox txtId_Producto2;
         private Panel panel1;
         private Panel panel2;
         private Label label8;

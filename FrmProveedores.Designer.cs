@@ -42,6 +42,7 @@
             panel2 = new Panel();
             label2 = new Label();
             label1 = new Label();
+            btnEliminar_Proveedor = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvProveedores).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -49,9 +50,9 @@
             // 
             // btnModificarProveedores
             // 
-            btnModificarProveedores.Location = new Point(534, 332);
+            btnModificarProveedores.Location = new Point(557, 243);
             btnModificarProveedores.Name = "btnModificarProveedores";
-            btnModificarProveedores.Size = new Size(112, 34);
+            btnModificarProveedores.Size = new Size(218, 73);
             btnModificarProveedores.TabIndex = 1;
             btnModificarProveedores.Text = "Modificar";
             btnModificarProveedores.UseVisualStyleBackColor = true;
@@ -59,9 +60,9 @@
             // 
             // btnAgregarProveedor
             // 
-            btnAgregarProveedor.Location = new Point(932, 332);
+            btnAgregarProveedor.Location = new Point(825, 243);
             btnAgregarProveedor.Name = "btnAgregarProveedor";
-            btnAgregarProveedor.Size = new Size(239, 53);
+            btnAgregarProveedor.Size = new Size(281, 73);
             btnAgregarProveedor.TabIndex = 2;
             btnAgregarProveedor.Text = "Agregar";
             btnAgregarProveedor.UseVisualStyleBackColor = true;
@@ -70,10 +71,10 @@
             // dgvProveedores
             // 
             dgvProveedores.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvProveedores.Location = new Point(672, 414);
+            dgvProveedores.Location = new Point(506, 394);
             dgvProveedores.Name = "dgvProveedores";
             dgvProveedores.RowHeadersWidth = 62;
-            dgvProveedores.Size = new Size(567, 202);
+            dgvProveedores.Size = new Size(1176, 514);
             dgvProveedores.TabIndex = 0;
             // 
             // panel1
@@ -194,11 +195,22 @@
             label1.TabIndex = 5;
             label1.Text = "Gestión de Proveedores";
             // 
+            // btnEliminar_Proveedor
+            // 
+            btnEliminar_Proveedor.Location = new Point(1275, 256);
+            btnEliminar_Proveedor.Name = "btnEliminar_Proveedor";
+            btnEliminar_Proveedor.Size = new Size(261, 68);
+            btnEliminar_Proveedor.TabIndex = 5;
+            btnEliminar_Proveedor.Text = "Eliminar";
+            btnEliminar_Proveedor.UseVisualStyleBackColor = true;
+            btnEliminar_Proveedor.Click += btnEliminar_Proveedor_Click;
+            // 
             // FrmProveedores
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1898, 968);
+            Controls.Add(btnEliminar_Proveedor);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Controls.Add(dgvProveedores);
@@ -229,5 +241,6 @@
         private Button btnProveedores;
         private Label label1;
         private Label label2;
+        private Button btnEliminar_Proveedor;
     }
 }

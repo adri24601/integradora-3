@@ -11,6 +11,7 @@ namespace integra_1
 {
     public partial class FrmAgregarProveedores : Form
     {
+        public bool EsEdicion = false;
         public FrmAgregarProveedores()
         {
             InitializeComponent();
@@ -21,8 +22,7 @@ namespace integra_1
             // 1. Validar que no dejen ningún campo vacío
             if (string.IsNullOrEmpty(txtId_Proveedor.Text) || string.IsNullOrEmpty(txtProveedor_Nombre.Text) ||
                 string.IsNullOrEmpty(txtProveedor_Empresa.Text) || string.IsNullOrEmpty(txtProveedor_Telefono.Text) ||
-                string.IsNullOrEmpty(txtProveedor_Correo.Text) || string.IsNullOrEmpty(txtProveedor_Direccion.Text) ||
-                string.IsNullOrEmpty(txtId_Producto2.Text))
+                string.IsNullOrEmpty(txtProveedor_Correo.Text) || string.IsNullOrEmpty(txtProveedor_Direccion.Text))
             {
                 MessageBox.Show("Por favor, llena todos los campos necesarios.");
                 return;
@@ -36,7 +36,7 @@ namespace integra_1
 
 
             // 3. Consulta SQL completa con los 4 campos (los signos '?' se sustituyen en orden exacto abajo)
-            string consulta = "INSERT INTO Proveedores ([Id_Proveedor], [Proveedor_Nombre], [Proveedor_Empresa], [Proveedor_Telefono], [Proveedor_Correo], [Proveedor_Direccion], [Id_Producto]) VALUES (?, ?, ?, ?, ?, ?, ?);";
+            string consulta = "INSERT INTO Proveedores ([Id_Proveedor], [Proveedor_Nombre], [Proveedor_Empresa], [Proveedor_Telefono], [Proveedor_Correo], [Proveedor_Direccion]) VALUES (?, ?, ?, ?, ?, ?);";
 
             try
             {
@@ -51,12 +51,11 @@ namespace integra_1
                         comando.Parameters.AddWithValue("@telefono_proveedor", txtProveedor_Telefono.Text);
                         comando.Parameters.AddWithValue("@correo_proveedor", txtProveedor_Correo.Text);
                         comando.Parameters.AddWithValue("@direccion_proveedor", txtProveedor_Direccion.Text);
-                        comando.Parameters.AddWithValue("@id_producto", Convert.ToInt32(txtId_Producto2.Text));
 
                         conexion.Open();
                         comando.ExecuteNonQuery(); // Guarda la fila completa en Access
 
-                        MessageBox.Show("¡Producto agregado con éxito con toda su información!");
+                        MessageBox.Show("Proveedor agregado correctamente");
 
                         this.Close(); // Cierra la ventana de captura al terminar
                     }
@@ -70,18 +69,75 @@ namespace integra_1
 
         private void btnModificarProveedor_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void btnProveedor_Click(object sender, EventArgs e)
-        {
-            DialogResult respuesta = MessageBox.Show("¿Seguro que quieres eliminar este producto de la base de datos?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (respuesta == DialogResult.No) return;
+            if(string.IsNullOrEmpty(txtId_Proveedor.Text))
+            {
+                MessageBox.Show("Seleccione la ID del proveedor que desea modificar");
+                return;
+            }
 
             // RUTA DE BASE DE DATOS
 
             string ruta = Path.Combine(Application.StartupPath, "integradora boceto.accdb");
 
+            string cadenaConexion = $@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={ruta}";
+
+            string consulta = "UPDATE Proveedores SET " + "Proveedor_Nombre = ?, " + "Proveedor_Empresa = ?, " + "Proveedor_Telefono = ?, " + "Proveedor_Correo = ?, " + "Proveedor_Direccion = ? " + "WHERE Id_Proveedor = ?";
+
+            try
+            {
+                using (OleDbConnection conexion = new OleDbConnection(cadenaConexion))
+                {
+                    using (OleDbCommand comando = new OleDbCommand(consulta, conexion))
+                    {
+                        comando.Parameters.AddWithValue("@proveedor_nombre", txtProveedor_Nombre.Text);
+                        comando.Parameters.AddWithValue("proveedor_empresa", txtProveedor_Empresa.Text);
+                        comando.Parameters.AddWithValue("proveedor_telefono", txtProveedor_Telefono.Text);
+                        comando.Parameters.AddWithValue("proveedor_correo", txtProveedor_Correo.Text);
+                        comando.Parameters.AddWithValue("proveedor_direccion", txtProveedor_Direccion.Text);
+                        comando.Parameters.AddWithValue("id_proveedor", Convert.ToInt32(txtId_Proveedor.Text));
+
+                        conexion.Open();
+
+                        int filasAfectadas = comando.ExecuteNonQuery();
+
+                        if(filasAfectadas > 0)
+                        {
+                            MessageBox.Show("Proveedor actualizado correctamente");
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("No se encontro el proveedor");
+                        }
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al actualizar: " + ex.Message);
+            }
+        }
+
+        private void btnProveedor_Click(object sender, EventArgs e) // Boton ELiminar proveedor
+        {
+            int filasAfectadas = 0;
+            
+            if(string.IsNullOrEmpty(txtId_Proveedor.Text))
+            {
+                MessageBox.Show("Seleccione el proveedor que desea eliminar");
+                return;
+            }
+
+            DialogResult respuesta = MessageBox.Show("¿Seguro que quieres eliminar este proveedor de la base de datos?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            
+            if (respuesta == DialogResult.No)
+            {
+                return;
+            }
+
+            // RUTA DE BASE DE DATOS
+            string ruta = Path.Combine(Application.StartupPath, "integradora boceto.accdb");
             string cadenaConexion = $@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={ruta}";
 
             string consulta = "DELETE FROM Proveedores WHERE Id_Proveedor = ?";
@@ -94,12 +150,19 @@ namespace integra_1
                     {
                         // Solo dejamos el parámetro que pide el '?' de la consulta anterior
                         comando.Parameters.AddWithValue("@id_proveedor", Convert.ToInt32(txtId_Proveedor.Text));
-
                         conexion.Open();
-                        comando.ExecuteNonQuery();
 
-                        MessageBox.Show("Producto eliminado con éxito."); // Nota: Si es la sección de proveedores, quizás quieras cambiar el texto a "Proveedor eliminado con éxito."
-                        this.Close();
+                        filasAfectadas = comando.ExecuteNonQuery();
+
+                        if(filasAfectadas > 0)
+                        {
+                            MessageBox.Show("Proveedor eliminado correctamente");
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("No se encontro el proveedor");
+                        }
                     }
                 }
             }
