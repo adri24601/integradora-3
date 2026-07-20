@@ -108,7 +108,7 @@ namespace integra_1
             // Pregunta si desea eliminar el proveedor seleccionado
             DialogResult respuesta = MessageBox.Show("¿Desea eliminar este proveedor?", "Eliminar", MessageBoxButtons.YesNo);
 
-            if(respuesta == DialogResult.Yes)
+            if (respuesta == DialogResult.Yes)
             {
                 // RUTA DE BASE DE DATOS
 
@@ -204,5 +204,9 @@ namespace integra_1
 
         }
 
+        private void dgvProveedores_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

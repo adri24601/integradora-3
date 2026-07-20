@@ -76,6 +76,7 @@
             dgvProveedores.RowHeadersWidth = 62;
             dgvProveedores.Size = new Size(1176, 514);
             dgvProveedores.TabIndex = 0;
+            dgvProveedores.CellContentClick += dgvProveedores_CellContentClick;
             // 
             // panel1
             // 

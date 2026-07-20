@@ -12,16 +12,9 @@ namespace integra_1
 {
     public partial class FrmDashboard : Form
     {
-
-
-        // Ruta de la base de datos
         string ruta = Path.Combine(Application.StartupPath, "integradora boceto.accdb");
 
-        // Cadena de conexión
-        string cadenaConexion = "";
-
-        // Guarda la ruta del logo seleccionado
-        string rutaLogo = "";
+        string cadenaConexion;
 
 
         public FrmDashboard()
@@ -34,258 +27,190 @@ namespace integra_1
 
         private void FrmDashboard_Load(object sender, EventArgs e)
         {
-
+            CargarResumen();
             CargarConfiguracion();
-
-            MostrarAlertaStock();
-
         }
 
+
+        private void CargarResumen()
+        {
+            OleDbConnection con = new OleDbConnection(cadenaConexion);
+
+            con.Open();
+
+            // Contar productos
+            OleDbCommand cmdProductos = new OleDbCommand("SELECT COUNT(*) FROM Productos", con);
+
+            int totalProductos = Convert.ToInt32(cmdProductos.ExecuteScalar());
+
+            lbCantidadProductos.Text = "Hay " + totalProductos + " productos registrados";
+
+
+            // Contar proveedores
+            OleDbCommand cmdProveedores = new OleDbCommand("SELECT COUNT(*) FROM Proveedores", con);
+
+            int totalProveedores = Convert.ToInt32(cmdProveedores.ExecuteScalar());
+
+            lbCantidadProveedores.Text = "Hay " + totalProveedores + " proveedores registrados";
+
+
+            // Obtener stock mínimo
+            OleDbCommand cmdStockMin = new OleDbCommand("SELECT TOP 1 Stock_minimo FROM Tienda", con);
+
+            int stockMinimo = 5;
+
+            object resultadoStock = cmdStockMin.ExecuteScalar();
+
+            if (resultadoStock != null)
+            {
+                stockMinimo = Convert.ToInt32(resultadoStock);
+            }
+
+
+            // Contar productos con stock bajo
+            OleDbCommand cmdAlerta = new OleDbCommand("SELECT COUNT(*) FROM Productos WHERE Cantidad_Producto <= " + stockMinimo, con);
+
+            int productosBajos = Convert.ToInt32(cmdAlerta.ExecuteScalar());
+
+            lbAlertaStock.Text = productosBajos + " productos con stock mínimo";
+
+            con.Close();
+        }
 
         private void CargarConfiguracion()
         {
-            try
+            OleDbConnection con = new OleDbConnection(cadenaConexion);
+            con.Open();
+
+            OleDbCommand cmd = new OleDbCommand("SELECT TOP 1 * FROM Tienda", con);
+
+            OleDbDataReader dr = cmd.ExecuteReader();
+
+            if (dr.Read())
             {
-                using (OleDbConnection conexion = new OleDbConnection(cadenaConexion))
-                {
-                    conexion.Open();
+                txtNomTienda.Text = dr["Nombre"].ToString();
+                txtDirTienda.Text = dr["Direccion"].ToString();
+                txtTelTienda.Text = dr["Telefono"].ToString();
+                txtCorreoTienda.Text = dr["Correo"].ToString();
 
-                    string consulta = "SELECT * FROM Tienda";
-
-                    OleDbCommand comando = new OleDbCommand(consulta, conexion);
-
-                    OleDbDataReader lector = comando.ExecuteReader();
-
-                    if (lector.Read())
-                    {
-                        txtNomTienda.Text = lector["Nombre"].ToString();
-                        txtDirTienda.Text = lector["Direccion"].ToString();
-                        txtTelefono.Text = lector["Telefono"].ToString();
-                        txtCorreo.Text = lector["Correo"].ToString();
-
-                        numStockAlerta.Value =
-                            Convert.ToDecimal(lector["Stock_Minimo"]);
-
-                        if (lector["Logo"].ToString() != "")
-                        {
-                            pictureBox2.Image = Image.FromFile(lector["Logo"].ToString());
-                            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-                        }
-                    }
-
-                }
+                numStockMinimo.Value = Convert.ToDecimal(dr["Stock_minimo"]);
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+
+            con.Close();
         }
-
-        private void btnCambiarLogo_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog abrir = new OpenFileDialog();
-
-
-            if (abrir.ShowDialog() == DialogResult.OK)
-            {
-                pictureBox2.Image = Image.FromFile(abrir.FileName);
-
-                pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-
-                rutaLogo = abrir.FileName;
-            }
-        }
-
 
         private void btnGuardarTienda_Click(object sender, EventArgs e)
         {
             // Verificar que el nombre no esté vacío
             if (txtNomTienda.Text == "")
             {
-                MessageBox.Show("Ingrese el nombre de la tienda.");
+                MessageBox.Show("Ingrese el nombre de la tienda");
                 txtNomTienda.Focus();
                 return;
             }
 
-            // Verificar la dirección
-            if (txtDirTienda.Text == "")
+            // Abrir conexión
+            OleDbConnection con = new OleDbConnection(cadenaConexion);
+            con.Open();
+
+            // Verificar si ya existe una tienda
+            OleDbCommand verificar = new OleDbCommand("SELECT COUNT(*) FROM Tienda", con);
+
+            int existe = Convert.ToInt32(verificar.ExecuteScalar());
+
+            if (existe > 0)
             {
-                MessageBox.Show("Ingrese la dirección.");
-                txtDirTienda.Focus();
+                MessageBox.Show("La tienda ya está registrada. Use el botón Modificar.");
+                con.Close();
                 return;
             }
 
-            // Verificar el teléfono
-            if (txtTelefono.Text == "")
-            {
-                MessageBox.Show("Ingrese el teléfono.");
-                txtTelefono.Focus();
-                return;
-            }
+            // Guardar datos
+            string insertar = "INSERT INTO Tienda (Nombre, Direccion, Telefono, Correo, Stock_minimo) " + "VALUES ('" + txtNomTienda.Text + "', '" + txtDirTienda.Text + "', '" + txtTelTienda.Text + "', '" + txtCorreoTienda.Text + "', " + numStockMinimo.Value + ")";
 
-            // Verificar el correo
-            if (txtCorreo.Text == "")
-            {
-                MessageBox.Show("Ingrese el correo electrónico.");
-                txtCorreo.Focus();
-                return;
-            }
+            OleDbCommand cmd = new OleDbCommand(insertar, con);
+            cmd.ExecuteNonQuery();
 
+            MessageBox.Show("Tienda guardada correctamente");
 
-            try
-            {
-                // Crear conexión con la base de datos
-                using (OleDbConnection conexion = new OleDbConnection(cadenaConexion))
-                {
-                    conexion.Open();
+            con.Close();
 
-
-                    // Verificar si ya existe información de la tienda
-                    string verificar = "SELECT COUNT(*) FROM Tienda";
-
-                    OleDbCommand comandoVerificar = new OleDbCommand(verificar, conexion);
-
-                    int registros = Convert.ToInt32(comandoVerificar.ExecuteScalar());
-
-
-                    if (registros == 0)
-                    {
-                        // Si no existe información, se inserta el primer registro
-
-                        string insertar = @"INSERT INTO Tienda  (Nombre, Direccion, Telefono, Correo, Stock_Minimo, Logo) VALUES (?, ?, ?, ?, ?, ?)";
-
-
-                        OleDbCommand comando = new OleDbCommand(insertar, conexion);
-
-
-                        comando.Parameters.AddWithValue("@Nombre", txtNomTienda.Text);
-
-                        comando.Parameters.AddWithValue("@Direccion", txtDirTienda.Text);
-
-                        comando.Parameters.AddWithValue("@Telefono", txtTelefono.Text);
-
-                        comando.Parameters.AddWithValue("@Correo", txtCorreo.Text);
-
-                        comando.Parameters.AddWithValue("@Stock_Minimo", (int)numStockAlerta.Value);
-
-                        comando.Parameters.AddWithValue("@Logo", rutaLogo);
-
-
-                        comando.ExecuteNonQuery();
-                    }
-                    else
-                    {
-                        // Si ya existe información, se actualizan los datos
-
-                        string actualizar = @"UPDATE Tienda
-                                      SET Nombre = ?,
-                                           Direccion = ?,
-                                           Telefono = ?,
-                                           Correo = ?,
-                                           Stock_Minimo = ?,
-                                           Logo = ?";
-
-
-                        OleDbCommand comando = new OleDbCommand(actualizar, conexion);
-
-
-                        comando.Parameters.AddWithValue("@Nombre", txtNomTienda.Text);
-
-                        comando.Parameters.AddWithValue("@Direccion", txtDirTienda.Text);
-
-                        comando.Parameters.AddWithValue("@Telefono", txtTelefono.Text);
-
-                        comando.Parameters.AddWithValue("@Correo", txtCorreo.Text);
-
-                        comando.Parameters.AddWithValue("@Stock_Minimo", (int)numStockAlerta.Value);
-
-                        comando.Parameters.AddWithValue("@Logo", rutaLogo);
-
-
-                        comando.ExecuteNonQuery();
-                    }
-
-
-
-                }
-
-
-                // Actualizar la alerta de productos
-                MostrarAlertaStock();
-
-
-                MessageBox.Show(
-                    "Los datos de la tienda fueron guardados correctamente.",
-                    "CAF Inventory",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(
-                    "Error al guardar la información: " + ex.Message,
-                    "Error",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-            }
+            // Actualizar resumen
+            CargarResumen();
         }
 
-        private void MostrarAlertaStock()
+        private void btnModificarTienda_Click_1(object sender, EventArgs e)
         {
+            // Abrir conexión
+            OleDbConnection con = new OleDbConnection(cadenaConexion);
+            con.Open();
 
-            // LA ruta ya se encuentra ingresada
-            // Consulta
-            string consulta = "SELECT Cantidad_Producto FROM Productos";
+            string actualizar = "UPDATE Tienda SET " + "Nombre='" + txtNomTienda.Text + "', " + "Direccion='" + txtDirTienda.Text + "', " + "Telefono='" + txtTelTienda.Text + "', " + "Correo='" + txtCorreoTienda.Text + "', " + "Stock_minimo=" + numStockMinimo.Value;
 
-            int productosStockBajo = 0;
+            OleDbCommand cmd = new OleDbCommand(actualizar, con);
+            cmd.ExecuteNonQuery();
 
-            try
-            {
-                using (OleDbConnection conexion = new OleDbConnection(cadenaConexion))
-                {
-                    conexion.Open();
+            MessageBox.Show("Tienda modificada correctamente");
 
-                    OleDbCommand comando = new OleDbCommand(consulta, conexion);
+            con.Close();
 
-                    OleDbDataReader lector = comando.ExecuteReader();
-
-                    // Recorrer todos los productos
-                    while (lector.Read())
-                    {
-                        int cantidad = Convert.ToInt32(lector["Cantidad_Producto"]);
-
-                        // Comparar con el stock mínimo configurado
-                        if (cantidad <= (int)numStockAlerta.Value)
-                        {
-                            productosStockBajo++;
-                        }
-                    }
-                }
-
-                // Mostrar la alerta
-                if (productosStockBajo > 0)
-                {
-                    lbAlerta.Text = "Hay " + productosStockBajo + " productos con stock bajo.";
-                    lbAlerta.ForeColor = Color.Red;
-                }
-                else
-                {
-                    lbAlerta.Text = "Todos los productos tienen suficiente stock.";
-                    lbAlerta.ForeColor = Color.Green;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al verificar el stock: " + ex.Message);
-            }
-
-
+            // Actualizar resumen
+            CargarResumen();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btnCambiarLogo_Click(object sender, EventArgs e)
         {
-            MostrarAlertaStock();
+            OpenFileDialog abrir = new OpenFileDialog();
+
+            abrir.Filter = "Archivos de imagen|*.jpg;*.png;*.jpeg";
+
+            if (abrir.ShowDialog() == DialogResult.OK)
+            {
+                picLogoTienda.Image = Image.FromFile(abrir.FileName);
+
+                picLogoTienda.SizeMode = PictureBoxSizeMode.Zoom;
+            }
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         // ABRIR FORMULARIOS
@@ -412,6 +337,18 @@ namespace integra_1
         {
 
         }
+
+        private void txtNomTienda_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }
 
