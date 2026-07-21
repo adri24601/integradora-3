@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDashboard));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             btnProductos = new Button();
             btnProveedores = new Button();
             btnVentas = new Button();
@@ -47,6 +47,7 @@
             label1 = new Label();
             pictureBox1 = new PictureBox();
             guna2ShadowPanel2 = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            picProveedores = new PictureBox();
             lbCantidadProveedores = new Label();
             label4 = new Label();
             guna2ShadowPanel3 = new Guna.UI2.WinForms.Guna2ShadowPanel();
@@ -68,8 +69,10 @@
             label8 = new Label();
             guna2ShadowPanel4 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             lbAlertaStock = new Label();
+            pictureBoxAlertas = new PictureBox();
             label12 = new Label();
             guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            picProductos = new PictureBox();
             lbCantidadProductos = new Label();
             lbTituloTotalProductos = new Label();
             panel1.SuspendLayout();
@@ -77,11 +80,14 @@
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             guna2ShadowPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)picProveedores).BeginInit();
             guna2ShadowPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numStockMinimo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)picLogoTienda).BeginInit();
             guna2ShadowPanel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxAlertas).BeginInit();
             guna2ShadowPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)picProductos).BeginInit();
             SuspendLayout();
             // 
             // btnProductos
@@ -177,7 +183,7 @@
             guna2CirclePictureBox1.ImageRotate = 0F;
             guna2CirclePictureBox1.Location = new Point(56, 59);
             guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
-            guna2CirclePictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            guna2CirclePictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges1;
             guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             guna2CirclePictureBox1.Size = new Size(257, 258);
             guna2CirclePictureBox1.TabIndex = 17;
@@ -264,6 +270,7 @@
             // guna2ShadowPanel2
             // 
             guna2ShadowPanel2.BackColor = Color.Transparent;
+            guna2ShadowPanel2.Controls.Add(picProveedores);
             guna2ShadowPanel2.Controls.Add(lbCantidadProveedores);
             guna2ShadowPanel2.Controls.Add(label4);
             guna2ShadowPanel2.FillColor = Color.DarkSeaGreen;
@@ -272,6 +279,17 @@
             guna2ShadowPanel2.ShadowColor = Color.Black;
             guna2ShadowPanel2.Size = new Size(616, 128);
             guna2ShadowPanel2.TabIndex = 17;
+            // 
+            // picProveedores
+            // 
+            picProveedores.Image = Properties.Resources.TProvedores;
+            picProveedores.Location = new Point(412, 3);
+            picProveedores.Name = "picProveedores";
+            picProveedores.Size = new Size(218, 133);
+            picProveedores.SizeMode = PictureBoxSizeMode.Zoom;
+            picProveedores.TabIndex = 3;
+            picProveedores.TabStop = false;
+            picProveedores.Click += picProveedores_Click;
             // 
             // lbCantidadProveedores
             // 
@@ -339,7 +357,7 @@
             // btnGuardarTienda
             // 
             btnGuardarTienda.BackColor = Color.Lime;
-            btnGuardarTienda.Location = new Point(156, 548);
+            btnGuardarTienda.Location = new Point(104, 559);
             btnGuardarTienda.Name = "btnGuardarTienda";
             btnGuardarTienda.Size = new Size(153, 34);
             btnGuardarTienda.TabIndex = 14;
@@ -465,6 +483,7 @@
             // 
             guna2ShadowPanel4.BackColor = Color.Transparent;
             guna2ShadowPanel4.Controls.Add(lbAlertaStock);
+            guna2ShadowPanel4.Controls.Add(pictureBoxAlertas);
             guna2ShadowPanel4.Controls.Add(label12);
             guna2ShadowPanel4.FillColor = Color.LightCoral;
             guna2ShadowPanel4.Location = new Point(467, 279);
@@ -477,11 +496,22 @@
             // 
             lbAlertaStock.AutoSize = true;
             lbAlertaStock.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lbAlertaStock.Location = new Point(41, 76);
+            lbAlertaStock.Location = new Point(42, 75);
             lbAlertaStock.Name = "lbAlertaStock";
             lbAlertaStock.Size = new Size(457, 30);
             lbAlertaStock.TabIndex = 1;
             lbAlertaStock.Text = "\"N\" productos se encuentran en stock mínimo";
+            // 
+            // pictureBoxAlertas
+            // 
+            pictureBoxAlertas.Image = Properties.Resources.TStockcritico;
+            pictureBoxAlertas.Location = new Point(482, 17);
+            pictureBoxAlertas.Name = "pictureBoxAlertas";
+            pictureBoxAlertas.Size = new Size(134, 120);
+            pictureBoxAlertas.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxAlertas.TabIndex = 2;
+            pictureBoxAlertas.TabStop = false;
+            pictureBoxAlertas.Click += pictureBoxAlertas_Click;
             // 
             // label12
             // 
@@ -496,6 +526,7 @@
             // guna2ShadowPanel1
             // 
             guna2ShadowPanel1.BackColor = Color.Transparent;
+            guna2ShadowPanel1.Controls.Add(picProductos);
             guna2ShadowPanel1.Controls.Add(lbCantidadProductos);
             guna2ShadowPanel1.Controls.Add(lbTituloTotalProductos);
             guna2ShadowPanel1.FillColor = Color.Plum;
@@ -504,6 +535,17 @@
             guna2ShadowPanel1.ShadowColor = Color.Black;
             guna2ShadowPanel1.Size = new Size(616, 140);
             guna2ShadowPanel1.TabIndex = 20;
+            // 
+            // picProductos
+            // 
+            picProductos.Image = Properties.Resources.TObjeto1;
+            picProductos.Location = new Point(463, 3);
+            picProductos.Name = "picProductos";
+            picProductos.Size = new Size(150, 115);
+            picProductos.SizeMode = PictureBoxSizeMode.Zoom;
+            picProductos.TabIndex = 21;
+            picProductos.TabStop = false;
+            picProductos.Click += picProductos_Click;
             // 
             // lbCantidadProductos
             // 
@@ -547,14 +589,17 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             guna2ShadowPanel2.ResumeLayout(false);
             guna2ShadowPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)picProveedores).EndInit();
             guna2ShadowPanel3.ResumeLayout(false);
             guna2ShadowPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)numStockMinimo).EndInit();
             ((System.ComponentModel.ISupportInitialize)picLogoTienda).EndInit();
             guna2ShadowPanel4.ResumeLayout(false);
             guna2ShadowPanel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxAlertas).EndInit();
             guna2ShadowPanel1.ResumeLayout(false);
             guna2ShadowPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)picProductos).EndInit();
             ResumeLayout(false);
         }
 
@@ -603,5 +648,8 @@
         private Button btnUsuario;
         private NumericUpDown numStockMinimo;
         private Button btnCambiarLogo;
+        private PictureBox pictureBoxAlertas;
+        private PictureBox picProveedores;
+        private PictureBox picProductos;
     }
 }

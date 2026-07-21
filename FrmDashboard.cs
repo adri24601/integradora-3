@@ -173,43 +173,152 @@ namespace integra_1
         }
 
 
+        // PICTUREBOX PRODUCTOS EN STOCK MINIMO
+
+        private void MostrarProductosStockMinimo()
+        {
+            // Crear conexión con la base de datos
+            OleDbConnection con = new OleDbConnection(cadenaConexion);
+
+            con.Open();
 
 
+            // Consulta para buscar productos que tengan
+            // una cantidad menor o igual al stock mínimo configurado
+            string consulta = @"SELECT Nombre_Producto, Cantidad_Producto FROM Productos WHERE Cantidad_Producto <= (SELECT TOP 1 Stock_minimo FROM Tienda)";
 
 
+            // Ejecutar la consulta
+            OleDbCommand cmd = new OleDbCommand(consulta, con);
 
 
+            // Leer los datos encontrados
+            OleDbDataReader dr = cmd.ExecuteReader();
 
 
+            // Variable donde se guardará el mensaje
+            string mensaje = "Productos con stock mínimo:\n\n";
 
 
+            // Sirve para saber si encontró productos
+            bool hayProductos = false;
 
 
+            // Recorrer los productos encontrados
+            while (dr.Read())
+            {
+                // Indica que sí encontró productos
+                hayProductos = true;
 
 
+                // Agrega el nombre y cantidad al mensaje
+                mensaje += dr["Nombre_Producto"].ToString() + ":  Cantidad: " + dr["Cantidad_Producto"].ToString() + "\n";
+            }
+
+            // Cerrar conexión
+            con.Close();
+
+            // Si encontró productos muestra la lista
+            if (hayProductos)
+            {
+                MessageBox.Show(mensaje, "Productos con Stock Mínimo", MessageBoxButtons.OK, MessageBoxIcon.None);
+            }
+            else
+            {
+                // Si no encontró productos muestra este mensaje
+                MessageBox.Show("No hay productos con stock mínimo.", "Stock", MessageBoxButtons.OK, MessageBoxIcon.None);
+            }
+        }
+
+        private void pictureBoxAlertas_Click(object sender, EventArgs e)
+        {
+            MostrarProductosStockMinimo();
+        }
+
+        // PICTUREBOX PRODUCTOS TOTALES
+
+        private void picProductos_Click(object sender, EventArgs e)
+        {
+            MostrarProductos();
+        }
+
+        private void MostrarProductos()
+        {
+            OleDbConnection con = new OleDbConnection(cadenaConexion);
+
+            con.Open();
+
+            string consulta = "SELECT Nombre_Producto, Cantidad_Producto FROM Productos";
+
+            OleDbCommand cmd = new OleDbCommand(consulta, con);
+
+            OleDbDataReader dr = cmd.ExecuteReader();
+
+            string mensaje = "Productos registrados:\n\n";
+
+            bool hayProductos = false;
+
+            while (dr.Read())
+            {
+                hayProductos = true;
+
+                mensaje += dr["Nombre_Producto"].ToString() + ": Cantidad: " + dr["Cantidad_Producto"].ToString() + "\n";
+            }
+
+            con.Close();
+
+            if (hayProductos)
+            {
+                MessageBox.Show(mensaje, "Productos", MessageBoxButtons.OK, MessageBoxIcon.None);
+            }
+            else
+            {
+                MessageBox.Show("No hay productos registrados.", "Productos", MessageBoxButtons.OK, MessageBoxIcon.None);
+            }
+        }
 
 
+        // PICTUREBOX TODOS LOS PROVEEDORES
 
+        private void picProveedores_Click(object sender, EventArgs e)
+        {
+            MostrarProveedores();
+        }
 
+        private void MostrarProveedores()
+        {
+            OleDbConnection con = new OleDbConnection(cadenaConexion);
 
+            con.Open();
 
+            string consulta = "SELECT Proveedor_Nombre FROM Proveedores";
 
+            OleDbCommand cmd = new OleDbCommand(consulta, con);
 
+            OleDbDataReader dr = cmd.ExecuteReader();
 
+            string mensaje = "Proveedores registrados:\n\n";
 
+            bool hayProveedores = false;
 
+            while (dr.Read())
+            {
+                hayProveedores = true;
 
+                mensaje += "- " + dr["Proveedor_Nombre"].ToString() + "\n";
+            }
 
+            con.Close();
 
-
-
-
-
-
-
-
-
-
+            if (hayProveedores)
+            {
+                MessageBox.Show(mensaje, "Proveedores", MessageBoxButtons.OK, MessageBoxIcon.None);
+            }
+            else
+            {
+                MessageBox.Show("No hay proveedores registrados.", "Proveedores", MessageBoxButtons.OK, MessageBoxIcon.None);
+            }
+        }
 
 
 

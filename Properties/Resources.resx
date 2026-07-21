@@ -124,6 +124,9 @@
   <data name="TObjeto" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TObjeto.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="CAF 12" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CAF 12.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="IMG-20260609-WA0004 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IMG-20260609-WA0004 (1).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -132,6 +135,9 @@
   </data>
   <data name="APARTADOS" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\APARTADOS.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TObjeto1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TObjeto1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="TStockcritico" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TStockcritico.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -142,7 +148,10 @@
   <data name="CAF1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CAF1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="CAF 12" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\CAF 12.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="TApartados" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TApartados.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TProvedores" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TProvedores.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
