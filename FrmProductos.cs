@@ -172,58 +172,7 @@ namespace integra_1
         }
 
 
-        private void btnMenu_Inicio_Click(object sender, EventArgs e)
-        {
-            FrmDashboard frm = new FrmDashboard();
-            frm.Show();
-            this.Hide();
-        }
 
-        private void btnProductos_Click(object sender, EventArgs e)
-        {
-            FrmProductos frm = new FrmProductos();
-            frm.Show();
-            this.Hide();
-        }
-
-
-
-        private void btnProveedores_Click(object sender, EventArgs e)
-        {
-            FrmProveedores frm = new FrmProveedores();
-            frm.Show();
-            this.Hide();
-        }
-
-        private void btnVentas_Click(object sender, EventArgs e)
-        {
-            FrmVentas frm = new FrmVentas();
-            frm.Show();
-            this.Hide();
-        }
-
-        private void btnReportes_Click(object sender, EventArgs e)
-        {
-            FrmReportes frm = new FrmReportes();
-            frm.Show();
-            this.Hide();
-        }
-
-        private void btnCerrar_Sesion_Click(object sender, EventArgs e)
-        {
-            Form1 frm = new Form1();
-            frm.Show();
-
-            this.Hide();
-        }
-
-        private void btnAyuda_Click(object sender, EventArgs e)
-        {
-            FrmAyuda frm = new FrmAyuda();
-            frm.Show();
-
-            this.Hide();
-        }
 
 
     }

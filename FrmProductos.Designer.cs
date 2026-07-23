@@ -28,24 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             button1 = new Button();
             dgvProductos = new DataGridView();
             btnModificarProducto = new Button();
             panel1 = new Panel();
-            btnAyuda = new Button();
-            btnCerrar_Sesion = new Button();
-            btnReportes = new Button();
-            btnVentas = new Button();
-            btnProveedores = new Button();
-            btnProductos = new Button();
-            btnMenu_Inicio = new Button();
+            label3 = new Label();
+            guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             panel2 = new Panel();
+            picBox_Apartados = new PictureBox();
             label2 = new Label();
             label1 = new Label();
             btnEliminarProducto = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvProductos).BeginInit();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).BeginInit();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)picBox_Apartados).BeginInit();
             SuspendLayout();
             // 
             // button1
@@ -82,91 +81,40 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(13, 71, 161);
-            panel1.Controls.Add(btnAyuda);
-            panel1.Controls.Add(btnCerrar_Sesion);
-            panel1.Controls.Add(btnReportes);
-            panel1.Controls.Add(btnVentas);
-            panel1.Controls.Add(btnProveedores);
-            panel1.Controls.Add(btnProductos);
-            panel1.Controls.Add(btnMenu_Inicio);
+            panel1.Controls.Add(label3);
+            panel1.Controls.Add(guna2CirclePictureBox1);
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(386, 1024);
             panel1.TabIndex = 5;
             // 
-            // btnAyuda
+            // label3
             // 
-            btnAyuda.Location = new Point(67, 755);
-            btnAyuda.Name = "btnAyuda";
-            btnAyuda.Size = new Size(239, 53);
-            btnAyuda.TabIndex = 7;
-            btnAyuda.Text = "Ayuda";
-            btnAyuda.UseVisualStyleBackColor = true;
-            btnAyuda.Click += btnAyuda_Click;
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI Symbol", 16F, FontStyle.Bold);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(68, 260);
+            label3.Name = "label3";
+            label3.Size = new Size(232, 45);
+            label3.TabIndex = 8;
+            label3.Text = "CAF Inventory";
             // 
-            // btnCerrar_Sesion
+            // guna2CirclePictureBox1
             // 
-            btnCerrar_Sesion.Location = new Point(67, 830);
-            btnCerrar_Sesion.Name = "btnCerrar_Sesion";
-            btnCerrar_Sesion.Size = new Size(239, 53);
-            btnCerrar_Sesion.TabIndex = 7;
-            btnCerrar_Sesion.Text = "Cerrar Sesión";
-            btnCerrar_Sesion.UseVisualStyleBackColor = true;
-            btnCerrar_Sesion.Click += btnCerrar_Sesion_Click;
-            // 
-            // btnReportes
-            // 
-            btnReportes.Location = new Point(67, 672);
-            btnReportes.Name = "btnReportes";
-            btnReportes.Size = new Size(239, 53);
-            btnReportes.TabIndex = 7;
-            btnReportes.Text = "Reportes";
-            btnReportes.UseVisualStyleBackColor = true;
-            btnReportes.Click += btnReportes_Click;
-            // 
-            // btnVentas
-            // 
-            btnVentas.Location = new Point(67, 590);
-            btnVentas.Name = "btnVentas";
-            btnVentas.Size = new Size(239, 53);
-            btnVentas.TabIndex = 7;
-            btnVentas.Text = "Ventas";
-            btnVentas.UseVisualStyleBackColor = true;
-            btnVentas.Click += btnVentas_Click;
-            // 
-            // btnProveedores
-            // 
-            btnProveedores.Location = new Point(67, 509);
-            btnProveedores.Name = "btnProveedores";
-            btnProveedores.Size = new Size(239, 53);
-            btnProveedores.TabIndex = 7;
-            btnProveedores.Text = "Proveedores";
-            btnProveedores.UseVisualStyleBackColor = true;
-            btnProveedores.Click += btnProveedores_Click;
-            // 
-            // btnProductos
-            // 
-            btnProductos.Location = new Point(67, 427);
-            btnProductos.Name = "btnProductos";
-            btnProductos.Size = new Size(239, 53);
-            btnProductos.TabIndex = 7;
-            btnProductos.Text = "Productos";
-            btnProductos.UseVisualStyleBackColor = true;
-            btnProductos.Click += btnProductos_Click;
-            // 
-            // btnMenu_Inicio
-            // 
-            btnMenu_Inicio.Location = new Point(67, 347);
-            btnMenu_Inicio.Name = "btnMenu_Inicio";
-            btnMenu_Inicio.Size = new Size(239, 53);
-            btnMenu_Inicio.TabIndex = 7;
-            btnMenu_Inicio.Text = "Inicio";
-            btnMenu_Inicio.UseVisualStyleBackColor = true;
-            btnMenu_Inicio.Click += btnMenu_Inicio_Click;
+            guna2CirclePictureBox1.Image = Properties.Resources.re4;
+            guna2CirclePictureBox1.ImageRotate = 0F;
+            guna2CirclePictureBox1.Location = new Point(85, 61);
+            guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
+            guna2CirclePictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges1;
+            guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            guna2CirclePictureBox1.Size = new Size(202, 174);
+            guna2CirclePictureBox1.TabIndex = 8;
+            guna2CirclePictureBox1.TabStop = false;
             // 
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(49, 6, 158);
+            panel2.Controls.Add(picBox_Apartados);
             panel2.Controls.Add(label2);
             panel2.Controls.Add(label1);
             panel2.Location = new Point(384, 0);
@@ -174,12 +122,22 @@
             panel2.Size = new Size(1517, 186);
             panel2.TabIndex = 6;
             // 
+            // picBox_Apartados
+            // 
+            picBox_Apartados.Image = Properties.Resources.APARTADOS;
+            picBox_Apartados.Location = new Point(79, 38);
+            picBox_Apartados.Name = "picBox_Apartados";
+            picBox_Apartados.Size = new Size(139, 75);
+            picBox_Apartados.SizeMode = PictureBoxSizeMode.Zoom;
+            picBox_Apartados.TabIndex = 9;
+            picBox_Apartados.TabStop = false;
+            // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Historic", 12F, FontStyle.Italic, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(138, 105);
+            label2.Location = new Point(231, 108);
             label2.Name = "label2";
             label2.Size = new Size(257, 32);
             label2.TabIndex = 8;
@@ -190,7 +148,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Historic", 26F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(125, 35);
+            label1.Location = new Point(224, 38);
             label1.Name = "label1";
             label1.Size = new Size(536, 70);
             label1.TabIndex = 7;
@@ -222,8 +180,11 @@
             Load += FrmProductos_Load;
             ((System.ComponentModel.ISupportInitialize)dgvProductos).EndInit();
             panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)picBox_Apartados).EndInit();
             ResumeLayout(false);
         }
 
@@ -236,13 +197,9 @@
         private Panel panel2;
         private Label label1;
         private Label label2;
-        private Button btnVentas;
-        private Button btnProveedores;
-        private Button btnProductos;
-        private Button btnMenu_Inicio;
-        private Button btnReportes;
-        private Button btnCerrar_Sesion;
-        private Button btnAyuda;
         private Button btnEliminarProducto;
+        private PictureBox picBox_Apartados;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
+        private Label label3;
     }
 }
