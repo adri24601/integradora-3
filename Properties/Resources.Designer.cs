@@ -233,6 +233,16 @@ namespace integra_1.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap TInventario {
+            get {
+                object obj = ResourceManager.GetObject("TInventario", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap TObjeto {
             get {
                 object obj = ResourceManager.GetObject("TObjeto", resourceCulture);

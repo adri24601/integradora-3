@@ -28,26 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDashboard));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDashboard));
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
+            btnCerrar = new Guna.UI2.WinForms.Guna2Button();
+            btnProveedores = new Guna.UI2.WinForms.Guna2Button();
+            btnAyuda = new Guna.UI2.WinForms.Guna2Button();
+            btnVentas = new Guna.UI2.WinForms.Guna2Button();
+            btnProductos = new Guna.UI2.WinForms.Guna2Button();
             label13 = new Label();
+            btnInicio = new Guna.UI2.WinForms.Guna2Button();
             guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             panel2 = new Panel();
+            pictureBox2 = new PictureBox();
+            pictureBox3 = new PictureBox();
             label7 = new Label();
             label6 = new Label();
             label2 = new Label();
@@ -58,44 +64,37 @@
             lbCantidadProveedores = new Label();
             label4 = new Label();
             guna2ShadowPanel3 = new Guna.UI2.WinForms.Guna2ShadowPanel();
-            btnCambiarLogo = new Button();
-            numStockMinimo = new NumericUpDown();
             btnGuardarTienda = new Button();
             btnModificarTienda = new Button();
-            picLogoTienda = new PictureBox();
+            btnCambiarLogo = new Button();
+            numStockMinimo = new NumericUpDown();
             label11 = new Label();
             txtCorreoTienda = new TextBox();
             txtDirTienda = new TextBox();
             txtTelTienda = new TextBox();
             txtNomTienda = new TextBox();
+            picLogoTienda = new PictureBox();
             label10 = new Label();
             label9 = new Label();
             label5 = new Label();
-            label3 = new Label();
             lbConfiguracionTienda = new Label();
             label8 = new Label();
+            label3 = new Label();
             guna2ShadowPanel4 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             lbAlertaStock = new Label();
             pictureBoxAlertas = new PictureBox();
             label12 = new Label();
             guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
-            picProductos = new PictureBox();
             lbCantidadProductos = new Label();
             lbTituloTotalProductos = new Label();
-            btnInicio = new Guna.UI2.WinForms.Guna2Button();
-            btnProductos = new Guna.UI2.WinForms.Guna2Button();
-            btnProveedores = new Guna.UI2.WinForms.Guna2Button();
-            btnReportes = new Guna.UI2.WinForms.Guna2Button();
-            btnAyuda = new Guna.UI2.WinForms.Guna2Button();
-            btnVentas = new Guna.UI2.WinForms.Guna2Button();
-            btnCerrar = new Guna.UI2.WinForms.Guna2Button();
-            pictureBox2 = new PictureBox();
-            pictureBox3 = new PictureBox();
+            picProductos = new PictureBox();
             panel3 = new Panel();
             pictureBox4 = new PictureBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).BeginInit();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             guna2ShadowPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picProveedores).BeginInit();
@@ -106,8 +105,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBoxAlertas).BeginInit();
             guna2ShadowPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picProductos).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             SuspendLayout();
@@ -121,13 +118,107 @@
             panel1.Controls.Add(btnVentas);
             panel1.Controls.Add(btnProductos);
             panel1.Controls.Add(label13);
-            panel1.Controls.Add(btnReportes);
             panel1.Controls.Add(btnInicio);
             panel1.Controls.Add(guna2CirclePictureBox1);
             panel1.Location = new Point(0, 1);
             panel1.Name = "panel1";
             panel1.Size = new Size(386, 1024);
             panel1.TabIndex = 8;
+            // 
+            // btnCerrar
+            // 
+            btnCerrar.BorderRadius = 10;
+            btnCerrar.CustomizableEdges = customizableEdges1;
+            btnCerrar.DisabledState.BorderColor = Color.DarkGray;
+            btnCerrar.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnCerrar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnCerrar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnCerrar.FillColor = Color.FromArgb(0, 21, 137);
+            btnCerrar.Font = new Font("Segoe UI Symbol", 11F, FontStyle.Bold);
+            btnCerrar.ForeColor = Color.White;
+            btnCerrar.Location = new Point(68, 778);
+            btnCerrar.Name = "btnCerrar";
+            btnCerrar.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btnCerrar.Size = new Size(234, 53);
+            btnCerrar.TabIndex = 23;
+            btnCerrar.Text = "Cerrar Sesión";
+            btnCerrar.Click += btnCerrar_Click;
+            // 
+            // btnProveedores
+            // 
+            btnProveedores.BorderRadius = 10;
+            btnProveedores.CustomizableEdges = customizableEdges3;
+            btnProveedores.DisabledState.BorderColor = Color.DarkGray;
+            btnProveedores.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnProveedores.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnProveedores.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnProveedores.FillColor = Color.FromArgb(0, 21, 137);
+            btnProveedores.Font = new Font("Segoe UI Symbol", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnProveedores.ForeColor = Color.White;
+            btnProveedores.Location = new Point(68, 531);
+            btnProveedores.Name = "btnProveedores";
+            btnProveedores.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btnProveedores.Size = new Size(234, 53);
+            btnProveedores.TabIndex = 22;
+            btnProveedores.Text = "Proveedores";
+            btnProveedores.Click += btnProveedores_Click;
+            // 
+            // btnAyuda
+            // 
+            btnAyuda.BorderRadius = 10;
+            btnAyuda.CustomizableEdges = customizableEdges5;
+            btnAyuda.DisabledState.BorderColor = Color.DarkGray;
+            btnAyuda.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnAyuda.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnAyuda.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnAyuda.FillColor = Color.FromArgb(0, 21, 137);
+            btnAyuda.Font = new Font("Segoe UI Symbol", 11F, FontStyle.Bold);
+            btnAyuda.ForeColor = Color.White;
+            btnAyuda.Location = new Point(68, 699);
+            btnAyuda.Name = "btnAyuda";
+            btnAyuda.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btnAyuda.Size = new Size(234, 53);
+            btnAyuda.TabIndex = 21;
+            btnAyuda.Text = "Ayuda";
+            btnAyuda.Click += btnAyuda_Click;
+            // 
+            // btnVentas
+            // 
+            btnVentas.BorderRadius = 10;
+            btnVentas.CustomizableEdges = customizableEdges7;
+            btnVentas.DisabledState.BorderColor = Color.DarkGray;
+            btnVentas.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnVentas.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnVentas.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnVentas.FillColor = Color.FromArgb(0, 21, 137);
+            btnVentas.Font = new Font("Segoe UI Symbol", 11F, FontStyle.Bold);
+            btnVentas.ForeColor = Color.White;
+            btnVentas.Location = new Point(68, 615);
+            btnVentas.Name = "btnVentas";
+            btnVentas.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            btnVentas.Size = new Size(234, 53);
+            btnVentas.TabIndex = 22;
+            btnVentas.Text = "Ventas";
+            btnVentas.Click += btnVentas_Click;
+            // 
+            // btnProductos
+            // 
+            btnProductos.BorderRadius = 10;
+            btnProductos.CustomizableEdges = customizableEdges9;
+            btnProductos.DisabledState.BorderColor = Color.DarkGray;
+            btnProductos.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnProductos.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnProductos.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnProductos.FillColor = Color.FromArgb(0, 21, 137);
+            btnProductos.Font = new Font("Segoe UI Historic", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnProductos.ForeColor = Color.White;
+            btnProductos.Location = new Point(68, 445);
+            btnProductos.Name = "btnProductos";
+            btnProductos.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            btnProductos.Size = new Size(234, 53);
+            btnProductos.TabIndex = 3;
+            btnProductos.Text = "Productos";
+            btnProductos.Click += btnProductos_Click;
             // 
             // label13
             // 
@@ -140,6 +231,25 @@
             label13.TabIndex = 21;
             label13.Text = "CAF Inventory";
             // 
+            // btnInicio
+            // 
+            btnInicio.BorderRadius = 10;
+            btnInicio.CustomizableEdges = customizableEdges11;
+            btnInicio.DisabledState.BorderColor = Color.DarkGray;
+            btnInicio.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnInicio.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnInicio.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnInicio.FillColor = Color.FromArgb(0, 21, 137);
+            btnInicio.Font = new Font("Segoe UI Symbol", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnInicio.ForeColor = Color.White;
+            btnInicio.Location = new Point(68, 360);
+            btnInicio.Name = "btnInicio";
+            btnInicio.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            btnInicio.Size = new Size(234, 53);
+            btnInicio.TabIndex = 21;
+            btnInicio.Text = "Inicio";
+            btnInicio.Click += btnInicio_Click;
+            // 
             // guna2CirclePictureBox1
             // 
             guna2CirclePictureBox1.ErrorImage = (Image)resources.GetObject("guna2CirclePictureBox1.ErrorImage");
@@ -147,7 +257,7 @@
             guna2CirclePictureBox1.ImageRotate = 0F;
             guna2CirclePictureBox1.Location = new Point(85, 68);
             guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
-            guna2CirclePictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges15;
+            guna2CirclePictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges13;
             guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             guna2CirclePictureBox1.Size = new Size(202, 174);
             guna2CirclePictureBox1.TabIndex = 17;
@@ -165,6 +275,26 @@
             panel2.Size = new Size(1518, 186);
             panel2.TabIndex = 15;
             panel2.Paint += panel2_Paint_1;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = Properties.Resources.APARTADOS;
+            pictureBox2.Location = new Point(79, 38);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(139, 75);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 21;
+            pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.Image = Properties.Resources.user3;
+            pictureBox3.Location = new Point(1273, 38);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(140, 117);
+            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox3.TabIndex = 21;
+            pictureBox3.TabStop = false;
             // 
             // label7
             // 
@@ -295,22 +425,6 @@
             guna2ShadowPanel3.Size = new Size(703, 503);
             guna2ShadowPanel3.TabIndex = 18;
             // 
-            // btnCambiarLogo
-            // 
-            btnCambiarLogo.Location = new Point(31, 331);
-            btnCambiarLogo.Name = "btnCambiarLogo";
-            btnCambiarLogo.Size = new Size(148, 37);
-            btnCambiarLogo.TabIndex = 16;
-            btnCambiarLogo.Text = "Cambiar Logo";
-            btnCambiarLogo.UseVisualStyleBackColor = true;
-            // 
-            // numStockMinimo
-            // 
-            numStockMinimo.Location = new Point(248, 249);
-            numStockMinimo.Name = "numStockMinimo";
-            numStockMinimo.Size = new Size(192, 31);
-            numStockMinimo.TabIndex = 15;
-            // 
             // btnGuardarTienda
             // 
             btnGuardarTienda.BackColor = Color.LightGreen;
@@ -335,16 +449,21 @@
             btnModificarTienda.UseVisualStyleBackColor = false;
             btnModificarTienda.Click += btnModificarTienda_Click_1;
             // 
-            // picLogoTienda
+            // btnCambiarLogo
             // 
-            picLogoTienda.Image = Properties.Resources.CAF_12;
-            picLogoTienda.Location = new Point(195, 312);
-            picLogoTienda.Name = "picLogoTienda";
-            picLogoTienda.Size = new Size(228, 171);
-            picLogoTienda.SizeMode = PictureBoxSizeMode.Zoom;
-            picLogoTienda.TabIndex = 12;
-            picLogoTienda.TabStop = false;
-            picLogoTienda.Click += pictureBox2_Click;
+            btnCambiarLogo.Location = new Point(31, 331);
+            btnCambiarLogo.Name = "btnCambiarLogo";
+            btnCambiarLogo.Size = new Size(148, 37);
+            btnCambiarLogo.TabIndex = 16;
+            btnCambiarLogo.Text = "Cambiar Logo";
+            btnCambiarLogo.UseVisualStyleBackColor = true;
+            // 
+            // numStockMinimo
+            // 
+            numStockMinimo.Location = new Point(248, 249);
+            numStockMinimo.Name = "numStockMinimo";
+            numStockMinimo.Size = new Size(192, 31);
+            numStockMinimo.TabIndex = 15;
             // 
             // label11
             // 
@@ -385,6 +504,17 @@
             txtNomTienda.Size = new Size(410, 31);
             txtNomTienda.TabIndex = 7;
             // 
+            // picLogoTienda
+            // 
+            picLogoTienda.Image = Properties.Resources.CAF_12;
+            picLogoTienda.Location = new Point(195, 312);
+            picLogoTienda.Name = "picLogoTienda";
+            picLogoTienda.Size = new Size(228, 171);
+            picLogoTienda.SizeMode = PictureBoxSizeMode.Zoom;
+            picLogoTienda.TabIndex = 12;
+            picLogoTienda.TabStop = false;
+            picLogoTienda.Click += pictureBox2_Click;
+            // 
             // label10
             // 
             label10.AutoSize = true;
@@ -418,17 +548,6 @@
             label5.TabIndex = 2;
             label5.Text = "Dirección: ";
             // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
-            label3.ForeColor = Color.Gainsboro;
-            label3.Location = new Point(31, 101);
-            label3.Name = "label3";
-            label3.Size = new Size(211, 28);
-            label3.TabIndex = 1;
-            label3.Text = "Nombre de la tienda: ";
-            // 
             // lbConfiguracionTienda
             // 
             lbConfiguracionTienda.AutoSize = true;
@@ -450,6 +569,17 @@
             label8.Size = new Size(102, 28);
             label8.TabIndex = 3;
             label8.Text = "Teléfono: ";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
+            label3.ForeColor = Color.Gainsboro;
+            label3.Location = new Point(31, 101);
+            label3.Name = "label3";
+            label3.Size = new Size(211, 28);
+            label3.TabIndex = 1;
+            label3.Text = "Nombre de la tienda: ";
             // 
             // guna2ShadowPanel4
             // 
@@ -510,17 +640,6 @@
             guna2ShadowPanel1.Size = new Size(646, 118);
             guna2ShadowPanel1.TabIndex = 20;
             // 
-            // picProductos
-            // 
-            picProductos.Image = Properties.Resources.TObjeto1;
-            picProductos.Location = new Point(490, 0);
-            picProductos.Name = "picProductos";
-            picProductos.Size = new Size(167, 137);
-            picProductos.SizeMode = PictureBoxSizeMode.Zoom;
-            picProductos.TabIndex = 21;
-            picProductos.TabStop = false;
-            picProductos.Click += picProductos_Click;
-            // 
             // lbCantidadProductos
             // 
             lbCantidadProductos.AutoSize = true;
@@ -543,155 +662,20 @@
             lbTituloTotalProductos.TabIndex = 0;
             lbTituloTotalProductos.Text = "Total Productos";
             // 
-            // btnInicio
+            // picProductos
             // 
-            btnInicio.BorderRadius = 10;
-            btnInicio.CustomizableEdges = customizableEdges13;
-            btnInicio.DisabledState.BorderColor = Color.DarkGray;
-            btnInicio.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnInicio.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnInicio.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnInicio.FillColor = Color.FromArgb(0, 21, 137);
-            btnInicio.Font = new Font("Segoe UI Symbol", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnInicio.ForeColor = Color.White;
-            btnInicio.Location = new Point(68, 350);
-            btnInicio.Name = "btnInicio";
-            btnInicio.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            btnInicio.Size = new Size(234, 53);
-            btnInicio.TabIndex = 21;
-            btnInicio.Text = "Inicio";
-            // 
-            // btnProductos
-            // 
-            btnProductos.BorderRadius = 10;
-            btnProductos.CustomizableEdges = customizableEdges9;
-            btnProductos.DisabledState.BorderColor = Color.DarkGray;
-            btnProductos.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnProductos.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnProductos.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnProductos.FillColor = Color.FromArgb(0, 21, 137);
-            btnProductos.Font = new Font("Segoe UI Historic", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnProductos.ForeColor = Color.White;
-            btnProductos.Location = new Point(68, 430);
-            btnProductos.Name = "btnProductos";
-            btnProductos.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            btnProductos.Size = new Size(234, 53);
-            btnProductos.TabIndex = 3;
-            btnProductos.Text = "Productos";
-            // 
-            // btnProveedores
-            // 
-            btnProveedores.BorderRadius = 10;
-            btnProveedores.CustomizableEdges = customizableEdges3;
-            btnProveedores.DisabledState.BorderColor = Color.DarkGray;
-            btnProveedores.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnProveedores.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnProveedores.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnProveedores.FillColor = Color.FromArgb(0, 21, 137);
-            btnProveedores.Font = new Font("Segoe UI Symbol", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnProveedores.ForeColor = Color.White;
-            btnProveedores.Location = new Point(68, 508);
-            btnProveedores.Name = "btnProveedores";
-            btnProveedores.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            btnProveedores.Size = new Size(234, 53);
-            btnProveedores.TabIndex = 22;
-            btnProveedores.Text = "Proveedores";
-            btnProveedores.Click += btnProveedores_Click;
-            // 
-            // btnReportes
-            // 
-            btnReportes.BorderRadius = 10;
-            btnReportes.CustomizableEdges = customizableEdges11;
-            btnReportes.DisabledState.BorderColor = Color.DarkGray;
-            btnReportes.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnReportes.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnReportes.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnReportes.FillColor = Color.FromArgb(0, 21, 137);
-            btnReportes.Font = new Font("Segoe UI Symbol", 11F, FontStyle.Bold);
-            btnReportes.ForeColor = Color.White;
-            btnReportes.Location = new Point(68, 583);
-            btnReportes.Name = "btnReportes";
-            btnReportes.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            btnReportes.Size = new Size(234, 53);
-            btnReportes.TabIndex = 3;
-            btnReportes.Text = "Reportes";
-            // 
-            // btnAyuda
-            // 
-            btnAyuda.BorderRadius = 10;
-            btnAyuda.CustomizableEdges = customizableEdges5;
-            btnAyuda.DisabledState.BorderColor = Color.DarkGray;
-            btnAyuda.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnAyuda.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnAyuda.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnAyuda.FillColor = Color.FromArgb(0, 21, 137);
-            btnAyuda.Font = new Font("Segoe UI Symbol", 11F, FontStyle.Bold);
-            btnAyuda.ForeColor = Color.White;
-            btnAyuda.Location = new Point(68, 734);
-            btnAyuda.Name = "btnAyuda";
-            btnAyuda.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            btnAyuda.Size = new Size(234, 53);
-            btnAyuda.TabIndex = 21;
-            btnAyuda.Text = "Ayuda";
-            // 
-            // btnVentas
-            // 
-            btnVentas.BorderRadius = 10;
-            btnVentas.CustomizableEdges = customizableEdges7;
-            btnVentas.DisabledState.BorderColor = Color.DarkGray;
-            btnVentas.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnVentas.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnVentas.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnVentas.FillColor = Color.FromArgb(0, 21, 137);
-            btnVentas.Font = new Font("Segoe UI Symbol", 11F, FontStyle.Bold);
-            btnVentas.ForeColor = Color.White;
-            btnVentas.Location = new Point(68, 659);
-            btnVentas.Name = "btnVentas";
-            btnVentas.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            btnVentas.Size = new Size(234, 53);
-            btnVentas.TabIndex = 22;
-            btnVentas.Text = "Ventas";
-            // 
-            // btnCerrar
-            // 
-            btnCerrar.BorderRadius = 10;
-            btnCerrar.CustomizableEdges = customizableEdges1;
-            btnCerrar.DisabledState.BorderColor = Color.DarkGray;
-            btnCerrar.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnCerrar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnCerrar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnCerrar.FillColor = Color.FromArgb(0, 21, 137);
-            btnCerrar.Font = new Font("Segoe UI Symbol", 11F, FontStyle.Bold);
-            btnCerrar.ForeColor = Color.White;
-            btnCerrar.Location = new Point(68, 810);
-            btnCerrar.Name = "btnCerrar";
-            btnCerrar.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            btnCerrar.Size = new Size(234, 53);
-            btnCerrar.TabIndex = 23;
-            btnCerrar.Text = "Cerrar Sesión";
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = Properties.Resources.APARTADOS;
-            pictureBox2.Location = new Point(79, 38);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(139, 75);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 21;
-            pictureBox2.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            pictureBox3.Image = Properties.Resources.user3;
-            pictureBox3.Location = new Point(1273, 38);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(140, 117);
-            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox3.TabIndex = 21;
-            pictureBox3.TabStop = false;
+            picProductos.Image = Properties.Resources.TObjeto1;
+            picProductos.Location = new Point(490, 0);
+            picProductos.Name = "picProductos";
+            picProductos.Size = new Size(167, 137);
+            picProductos.SizeMode = PictureBoxSizeMode.Zoom;
+            picProductos.TabIndex = 21;
+            picProductos.TabStop = false;
+            picProductos.Click += picProductos_Click;
             // 
             // panel3
             // 
+            panel3.BackColor = Color.Linen;
             panel3.Controls.Add(panel2);
             panel3.Controls.Add(guna2ShadowPanel3);
             panel3.Controls.Add(guna2ShadowPanel1);
@@ -729,6 +713,8 @@
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             guna2ShadowPanel2.ResumeLayout(false);
             guna2ShadowPanel2.PerformLayout();
@@ -743,8 +729,6 @@
             guna2ShadowPanel1.ResumeLayout(false);
             guna2ShadowPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)picProductos).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ResumeLayout(false);
@@ -793,7 +777,6 @@
         private Guna.UI2.WinForms.Guna2Button btnInicio;
         private Guna.UI2.WinForms.Guna2Button btnProductos;
         private Guna.UI2.WinForms.Guna2Button btnProveedores;
-        private Guna.UI2.WinForms.Guna2Button btnReportes;
         private Guna.UI2.WinForms.Guna2Button btnAyuda;
         private Guna.UI2.WinForms.Guna2Button btnVentas;
         private Guna.UI2.WinForms.Guna2Button btnCerrar;

@@ -114,7 +114,7 @@ namespace integra_1
 
             // Se asegura de que el produto haya sido seleccionado al precionar el boton
             // Se ejucuta si el producto no se ha seleccionado
-            if(dgvProductos.CurrentRow == null)
+            if (dgvProductos.CurrentRow == null)
             {
                 MessageBox.Show("Seleccione un producto");
                 return;
@@ -123,11 +123,11 @@ namespace integra_1
 
             // Pregunta si desea eliminar el producto
             DialogResult respuesta = MessageBox.Show("¿Desea eliminar este producto?", "Eliminar", MessageBoxButtons.YesNo);
-           
+
 
 
             // Al seleccionar "SI"
-            if(respuesta == DialogResult.Yes)
+            if (respuesta == DialogResult.Yes)
             {
                 // 1. Establecer ruta de la base de datos 
                 string ruta = Path.Combine(Application.StartupPath, "integradora boceto.accdb");
@@ -150,7 +150,7 @@ namespace integra_1
                     OleDbCommand comando = new OleDbCommand(consulta, conexion);
 
                     // 6. Toma la Id del producto a eliminar
-                    comando.Parameters.AddWithValue("Id_Producto",dgvProductos.CurrentRow.Cells["Id_Producto"].Value);
+                    comando.Parameters.AddWithValue("Id_Producto", dgvProductos.CurrentRow.Cells["Id_Producto"].Value);
 
                     // 7. Ejecuta la eliminación
                     comando.ExecuteNonQuery();
@@ -171,9 +171,44 @@ namespace integra_1
 
         }
 
+        private void btnInicio_Click(object sender, EventArgs e)
+        {
+            FrmDashboard frm = new FrmDashboard();
+            frm.Show();
+            this.Hide();
+        }
 
+        private void btnProductos_Click(object sender, EventArgs e)
+        {
 
+        }
 
+        private void btnProveedores_Click(object sender, EventArgs e)
+        {
+            FrmProveedores frm = new FrmProveedores();
+            frm.Show();
+            this.Hide();
+        }
 
+        private void btnReportes_Click(object sender, EventArgs e) // Ventas
+        {
+            FrmVentas frm = new FrmVentas();
+            frm.Show();
+            this.Hide();
+        }
+
+        private void btnAyuda_Click(object sender, EventArgs e)
+        {
+            FrmAyuda frm = new FrmAyuda();
+            frm.Show();
+            this.Hide();
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            Form1 frm = new Form1();
+            frm.Show();
+            this.Hide();
+        }
     }
 }
