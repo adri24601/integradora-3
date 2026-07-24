@@ -69,7 +69,7 @@ namespace integra_1
 
         private void btnModificarProveedor_Click(object sender, EventArgs e)
         {
-            if(string.IsNullOrEmpty(txtId_Proveedor.Text))
+            if (string.IsNullOrEmpty(txtId_Proveedor.Text))
             {
                 MessageBox.Show("Seleccione la ID del proveedor que desea modificar");
                 return;
@@ -100,7 +100,7 @@ namespace integra_1
 
                         int filasAfectadas = comando.ExecuteNonQuery();
 
-                        if(filasAfectadas > 0)
+                        if (filasAfectadas > 0)
                         {
                             MessageBox.Show("Proveedor actualizado correctamente");
                             this.Close();
@@ -122,15 +122,15 @@ namespace integra_1
         private void btnProveedor_Click(object sender, EventArgs e) // Boton ELiminar proveedor
         {
             int filasAfectadas = 0;
-            
-            if(string.IsNullOrEmpty(txtId_Proveedor.Text))
+
+            if (string.IsNullOrEmpty(txtId_Proveedor.Text))
             {
                 MessageBox.Show("Seleccione el proveedor que desea eliminar");
                 return;
             }
 
             DialogResult respuesta = MessageBox.Show("¿Seguro que quieres eliminar este proveedor de la base de datos?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            
+
             if (respuesta == DialogResult.No)
             {
                 return;
@@ -154,7 +154,7 @@ namespace integra_1
 
                         filasAfectadas = comando.ExecuteNonQuery();
 
-                        if(filasAfectadas > 0)
+                        if (filasAfectadas > 0)
                         {
                             MessageBox.Show("Proveedor eliminado correctamente");
                             this.Close();
@@ -177,19 +177,20 @@ namespace integra_1
 
         }
 
-        private void button8_Click(object sender, EventArgs e)
-        {
-            Form1 frm = new Form1();
-            frm.Show();
 
-            this.Hide();
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void panel3_Paint(object sender, PaintEventArgs e)
         {
-            FrmProveedores frm = new FrmProveedores();
-            frm.Show();
-            this.Hide();
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void btnInicio_Click(object sender, EventArgs e)
@@ -206,6 +207,12 @@ namespace integra_1
             this.Hide();
         }
 
+        private void btnProveedores_Click(object sender, EventArgs e)
+        {
+            FrmProveedores frm = new FrmProveedores();
+            frm.Show();
+            this.Hide();
+        }
 
         private void btnVentas_Click(object sender, EventArgs e)
         {
@@ -214,25 +221,18 @@ namespace integra_1
             this.Hide();
         }
 
-        private void btnReportes_Click(object sender, EventArgs e)
-        {
-            FrmReportes frm = new FrmReportes();
-            frm.Show();
-            this.Hide();
-
-        }
-
         private void btnAyuda_Click(object sender, EventArgs e)
         {
             FrmAyuda frm = new FrmAyuda();
             frm.Show();
-
             this.Hide();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void btnCerrar_Click(object sender, EventArgs e)
         {
-
+            Form1 frm = new Form1();
+            frm.Show();
+            this.Hide();
         }
     }
 }
