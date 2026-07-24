@@ -244,7 +244,7 @@
             panel1.Controls.Add(btnInicio);
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(386, 965);
+            panel1.Size = new Size(385, 968);
             panel1.TabIndex = 17;
             // 
             // btnCerrar

@@ -198,5 +198,10 @@ namespace integra_1
             frm.Show();
             this.Hide();
         }
+
+        private void btnInicio_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

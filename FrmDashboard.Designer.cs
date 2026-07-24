@@ -52,8 +52,8 @@
             btnInicio = new Guna.UI2.WinForms.Guna2Button();
             guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             panel2 = new Panel();
-            pictureBox2 = new PictureBox();
-            pictureBox3 = new PictureBox();
+            picBoxApartados = new PictureBox();
+            picBoxUsuario = new PictureBox();
             label7 = new Label();
             label6 = new Label();
             label2 = new Label();
@@ -93,8 +93,8 @@
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).BeginInit();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picBoxApartados).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picBoxUsuario).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             guna2ShadowPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picProveedores).BeginInit();
@@ -122,7 +122,7 @@
             panel1.Controls.Add(guna2CirclePictureBox1);
             panel1.Location = new Point(0, 1);
             panel1.Name = "panel1";
-            panel1.Size = new Size(386, 1024);
+            panel1.Size = new Size(385, 968);
             panel1.TabIndex = 8;
             // 
             // btnCerrar
@@ -266,8 +266,8 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(49, 6, 158);
-            panel2.Controls.Add(pictureBox2);
-            panel2.Controls.Add(pictureBox3);
+            panel2.Controls.Add(picBoxApartados);
+            panel2.Controls.Add(picBoxUsuario);
             panel2.Controls.Add(label7);
             panel2.Controls.Add(label6);
             panel2.Location = new Point(0, 0);
@@ -276,25 +276,25 @@
             panel2.TabIndex = 15;
             panel2.Paint += panel2_Paint_1;
             // 
-            // pictureBox2
+            // picBoxApartados
             // 
-            pictureBox2.Image = Properties.Resources.APARTADOS;
-            pictureBox2.Location = new Point(79, 38);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(139, 75);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 21;
-            pictureBox2.TabStop = false;
+            picBoxApartados.Image = Properties.Resources.APARTADOS;
+            picBoxApartados.Location = new Point(79, 38);
+            picBoxApartados.Name = "picBoxApartados";
+            picBoxApartados.Size = new Size(139, 75);
+            picBoxApartados.SizeMode = PictureBoxSizeMode.Zoom;
+            picBoxApartados.TabIndex = 21;
+            picBoxApartados.TabStop = false;
             // 
-            // pictureBox3
+            // picBoxUsuario
             // 
-            pictureBox3.Image = Properties.Resources.user3;
-            pictureBox3.Location = new Point(1273, 38);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(140, 117);
-            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox3.TabIndex = 21;
-            pictureBox3.TabStop = false;
+            picBoxUsuario.Image = Properties.Resources.user3;
+            picBoxUsuario.Location = new Point(1273, 38);
+            picBoxUsuario.Name = "picBoxUsuario";
+            picBoxUsuario.Size = new Size(140, 117);
+            picBoxUsuario.SizeMode = PictureBoxSizeMode.Zoom;
+            picBoxUsuario.TabIndex = 21;
+            picBoxUsuario.TabStop = false;
             // 
             // label7
             // 
@@ -713,8 +713,8 @@
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picBoxApartados).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picBoxUsuario).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             guna2ShadowPanel2.ResumeLayout(false);
             guna2ShadowPanel2.PerformLayout();
@@ -780,8 +780,8 @@
         private Guna.UI2.WinForms.Guna2Button btnAyuda;
         private Guna.UI2.WinForms.Guna2Button btnVentas;
         private Guna.UI2.WinForms.Guna2Button btnCerrar;
-        private PictureBox pictureBox2;
-        private PictureBox pictureBox3;
+        private PictureBox picBoxApartados;
+        private PictureBox picBoxUsuario;
         private Panel panel3;
         private PictureBox pictureBox4;
     }
