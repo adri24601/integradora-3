@@ -163,6 +163,26 @@ namespace integra_1.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap grocery_cart1 {
+            get {
+                object obj = ResourceManager.GetObject("grocery-cart1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap grocery_cart2 {
+            get {
+                object obj = ResourceManager.GetObject("grocery-cart2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap IMG_20260609_WA0003 {
             get {
                 object obj = ResourceManager.GetObject("IMG-20260609-WA0003", resourceCulture);
@@ -276,6 +296,16 @@ namespace integra_1.Properties {
         internal static System.Drawing.Bitmap trolley {
             get {
                 object obj = ResourceManager.GetObject("trolley", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap trolley1 {
+            get {
+                object obj = ResourceManager.GetObject("trolley1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

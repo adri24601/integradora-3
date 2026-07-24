@@ -150,7 +150,7 @@ namespace integra_1
             }
 
             // 2. Tu ruta de la base de datos fija
-        
+
             string ruta = Path.Combine(Application.StartupPath, "integradora boceto.accdb");
 
             string cadenaConexion = $@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={ruta}";
@@ -232,7 +232,7 @@ namespace integra_1
 
         }
 
-        private void btnMenu_Inicio_Click(object sender, EventArgs e)
+        private void btnInicio_Click(object sender, EventArgs e)
         {
             FrmDashboard frm = new FrmDashboard();
             frm.Show();
@@ -246,8 +246,6 @@ namespace integra_1
             this.Hide();
         }
 
-
-
         private void btnProveedores_Click(object sender, EventArgs e)
         {
             FrmProveedores frm = new FrmProveedores();
@@ -257,31 +255,20 @@ namespace integra_1
 
         private void btnVentas_Click(object sender, EventArgs e)
         {
-            FrmVentas frm = new FrmVentas();
-            frm.Show();
-            this.Hide();
-        }
-
-        private void btnReportes_Click(object sender, EventArgs e)
-        {
-            FrmReportes frm = new FrmReportes();
-            frm.Show();
-            this.Hide();
-        }
-
-        private void btnCerrar_Sesion_Click(object sender, EventArgs e)
-        {
-            Form1 frm = new Form1();
-            frm.Show();
-
-            this.Hide();
+            
         }
 
         private void btnAyuda_Click(object sender, EventArgs e)
         {
             FrmAyuda frm = new FrmAyuda();
             frm.Show();
+            this.Hide();
+        }
 
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            Form1 frm = new Form1();
+            frm.Show();
             this.Hide();
         }
     }

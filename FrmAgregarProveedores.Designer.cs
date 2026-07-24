@@ -41,8 +41,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             btnModificarProveedor = new Button();
             btnProveedor_Eliminar = new Button();
             btnGuardarProveedor = new Button();
@@ -75,7 +73,6 @@
             label8 = new Label();
             label7 = new Label();
             panel3 = new Panel();
-            guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).BeginInit();
             panel2.SuspendLayout();
@@ -461,7 +458,6 @@
             // panel3
             // 
             panel3.BackColor = Color.Linen;
-            panel3.Controls.Add(guna2Button4);
             panel3.Controls.Add(panel2);
             panel3.Controls.Add(label8);
             panel3.Controls.Add(btnProveedor_Eliminar);
@@ -483,22 +479,6 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(1515, 968);
             panel3.TabIndex = 21;
-            // 
-            // guna2Button4
-            // 
-            guna2Button4.CustomizableEdges = customizableEdges14;
-            guna2Button4.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button4.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button4.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button4.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button4.Font = new Font("Segoe UI", 9F);
-            guna2Button4.ForeColor = Color.White;
-            guna2Button4.Location = new Point(990, 425);
-            guna2Button4.Name = "guna2Button4";
-            guna2Button4.ShadowDecoration.CustomizableEdges = customizableEdges15;
-            guna2Button4.Size = new Size(270, 68);
-            guna2Button4.TabIndex = 23;
-            guna2Button4.Text = "guna2Button4";
             // 
             // FrmAgregarProveedores
             // 
@@ -555,7 +535,6 @@
         private Guna.UI2.WinForms.Guna2Button btnProveedores;
         private Guna.UI2.WinForms.Guna2Button btnProductos;
         private Guna.UI2.WinForms.Guna2Button btnInicio;
-        private Guna.UI2.WinForms.Guna2Button guna2Button4;
         private Guna.UI2.WinForms.Guna2Button btnCerrar;
         private Guna.UI2.WinForms.Guna2Button btnAyuda;
         private Guna.UI2.WinForms.Guna2Button btnVentas;

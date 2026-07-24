@@ -138,6 +138,7 @@
             label2.Size = new Size(304, 38);
             label2.TabIndex = 4;
             label2.Text = "Nombre del Producto";
+            label2.Click += label2_Click;
             // 
             // label3
             // 

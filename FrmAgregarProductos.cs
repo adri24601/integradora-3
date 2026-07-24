@@ -319,5 +319,10 @@ namespace integra_1
             frm.Show();
             this.Hide();
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

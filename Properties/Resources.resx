@@ -133,6 +133,9 @@
   <data name="shopping-bag" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\shopping-bag.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="CAF 12" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CAF 12.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="TStockcritico" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TStockcritico.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -145,8 +148,8 @@
   <data name="TProvedores" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TProvedores.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="CAF 12" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\CAF 12.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="grocery-cart" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\grocery-cart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="TObjeto1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TObjeto1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -156,9 +159,6 @@
   </data>
   <data name="shopping-bag1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\shopping-bag1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="grocery-cart" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\grocery-cart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="IMG-20260609-WA0004 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\IMG-20260609-WA0004 (1).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -187,6 +187,9 @@
   <data name="CAF 1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CAF 1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="TInventario" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TInventario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="TApartados" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\TApartados.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -199,7 +202,13 @@
   <data name="CAF1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CAF1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="TInventario" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\TInventario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="grocery-cart1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\grocery-cart1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="trolley1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\trolley1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="grocery-cart2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\grocery-cart2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
