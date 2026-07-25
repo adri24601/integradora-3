@@ -33,12 +33,12 @@
             txtContrasena = new TextBox();
             label1 = new Label();
             label2 = new Label();
-            pictureBox1 = new PictureBox();
             panel1 = new Panel();
             label4 = new Label();
             label3 = new Label();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            pictureBox1 = new PictureBox();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // btnInicio
@@ -86,16 +86,6 @@
             label2.TabIndex = 4;
             label2.Text = "Contraseña:";
             // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = Properties.Resources.IMG_20260609_WA0003;
-            pictureBox1.Location = new Point(199, 147);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(592, 454);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 5;
-            pictureBox1.TabStop = false;
-            // 
             // panel1
             // 
             panel1.BackColor = Color.White;
@@ -131,6 +121,16 @@
             label3.TabIndex = 7;
             label3.Text = "Sistema De Inventario";
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.IMG_20260609_WA0003;
+            pictureBox1.Location = new Point(199, 147);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(592, 454);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 5;
+            pictureBox1.TabStop = false;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -142,9 +142,9 @@
             Controls.Add(pictureBox1);
             Name = "Form1";
             Load += Form1_Load;
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -156,9 +156,9 @@
         private TextBox txtContrasena;
         private Label label1;
         private Label label2;
-        private PictureBox pictureBox1;
         private Panel panel1;
         private Label label3;
         private Label label4;
+        private PictureBox pictureBox1;
     }
 }

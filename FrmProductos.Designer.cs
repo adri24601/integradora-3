@@ -235,7 +235,7 @@
             btnProductos.DisabledState.CustomBorderColor = Color.DarkGray;
             btnProductos.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnProductos.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnProductos.FillColor = Color.FromArgb(0, 21, 137);
+            btnProductos.FillColor = Color.SkyBlue;
             btnProductos.Font = new Font("Segoe UI Symbol", 11F, FontStyle.Bold);
             btnProductos.ForeColor = Color.White;
             btnProductos.Location = new Point(68, 445);
