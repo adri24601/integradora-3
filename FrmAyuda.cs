@@ -14,8 +14,14 @@ namespace integra_1
         {
             InitializeComponent();
         }
+      
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+private void button1_Click(object sender, EventArgs e)
         {
             FrmDashboard frm = new FrmDashboard();
             frm.Show();
@@ -67,10 +73,70 @@ namespace integra_1
 
             this.Hide();
         }
-
-        private void label2_Click(object sender, EventArgs e)
+        private void btnAgregarProducto_Click(object sender, EventArgs e)
         {
+            string mensaje = "Para agregar un producto:\n\n" +
+                             "1. Dirígete al menú 'Inventario' o 'Productos'.\n" +
+                             "2. Haz clic en el botón 'Nuevo' / 'Agregar'.\n" +
+                             "3. Completa los campos obligatorios (Nombre, Código, Precio, Stock).\n" +
+                             "4. Presiona 'Guardar'.";
 
+            MessageBox.Show(mensaje, "¿Cómo agregar un producto?", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void btnEditarProducto_Click(object sender, EventArgs e)
+        {
+            string mensaje = "Para editar un producto:\n\n" +
+                             "1. Selecciona el producto que deseas modificar de la lista.\n" +
+                             "2. Haz clic en 'Editar'.\n" +
+                             "3. Cambia la información necesaria.\n" +
+                             "4. Presiona 'Guardar cambios'.";
+
+            MessageBox.Show(mensaje, "¿Cómo editar un producto?", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void btnEliminarProducto_Click(object sender, EventArgs e)
+        {
+            string mensaje = "Para eliminar un producto:\n\n" +
+                             "1. Selecciona el producto en la tabla.\n" +
+                             "2. Haz clic en el botón 'Eliminar'.\n" +
+                             "3. Confirma la acción cuando el sistema te lo pregunte.\n\n" +
+                             "Nota: Si el producto tiene movimientos registrados, se recomienda deshabilitarlo en lugar de borrarlo.";
+
+            MessageBox.Show(mensaje, "¿Cómo eliminar un producto?", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+
+        private void btnNoPuedoIniciarSesion_Click(object sender, EventArgs e)
+        {
+            string mensaje = "Solución si no puedes iniciar sesión:\n\n" +
+                             "• Verifica que tu usuario y contraseña estén escritos correctamente.\n" +
+                             "• Asegúrate de que las mayúsculas/minúsculas coincidan.\n" +
+                             "• Si olvidaste tu contraseña, contacta al administrador del sistema.";
+
+            MessageBox.Show(mensaje, "Problema: Inicio de Sesión", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void btnProductoNoAparece_Click(object sender, EventArgs e)
+        {
+            string mensaje = "Solución si un producto no aparece:\n\n" +
+                             "• Limpia los filtros de búsqueda y presiona 'Buscar' o 'Actualizar'.\n" +
+                             "• Comprueba si el producto fue marcado como 'Inactivo' o eliminado.\n" +
+                             "• Verifica que la base de datos esté conectada correctamente.";
+
+            MessageBox.Show(mensaje, "Problema: Producto no encontrado", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+        }
+
+        private void btnErrorGuardar_Click(object sender, EventArgs e)
+        {
+            string mensaje = "Solución a error al guardar información:\n\n" +
+                             "• Revisa que no haya campos requeridos vacíos.\n" +
+                             "• Asegúrate de introducir valores numéricos válidos en precio y cantidad.\n" +
+                             "• Verifica que el código de producto no esté duplicado.\n" +
+                             "• Si el problema persiste, reinicia la aplicación o contacta a soporte.";
+
+            MessageBox.Show(mensaje, "Problema: Error al guardar", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }
+
