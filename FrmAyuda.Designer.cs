@@ -31,13 +31,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAyuda));
             panel1 = new Panel();
-            btnCerrar_Sesion = new Button();
-            btnReportes = new Button();
-            btnAyuda = new Button();
-            btnVentas = new Button();
-            btnMenu_Inicio = new Button();
-            btnProveedores = new Button();
-            btnProductos = new Button();
             panel2 = new Panel();
             label2 = new Label();
             lblTitulo = new Label();
@@ -72,7 +65,7 @@
             label9 = new Label();
             label8 = new Label();
             label7 = new Label();
-            panel1.SuspendLayout();
+            panel8 = new Panel();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
@@ -83,99 +76,23 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel7.SuspendLayout();
+            panel8.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(13, 71, 161);
-            panel1.Controls.Add(btnCerrar_Sesion);
-            panel1.Controls.Add(btnReportes);
-            panel1.Controls.Add(btnAyuda);
-            panel1.Controls.Add(btnVentas);
-            panel1.Controls.Add(btnMenu_Inicio);
-            panel1.Controls.Add(btnProveedores);
-            panel1.Controls.Add(btnProductos);
             panel1.Location = new Point(1, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(386, 1024);
+            panel1.Size = new Size(385, 968);
             panel1.TabIndex = 0;
-            // 
-            // btnCerrar_Sesion
-            // 
-            btnCerrar_Sesion.Location = new Point(70, 821);
-            btnCerrar_Sesion.Name = "btnCerrar_Sesion";
-            btnCerrar_Sesion.Size = new Size(239, 53);
-            btnCerrar_Sesion.TabIndex = 2;
-            btnCerrar_Sesion.Text = "Cerrar Sesión";
-            btnCerrar_Sesion.UseVisualStyleBackColor = true;
-            btnCerrar_Sesion.Click += btnCerrar_Sesion_Click;
-            // 
-            // btnReportes
-            // 
-            btnReportes.Location = new Point(70, 665);
-            btnReportes.Name = "btnReportes";
-            btnReportes.Size = new Size(239, 53);
-            btnReportes.TabIndex = 7;
-            btnReportes.Text = "Reportes";
-            btnReportes.UseVisualStyleBackColor = true;
-            btnReportes.Click += btnReportes_Click;
-            // 
-            // btnAyuda
-            // 
-            btnAyuda.Location = new Point(70, 746);
-            btnAyuda.Name = "btnAyuda";
-            btnAyuda.Size = new Size(239, 53);
-            btnAyuda.TabIndex = 8;
-            btnAyuda.Text = "Ayuda";
-            btnAyuda.UseVisualStyleBackColor = true;
-            btnAyuda.Click += btnAyuda_Click;
-            // 
-            // btnVentas
-            // 
-            btnVentas.Location = new Point(70, 582);
-            btnVentas.Name = "btnVentas";
-            btnVentas.Size = new Size(239, 53);
-            btnVentas.TabIndex = 6;
-            btnVentas.Text = "Ventas";
-            btnVentas.UseVisualStyleBackColor = true;
-            btnVentas.Click += btnVentas_Click;
-            // 
-            // btnMenu_Inicio
-            // 
-            btnMenu_Inicio.Location = new Point(70, 330);
-            btnMenu_Inicio.Name = "btnMenu_Inicio";
-            btnMenu_Inicio.Size = new Size(239, 53);
-            btnMenu_Inicio.TabIndex = 2;
-            btnMenu_Inicio.Text = "Inicio";
-            btnMenu_Inicio.UseVisualStyleBackColor = true;
-            btnMenu_Inicio.Click += button1_Click;
-            // 
-            // btnProveedores
-            // 
-            btnProveedores.Location = new Point(70, 498);
-            btnProveedores.Name = "btnProveedores";
-            btnProveedores.Size = new Size(239, 53);
-            btnProveedores.TabIndex = 5;
-            btnProveedores.Text = "Proveedores";
-            btnProveedores.UseVisualStyleBackColor = true;
-            btnProveedores.Click += btnProveedores_Click;
-            // 
-            // btnProductos
-            // 
-            btnProductos.Location = new Point(70, 414);
-            btnProductos.Name = "btnProductos";
-            btnProductos.Size = new Size(239, 53);
-            btnProductos.TabIndex = 3;
-            btnProductos.Text = "Productos";
-            btnProductos.UseVisualStyleBackColor = true;
-            btnProductos.Click += btnProductos_Click;
             // 
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(49, 6, 158);
             panel2.Controls.Add(label2);
             panel2.Controls.Add(lblTitulo);
-            panel2.Location = new Point(387, 0);
+            panel2.Location = new Point(0, 0);
             panel2.Name = "panel2";
             panel2.Size = new Size(1518, 186);
             panel2.TabIndex = 1;
@@ -190,7 +107,6 @@
             label2.Size = new Size(439, 32);
             label2.TabIndex = 3;
             label2.Text = "Guía de uso del sistema CAF Inventory  ";
-            
             // 
             // lblTitulo
             // 
@@ -209,9 +125,9 @@
             panel3.Controls.Add(pictureBox4);
             panel3.Controls.Add(label4);
             panel3.Controls.Add(label3);
-            panel3.Location = new Point(463, 203);
+            panel3.Location = new Point(66, 246);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1354, 170);
+            panel3.Size = new Size(723, 170);
             panel3.TabIndex = 2;
             // 
             // pictureBox4
@@ -251,7 +167,7 @@
             panel4.Controls.Add(btnEliminar);
             panel4.Controls.Add(btnEditar);
             panel4.Controls.Add(btnAgregar);
-            panel4.Location = new Point(501, 382);
+            panel4.Location = new Point(852, 232);
             panel4.Name = "panel4";
             panel4.Size = new Size(579, 269);
             panel4.TabIndex = 3;
@@ -295,7 +211,6 @@
             btnAgregar.TabIndex = 0;
             btnAgregar.Text = "-->  ¿Cómo agregar un producto?                                >";
             btnAgregar.UseVisualStyleBackColor = false;
-           
             // 
             // panel5
             // 
@@ -304,7 +219,7 @@
             panel5.Controls.Add(btnNoSesion);
             panel5.Controls.Add(btnGuardar);
             panel5.Controls.Add(btnNoProducto);
-            panel5.Location = new Point(1135, 679);
+            panel5.Location = new Point(990, 553);
             panel5.Name = "panel5";
             panel5.Size = new Size(441, 269);
             panel5.TabIndex = 4;
@@ -362,7 +277,7 @@
             panel6.Controls.Add(label14);
             panel6.Controls.Add(label13);
             panel6.Controls.Add(label12);
-            panel6.Location = new Point(639, 679);
+            panel6.Location = new Point(384, 611);
             panel6.Name = "panel6";
             panel6.Size = new Size(441, 269);
             panel6.TabIndex = 5;
@@ -376,7 +291,6 @@
             pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox3.TabIndex = 9;
             pictureBox3.TabStop = false;
-            
             // 
             // pictureBox2
             // 
@@ -391,7 +305,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(9, 40);
+            pictureBox1.Location = new Point(33, 54);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(58, 55);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -473,11 +387,10 @@
             panel7.Controls.Add(label9);
             panel7.Controls.Add(label8);
             panel7.Controls.Add(label7);
-            panel7.Location = new Point(1135, 382);
+            panel7.Location = new Point(123, 437);
             panel7.Name = "panel7";
             panel7.Size = new Size(666, 269);
             panel7.TabIndex = 6;
-            
             // 
             // label11
             // 
@@ -529,21 +442,28 @@
             label7.TabIndex = 0;
             label7.Text = "2.Consejos de uso";
             // 
+            // panel8
+            // 
+            panel8.Controls.Add(panel2);
+            panel8.Controls.Add(panel7);
+            panel8.Controls.Add(panel4);
+            panel8.Controls.Add(panel5);
+            panel8.Controls.Add(panel3);
+            panel8.Controls.Add(panel6);
+            panel8.Location = new Point(384, 0);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(1515, 968);
+            panel8.TabIndex = 7;
+            // 
             // FrmAyuda
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1898, 968);
-            Controls.Add(panel7);
-            Controls.Add(panel6);
-            Controls.Add(panel5);
-            Controls.Add(panel4);
-            Controls.Add(panel3);
-            Controls.Add(panel2);
+            Controls.Add(panel8);
             Controls.Add(panel1);
             Name = "FrmAyuda";
             Load += FrmAyuda_Load;
-            panel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             panel3.ResumeLayout(false);
@@ -560,6 +480,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel7.ResumeLayout(false);
             panel7.PerformLayout();
+            panel8.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -569,13 +490,6 @@
         private Panel panel2;
         private Label label2;
         private Label lblTitulo;
-        private Button btnReportes;
-        private Button btnAyuda;
-        private Button btnVentas;
-        private Button btnMenu_Inicio;
-        private Button btnProveedores;
-        private Button btnProductos;
-        private Button btnCerrar_Sesion;
         private Panel panel3;
         private Label label3;
         private Label label4;
@@ -607,5 +521,6 @@
         private PictureBox pictureBox2;
         private PictureBox pictureBox1;
         private PictureBox pictureBox4;
+        private Panel panel8;
     }
 }
