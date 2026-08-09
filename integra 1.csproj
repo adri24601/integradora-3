@@ -19,13 +19,10 @@
     <Content Include="integradora boceto.accdb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="integradora boceto.laccdb">
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Guna.UI2.WinForms" Version="2.0.4.8" />
+    <PackageReference Include="Guna.UI2.WinForms" Version="2.0.3.3" />
     <PackageReference Include="HartUI.Winforms" Version="2026.7.22" />
     <PackageReference Include="System.Data.OleDb" Version="10.0.9" />
     <PackageReference Include="ZSeal.Hart.Licensing" Version="1.0.2" />

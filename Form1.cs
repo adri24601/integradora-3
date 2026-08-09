@@ -9,12 +9,11 @@ namespace integra_1
 
         private void btnInicio_Click(object sender, EventArgs e)
         {
-            string usuario = txtUsuario.Text;
-            string contrasena = txtContrasena.Text;
+            string usuario = texUsuario.Text;
+            string contrasena = texContrasena.Text;
 
             if (usuario == "admin" && contrasena == "1234")
             {
-                MessageBox.Show("Bienvenido");
 
                 FrmDashboard menu = new FrmDashboard();
                 menu.Show();

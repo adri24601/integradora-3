@@ -14,14 +14,14 @@ namespace integra_1
         {
             InitializeComponent();
         }
-      
+
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             FrmDashboard frm = new FrmDashboard();
             frm.Show();
@@ -136,6 +136,11 @@ private void button1_Click(object sender, EventArgs e)
                              "• Si el problema persiste, reinicia la aplicación o contacta a soporte.";
 
             MessageBox.Show(mensaje, "Problema: Error al guardar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void btnNoProducto_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

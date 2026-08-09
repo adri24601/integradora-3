@@ -31,65 +31,327 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAyuda));
             panel1 = new Panel();
+            label1 = new Label();
+            pictureBox3 = new PictureBox();
+            btnCerrar = new HartUI.Controls.cuiButton();
+            cuiButton3 = new HartUI.Controls.cuiButton();
+            btnVentas = new HartUI.Controls.cuiButton();
+            btnAyuda = new HartUI.Controls.cuiButton();
+            btnProductos = new HartUI.Controls.cuiButton();
+            btnInicio = new HartUI.Controls.cuiButton();
             panel2 = new Panel();
+            pictureBox1 = new PictureBox();
+            pictureBox5 = new PictureBox();
             label2 = new Label();
             lblTitulo = new Label();
-            panel3 = new Panel();
-            pictureBox4 = new PictureBox();
             label4 = new Label();
             label3 = new Label();
-            panel4 = new Panel();
-            label5 = new Label();
-            btnEliminar = new Button();
-            btnEditar = new Button();
-            btnAgregar = new Button();
-            panel5 = new Panel();
             label6 = new Label();
             btnNoSesion = new Button();
             btnGuardar = new Button();
             btnNoProducto = new Button();
-            panel6 = new Panel();
-            pictureBox3 = new PictureBox();
-            pictureBox2 = new PictureBox();
-            pictureBox1 = new PictureBox();
-            label18 = new Label();
-            label17 = new Label();
-            label16 = new Label();
-            label15 = new Label();
-            label14 = new Label();
-            label13 = new Label();
-            label12 = new Label();
-            panel7 = new Panel();
-            label11 = new Label();
-            label10 = new Label();
-            label9 = new Label();
-            label8 = new Label();
-            label7 = new Label();
             panel8 = new Panel();
-            panel2.SuspendLayout();
-            panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
-            panel4.SuspendLayout();
-            panel5.SuspendLayout();
-            panel6.SuspendLayout();
+            cuiPanel5 = new HartUI.Controls.cuiPanel();
+            pictureBox7 = new PictureBox();
+            pictureBox6 = new PictureBox();
+            pictureBox4 = new PictureBox();
+            label18 = new Label();
+            label12 = new Label();
+            label17 = new Label();
+            label13 = new Label();
+            label16 = new Label();
+            label14 = new Label();
+            label15 = new Label();
+            cuiPanel4 = new HartUI.Controls.cuiPanel();
+            pictureBox9 = new PictureBox();
+            pictureBox8 = new PictureBox();
+            btnEliminar = new Button();
+            label5 = new Label();
+            btnEditar = new Button();
+            btnAgregar = new Button();
+            cuiPanel2 = new HartUI.Controls.cuiPanel();
+            pictureBox2 = new PictureBox();
+            panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             panel8.SuspendLayout();
+            cuiPanel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            cuiPanel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
+            cuiPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(13, 71, 161);
+            panel1.Controls.Add(label1);
+            panel1.Controls.Add(pictureBox3);
+            panel1.Controls.Add(btnCerrar);
+            panel1.Controls.Add(cuiButton3);
+            panel1.Controls.Add(btnVentas);
+            panel1.Controls.Add(btnAyuda);
+            panel1.Controls.Add(btnProductos);
+            panel1.Controls.Add(btnInicio);
             panel1.Location = new Point(1, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(385, 968);
             panel1.TabIndex = 0;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI Symbol", 16F, FontStyle.Bold);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(77, 285);
+            label1.Name = "label1";
+            label1.Size = new Size(232, 45);
+            label1.TabIndex = 10;
+            label1.Text = "CAF Inventory";
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.Image = Properties.Resources.Ayuda;
+            pictureBox3.Location = new Point(42, 53);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(278, 240);
+            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox3.TabIndex = 6;
+            pictureBox3.TabStop = false;
+            // 
+            // btnCerrar
+            // 
+            btnCerrar.CheckButton = false;
+            btnCerrar.Checked = false;
+            btnCerrar.CheckedBackground = Color.FromArgb(0, 21, 137);
+            btnCerrar.CheckedForeColor = Color.White;
+            btnCerrar.CheckedImageTint = Color.White;
+            btnCerrar.CheckedOutline = Color.FromArgb(0, 21, 137);
+            btnCerrar.Content = "Cerrar Sesión ";
+            btnCerrar.DialogResult = DialogResult.None;
+            btnCerrar.Font = new Font("Segoe UI Symbol", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnCerrar.ForeColor = Color.White;
+            btnCerrar.HoverBackground = Color.FromArgb(0, 21, 137);
+            btnCerrar.HoverForeColor = Color.DimGray;
+            btnCerrar.HoverImageTint = Color.DimGray;
+            btnCerrar.HoverOutline = Color.FromArgb(32, 128, 128, 128);
+            btnCerrar.Image = null;
+            btnCerrar.ImageExpand = new Point(0, 0);
+            btnCerrar.Location = new Point(75, 795);
+            btnCerrar.Name = "btnCerrar";
+            btnCerrar.NormalBackground = Color.FromArgb(0, 21, 137);
+            btnCerrar.NormalForeColor = Color.White;
+            btnCerrar.NormalImageTint = Color.Black;
+            btnCerrar.NormalOutline = Color.FromArgb(64, 128, 128, 128);
+            btnCerrar.OutlineThickness = 1F;
+            btnCerrar.Padding = new Padding(12);
+            btnCerrar.PressedBackground = Color.FromArgb(0, 21, 137);
+            btnCerrar.PressedForeColor = Color.FromArgb(32, 32, 32);
+            btnCerrar.PressedImageTint = Color.FromArgb(32, 32, 32);
+            btnCerrar.PressedOutline = Color.FromArgb(64, 128, 128, 128);
+            btnCerrar.Rounding = new Padding(8);
+            btnCerrar.Size = new Size(234, 55);
+            btnCerrar.TabIndex = 7;
+            btnCerrar.TextAlignment = StringAlignment.Center;
+            btnCerrar.TextPadding = 12;
+            btnCerrar.TextSpacing = 2;
+            // 
+            // cuiButton3
+            // 
+            cuiButton3.CheckButton = false;
+            cuiButton3.Checked = false;
+            cuiButton3.CheckedBackground = Color.FromArgb(0, 21, 137);
+            cuiButton3.CheckedForeColor = Color.White;
+            cuiButton3.CheckedImageTint = Color.White;
+            cuiButton3.CheckedOutline = Color.FromArgb(255, 106, 0);
+            cuiButton3.Content = "Proveedores";
+            cuiButton3.DialogResult = DialogResult.None;
+            cuiButton3.Font = new Font("Segoe UI Symbol", 12F, FontStyle.Bold);
+            cuiButton3.ForeColor = Color.White;
+            cuiButton3.HoverBackground = Color.FromArgb(0, 21, 137);
+            cuiButton3.HoverForeColor = Color.DimGray;
+            cuiButton3.HoverImageTint = Color.DimGray;
+            cuiButton3.HoverOutline = Color.FromArgb(32, 128, 128, 128);
+            cuiButton3.Image = null;
+            cuiButton3.ImageExpand = new Point(0, 0);
+            cuiButton3.Location = new Point(75, 551);
+            cuiButton3.Name = "cuiButton3";
+            cuiButton3.NormalBackground = Color.FromArgb(0, 21, 137);
+            cuiButton3.NormalForeColor = Color.White;
+            cuiButton3.NormalImageTint = Color.Black;
+            cuiButton3.NormalOutline = Color.FromArgb(64, 128, 128, 128);
+            cuiButton3.OutlineThickness = 1F;
+            cuiButton3.Padding = new Padding(12);
+            cuiButton3.PressedBackground = Color.FromArgb(0, 21, 137);
+            cuiButton3.PressedForeColor = Color.FromArgb(32, 32, 32);
+            cuiButton3.PressedImageTint = Color.FromArgb(32, 32, 32);
+            cuiButton3.PressedOutline = Color.FromArgb(64, 128, 128, 128);
+            cuiButton3.Rounding = new Padding(8);
+            cuiButton3.Size = new Size(234, 53);
+            cuiButton3.TabIndex = 5;
+            cuiButton3.TextAlignment = StringAlignment.Center;
+            cuiButton3.TextPadding = 12;
+            cuiButton3.TextSpacing = 2;
+            // 
+            // btnVentas
+            // 
+            btnVentas.CheckButton = false;
+            btnVentas.Checked = false;
+            btnVentas.CheckedBackground = Color.FromArgb(0, 21, 137);
+            btnVentas.CheckedForeColor = Color.White;
+            btnVentas.CheckedImageTint = Color.White;
+            btnVentas.CheckedOutline = Color.FromArgb(255, 106, 0);
+            btnVentas.Content = "Ventas";
+            btnVentas.DialogResult = DialogResult.None;
+            btnVentas.Font = new Font("Segoe UI Symbol", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnVentas.ForeColor = Color.White;
+            btnVentas.HoverBackground = Color.FromArgb(0, 21, 137);
+            btnVentas.HoverForeColor = Color.DimGray;
+            btnVentas.HoverImageTint = Color.DimGray;
+            btnVentas.HoverOutline = Color.FromArgb(32, 128, 128, 128);
+            btnVentas.Image = null;
+            btnVentas.ImageExpand = new Point(0, 0);
+            btnVentas.Location = new Point(75, 631);
+            btnVentas.Name = "btnVentas";
+            btnVentas.NormalBackground = Color.FromArgb(0, 21, 137);
+            btnVentas.NormalForeColor = Color.White;
+            btnVentas.NormalImageTint = Color.Black;
+            btnVentas.NormalOutline = Color.FromArgb(64, 128, 128, 128);
+            btnVentas.OutlineThickness = 1F;
+            btnVentas.Padding = new Padding(12);
+            btnVentas.PressedBackground = Color.FromArgb(0, 21, 137);
+            btnVentas.PressedForeColor = Color.FromArgb(32, 32, 32);
+            btnVentas.PressedImageTint = Color.FromArgb(32, 32, 32);
+            btnVentas.PressedOutline = Color.FromArgb(64, 128, 128, 128);
+            btnVentas.Rounding = new Padding(8);
+            btnVentas.Size = new Size(234, 53);
+            btnVentas.TabIndex = 4;
+            btnVentas.TextAlignment = StringAlignment.Center;
+            btnVentas.TextPadding = 12;
+            btnVentas.TextSpacing = 2;
+            // 
+            // btnAyuda
+            // 
+            btnAyuda.CheckButton = false;
+            btnAyuda.Checked = false;
+            btnAyuda.CheckedBackground = Color.FromArgb(0, 21, 137);
+            btnAyuda.CheckedForeColor = Color.White;
+            btnAyuda.CheckedImageTint = Color.White;
+            btnAyuda.CheckedOutline = Color.FromArgb(255, 106, 0);
+            btnAyuda.Content = "Ayuda";
+            btnAyuda.DialogResult = DialogResult.None;
+            btnAyuda.Font = new Font("Segoe UI Symbol", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAyuda.ForeColor = Color.White;
+            btnAyuda.HoverBackground = Color.White;
+            btnAyuda.HoverForeColor = Color.DimGray;
+            btnAyuda.HoverImageTint = Color.DimGray;
+            btnAyuda.HoverOutline = Color.FromArgb(32, 128, 128, 128);
+            btnAyuda.Image = null;
+            btnAyuda.ImageExpand = new Point(0, 0);
+            btnAyuda.Location = new Point(75, 716);
+            btnAyuda.Name = "btnAyuda";
+            btnAyuda.NormalBackground = Color.FromArgb(0, 21, 137);
+            btnAyuda.NormalForeColor = Color.White;
+            btnAyuda.NormalImageTint = Color.Black;
+            btnAyuda.NormalOutline = Color.FromArgb(64, 128, 128, 128);
+            btnAyuda.OutlineThickness = 1F;
+            btnAyuda.Padding = new Padding(12);
+            btnAyuda.PressedBackground = Color.FromArgb(0, 21, 137);
+            btnAyuda.PressedForeColor = Color.FromArgb(32, 32, 32);
+            btnAyuda.PressedImageTint = Color.FromArgb(32, 32, 32);
+            btnAyuda.PressedOutline = Color.FromArgb(64, 128, 128, 128);
+            btnAyuda.Rounding = new Padding(8);
+            btnAyuda.Size = new Size(234, 53);
+            btnAyuda.TabIndex = 4;
+            btnAyuda.TextAlignment = StringAlignment.Center;
+            btnAyuda.TextPadding = 12;
+            btnAyuda.TextSpacing = 2;
+            // 
+            // btnProductos
+            // 
+            btnProductos.CheckButton = false;
+            btnProductos.Checked = false;
+            btnProductos.CheckedBackground = Color.FromArgb(0, 21, 137);
+            btnProductos.CheckedForeColor = Color.White;
+            btnProductos.CheckedImageTint = Color.White;
+            btnProductos.CheckedOutline = Color.FromArgb(255, 106, 0);
+            btnProductos.Content = "Productos";
+            btnProductos.DialogResult = DialogResult.None;
+            btnProductos.Font = new Font("Segoe UI Symbol", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnProductos.ForeColor = Color.White;
+            btnProductos.HoverBackground = Color.FromArgb(0, 21, 137);
+            btnProductos.HoverForeColor = Color.DimGray;
+            btnProductos.HoverImageTint = Color.DimGray;
+            btnProductos.HoverOutline = Color.FromArgb(32, 128, 128, 128);
+            btnProductos.Image = null;
+            btnProductos.ImageExpand = new Point(0, 0);
+            btnProductos.Location = new Point(75, 468);
+            btnProductos.Name = "btnProductos";
+            btnProductos.NormalBackground = Color.FromArgb(0, 21, 137);
+            btnProductos.NormalForeColor = Color.White;
+            btnProductos.NormalImageTint = Color.Black;
+            btnProductos.NormalOutline = Color.FromArgb(64, 128, 128, 128);
+            btnProductos.OutlineThickness = 1F;
+            btnProductos.Padding = new Padding(12);
+            btnProductos.PressedBackground = Color.WhiteSmoke;
+            btnProductos.PressedForeColor = Color.FromArgb(32, 32, 32);
+            btnProductos.PressedImageTint = Color.FromArgb(32, 32, 32);
+            btnProductos.PressedOutline = Color.FromArgb(64, 128, 128, 128);
+            btnProductos.Rounding = new Padding(8);
+            btnProductos.Size = new Size(234, 53);
+            btnProductos.TabIndex = 3;
+            btnProductos.TextAlignment = StringAlignment.Center;
+            btnProductos.TextPadding = 12;
+            btnProductos.TextSpacing = 2;
+            // 
+            // btnInicio
+            // 
+            btnInicio.CheckButton = false;
+            btnInicio.Checked = false;
+            btnInicio.CheckedBackground = Color.FromArgb(0, 21, 137);
+            btnInicio.CheckedForeColor = Color.White;
+            btnInicio.CheckedImageTint = Color.White;
+            btnInicio.CheckedOutline = Color.FromArgb(255, 106, 0);
+            btnInicio.Content = "Inicio";
+            btnInicio.DialogResult = DialogResult.None;
+            btnInicio.Font = new Font("Segoe UI Symbol", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnInicio.ForeColor = Color.White;
+            btnInicio.HoverBackground = Color.FromArgb(0, 21, 137);
+            btnInicio.HoverForeColor = Color.DimGray;
+            btnInicio.HoverImageTint = Color.DimGray;
+            btnInicio.HoverOutline = Color.FromArgb(32, 128, 128, 128);
+            btnInicio.Image = null;
+            btnInicio.ImageExpand = new Point(0, 0);
+            btnInicio.Location = new Point(75, 380);
+            btnInicio.Name = "btnInicio";
+            btnInicio.NormalBackground = Color.FromArgb(0, 21, 137);
+            btnInicio.NormalForeColor = Color.White;
+            btnInicio.NormalImageTint = Color.Black;
+            btnInicio.NormalOutline = Color.FromArgb(64, 128, 128, 128);
+            btnInicio.OutlineThickness = 1F;
+            btnInicio.Padding = new Padding(12);
+            btnInicio.PressedBackground = Color.FromArgb(0, 21, 137);
+            btnInicio.PressedForeColor = Color.FromArgb(32, 32, 32);
+            btnInicio.PressedImageTint = Color.FromArgb(32, 32, 32);
+            btnInicio.PressedOutline = Color.FromArgb(64, 128, 128, 128);
+            btnInicio.Rounding = new Padding(8);
+            btnInicio.Size = new Size(234, 53);
+            btnInicio.TabIndex = 0;
+            btnInicio.TextAlignment = StringAlignment.Center;
+            btnInicio.TextPadding = 12;
+            btnInicio.TextSpacing = 2;
+            // 
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(49, 6, 158);
+            panel2.Controls.Add(pictureBox1);
+            panel2.Controls.Add(pictureBox5);
             panel2.Controls.Add(label2);
             panel2.Controls.Add(lblTitulo);
             panel2.Location = new Point(0, 0);
@@ -97,12 +359,32 @@
             panel2.Size = new Size(1518, 186);
             panel2.TabIndex = 1;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(1266, 39);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(140, 117);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 5;
+            pictureBox1.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            pictureBox5.Image = Properties.Resources.APARTADOS;
+            pictureBox5.Location = new Point(89, 39);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(103, 75);
+            pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox5.TabIndex = 4;
+            pictureBox5.TabStop = false;
+            // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Historic", 12F, FontStyle.Italic, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(92, 87);
+            label2.Location = new Point(200, 109);
             label2.Name = "label2";
             label2.Size = new Size(439, 32);
             label2.TabIndex = 3;
@@ -113,347 +395,337 @@
             lblTitulo.AutoSize = true;
             lblTitulo.Font = new Font("Segoe UI Historic", 26F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTitulo.ForeColor = Color.White;
-            lblTitulo.Location = new Point(76, 28);
+            lblTitulo.Location = new Point(198, 39);
             lblTitulo.Name = "lblTitulo";
             lblTitulo.Size = new Size(441, 70);
             lblTitulo.TabIndex = 2;
             lblTitulo.Text = "Centro de Ayuda ";
             // 
-            // panel3
-            // 
-            panel3.BackColor = Color.FromArgb(207, 239, 255);
-            panel3.Controls.Add(pictureBox4);
-            panel3.Controls.Add(label4);
-            panel3.Controls.Add(label3);
-            panel3.Location = new Point(66, 246);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(723, 170);
-            panel3.TabIndex = 2;
-            // 
-            // pictureBox4
-            // 
-            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(1144, 16);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(176, 139);
-            pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox4.TabIndex = 2;
-            pictureBox4.TabStop = false;
-            // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Arial Narrow", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.Location = new Point(38, 68);
+            label4.BackColor = Color.FromArgb(197, 212, 235);
+            label4.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
+            label4.ForeColor = Color.MidnightBlue;
+            label4.Location = new Point(72, 82);
             label4.Name = "label4";
-            label4.Size = new Size(852, 87);
+            label4.Size = new Size(889, 84);
             label4.TabIndex = 1;
             label4.Text = resources.GetString("label4.Text");
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Britannic Bold", 20F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(38, 13);
+            label3.BackColor = Color.FromArgb(197, 212, 235);
+            label3.Font = new Font("Segoe UI Symbol", 14F, FontStyle.Bold);
+            label3.ForeColor = Color.MidnightBlue;
+            label3.Location = new Point(72, 32);
             label3.Name = "label3";
-            label3.Size = new Size(572, 44);
+            label3.Size = new Size(428, 38);
             label3.TabIndex = 0;
-            label3.Text = "Bienvenido al Centro de Ayuda.";
-            // 
-            // panel4
-            // 
-            panel4.BackColor = Color.Lavender;
-            panel4.Controls.Add(label5);
-            panel4.Controls.Add(btnEliminar);
-            panel4.Controls.Add(btnEditar);
-            panel4.Controls.Add(btnAgregar);
-            panel4.Location = new Point(852, 232);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(579, 269);
-            panel4.TabIndex = 3;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(108, 9);
-            label5.Name = "label5";
-            label5.Size = new Size(323, 30);
-            label5.TabIndex = 6;
-            label5.Text = "1. Preguntas frecuentes (FAQ)";
-            // 
-            // btnEliminar
-            // 
-            btnEliminar.BackColor = Color.Lavender;
-            btnEliminar.Location = new Point(35, 217);
-            btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(468, 34);
-            btnEliminar.TabIndex = 2;
-            btnEliminar.Text = "-->  ¿Cómo eliminar un producto?                                >";
-            btnEliminar.UseVisualStyleBackColor = false;
-            // 
-            // btnEditar
-            // 
-            btnEditar.BackColor = Color.Lavender;
-            btnEditar.Location = new Point(35, 139);
-            btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(468, 33);
-            btnEditar.TabIndex = 1;
-            btnEditar.Text = "-->  ¿Cómo editar un producto?                                    >";
-            btnEditar.UseVisualStyleBackColor = false;
-            // 
-            // btnAgregar
-            // 
-            btnAgregar.BackColor = Color.Lavender;
-            btnAgregar.Location = new Point(35, 60);
-            btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(468, 34);
-            btnAgregar.TabIndex = 0;
-            btnAgregar.Text = "-->  ¿Cómo agregar un producto?                                >";
-            btnAgregar.UseVisualStyleBackColor = false;
-            // 
-            // panel5
-            // 
-            panel5.BackColor = Color.FromArgb(184, 242, 230);
-            panel5.Controls.Add(label6);
-            panel5.Controls.Add(btnNoSesion);
-            panel5.Controls.Add(btnGuardar);
-            panel5.Controls.Add(btnNoProducto);
-            panel5.Location = new Point(990, 553);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(441, 269);
-            panel5.TabIndex = 4;
+            label3.Text = "Bienvenido al Centro de Ayuda";
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.Location = new Point(83, 10);
+            label6.BackColor = Color.FromArgb(197, 212, 235);
+            label6.Font = new Font("Segoe UI Symbol", 14F, FontStyle.Bold);
+            label6.ForeColor = Color.MidnightBlue;
+            label6.Location = new Point(31, 215);
             label6.Name = "label6";
-            label6.Size = new Size(273, 30);
+            label6.Size = new Size(321, 38);
             label6.TabIndex = 6;
-            label6.Text = "4. Solución de problemas";
+            label6.Text = "Solución de problemas";
             // 
             // btnNoSesion
             // 
-            btnNoSesion.BackColor = Color.FromArgb(184, 242, 230);
-            btnNoSesion.Location = new Point(72, 70);
+            btnNoSesion.BackColor = Color.LightCyan;
+            btnNoSesion.ForeColor = Color.MidnightBlue;
+            btnNoSesion.Location = new Point(189, 305);
             btnNoSesion.Name = "btnNoSesion";
-            btnNoSesion.Size = new Size(309, 34);
+            btnNoSesion.Size = new Size(365, 34);
             btnNoSesion.TabIndex = 3;
-            btnNoSesion.Text = "-->  No puedo iniciar sesión.          >";
+            btnNoSesion.Text = "No puedo iniciar sesión                          >                                    >";
             btnNoSesion.UseVisualStyleBackColor = false;
             // 
             // btnGuardar
             // 
-            btnGuardar.BackColor = Color.FromArgb(184, 242, 230);
-            btnGuardar.Location = new Point(72, 227);
+            btnGuardar.BackColor = Color.LightCyan;
+            btnGuardar.ForeColor = Color.MidnightBlue;
+            btnGuardar.Location = new Point(189, 265);
             btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(309, 34);
+            btnGuardar.Size = new Size(365, 34);
             btnGuardar.TabIndex = 5;
-            btnGuardar.Text = "-->  Error al guardar información.  >";
+            btnGuardar.Text = " Error al guardar información                  > ";
             btnGuardar.UseVisualStyleBackColor = false;
             // 
             // btnNoProducto
             // 
-            btnNoProducto.BackColor = Color.FromArgb(184, 242, 230);
-            btnNoProducto.Location = new Point(72, 149);
+            btnNoProducto.BackColor = Color.LightCyan;
+            btnNoProducto.ForeColor = Color.MidnightBlue;
+            btnNoProducto.Location = new Point(189, 345);
             btnNoProducto.Name = "btnNoProducto";
-            btnNoProducto.Size = new Size(309, 34);
+            btnNoProducto.Size = new Size(365, 34);
             btnNoProducto.TabIndex = 4;
-            btnNoProducto.Text = "-->  Un producto no aparece.        >";
+            btnNoProducto.Text = "Un producto no aparece                         >                      >";
             btnNoProducto.UseVisualStyleBackColor = false;
+            btnNoProducto.Click += btnNoProducto_Click;
             // 
-            // panel6
+            // panel8
             // 
-            panel6.BackColor = Color.FromArgb(255, 209, 220);
-            panel6.Controls.Add(pictureBox3);
-            panel6.Controls.Add(pictureBox2);
-            panel6.Controls.Add(pictureBox1);
-            panel6.Controls.Add(label18);
-            panel6.Controls.Add(label17);
-            panel6.Controls.Add(label16);
-            panel6.Controls.Add(label15);
-            panel6.Controls.Add(label14);
-            panel6.Controls.Add(label13);
-            panel6.Controls.Add(label12);
-            panel6.Location = new Point(384, 611);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(441, 269);
-            panel6.TabIndex = 5;
+            panel8.Controls.Add(cuiPanel5);
+            panel8.Controls.Add(cuiPanel4);
+            panel8.Controls.Add(cuiPanel2);
+            panel8.Controls.Add(panel2);
+            panel8.Location = new Point(384, 0);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(1515, 968);
+            panel8.TabIndex = 7;
             // 
-            // pictureBox3
+            // cuiPanel5
             // 
-            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(9, 182);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(58, 55);
-            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox3.TabIndex = 9;
-            pictureBox3.TabStop = false;
+            cuiPanel5.Controls.Add(pictureBox7);
+            cuiPanel5.Controls.Add(pictureBox6);
+            cuiPanel5.Controls.Add(pictureBox4);
+            cuiPanel5.Controls.Add(label18);
+            cuiPanel5.Controls.Add(label12);
+            cuiPanel5.Controls.Add(label17);
+            cuiPanel5.Controls.Add(label13);
+            cuiPanel5.Controls.Add(label16);
+            cuiPanel5.Controls.Add(label14);
+            cuiPanel5.Controls.Add(label15);
+            cuiPanel5.Location = new Point(114, 490);
+            cuiPanel5.Name = "cuiPanel5";
+            cuiPanel5.OutlineThickness = 1F;
+            cuiPanel5.PanelColor = Color.FromArgb(197, 212, 235);
+            cuiPanel5.PanelOutlineColor = Color.FromArgb(64, 128, 128, 128);
+            cuiPanel5.Rounding = new Padding(20);
+            cuiPanel5.Size = new Size(594, 405);
+            cuiPanel5.TabIndex = 9;
             // 
-            // pictureBox2
+            // pictureBox7
             // 
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(9, 112);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(58, 55);
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 8;
-            pictureBox2.TabStop = false;
+            pictureBox7.BackColor = Color.FromArgb(197, 212, 235);
+            pictureBox7.Image = (Image)resources.GetObject("pictureBox7.Image");
+            pictureBox7.Location = new Point(72, 196);
+            pictureBox7.Name = "pictureBox7";
+            pictureBox7.Size = new Size(114, 83);
+            pictureBox7.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox7.TabIndex = 9;
+            pictureBox7.TabStop = false;
             // 
-            // pictureBox1
+            // pictureBox6
             // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(33, 54);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(58, 55);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 7;
-            pictureBox1.TabStop = false;
+            pictureBox6.BackColor = Color.FromArgb(197, 212, 235);
+            pictureBox6.Image = Properties.Resources.correo;
+            pictureBox6.Location = new Point(72, 95);
+            pictureBox6.Name = "pictureBox6";
+            pictureBox6.Size = new Size(114, 89);
+            pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox6.TabIndex = 8;
+            pictureBox6.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.BackColor = Color.FromArgb(197, 212, 235);
+            pictureBox4.Image = Properties.Resources.Horario;
+            pictureBox4.Location = new Point(80, 294);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(106, 85);
+            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox4.TabIndex = 7;
+            pictureBox4.TabStop = false;
             // 
             // label18
             // 
             label18.AutoSize = true;
-            label18.Location = new Point(73, 210);
+            label18.BackColor = Color.FromArgb(197, 212, 235);
+            label18.Location = new Point(211, 345);
             label18.Name = "label18";
             label18.Size = new Size(69, 25);
             label18.TabIndex = 6;
             label18.Text = "label18";
             // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.BackColor = Color.FromArgb(197, 212, 235);
+            label12.Font = new Font("Segoe UI Symbol", 14F, FontStyle.Bold);
+            label12.ForeColor = Color.MidnightBlue;
+            label12.Location = new Point(72, 40);
+            label12.Name = "label12";
+            label12.Size = new Size(287, 38);
+            label12.TabIndex = 0;
+            label12.Text = "Contacto de soporte";
+            // 
             // label17
             // 
             label17.AutoSize = true;
-            label17.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label17.Location = new Point(73, 182);
+            label17.BackColor = Color.FromArgb(197, 212, 235);
+            label17.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
+            label17.ForeColor = Color.MidnightBlue;
+            label17.Location = new Point(211, 305);
             label17.Name = "label17";
-            label17.Size = new Size(206, 28);
+            label17.Size = new Size(211, 30);
             label17.TabIndex = 5;
-            label17.Text = "Horario de atención.";
+            label17.Text = "Horario de atención";
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.BackColor = Color.FromArgb(197, 212, 235);
+            label13.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
+            label13.ForeColor = Color.MidnightBlue;
+            label13.Location = new Point(211, 95);
+            label13.Name = "label13";
+            label13.Size = new Size(203, 30);
+            label13.TabIndex = 1;
+            label13.Text = "Correo electrónico.";
             // 
             // label16
             // 
             label16.AutoSize = true;
-            label16.Location = new Point(73, 142);
+            label16.BackColor = Color.FromArgb(197, 212, 235);
+            label16.Location = new Point(211, 248);
             label16.Name = "label16";
             label16.Size = new Size(69, 25);
             label16.TabIndex = 4;
             label16.Text = "label16";
             // 
-            // label15
-            // 
-            label15.AutoSize = true;
-            label15.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label15.Location = new Point(73, 112);
-            label15.Name = "label15";
-            label15.Size = new Size(196, 28);
-            label15.TabIndex = 3;
-            label15.Text = "Número telefónico.";
-            // 
             // label14
             // 
             label14.AutoSize = true;
-            label14.Location = new Point(73, 70);
+            label14.BackColor = Color.FromArgb(197, 212, 235);
+            label14.Location = new Point(223, 141);
             label14.Name = "label14";
             label14.Size = new Size(69, 25);
             label14.TabIndex = 2;
             label14.Text = "label14";
             // 
-            // label13
+            // label15
             // 
-            label13.AutoSize = true;
-            label13.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label13.Location = new Point(73, 40);
-            label13.Name = "label13";
-            label13.Size = new Size(192, 28);
-            label13.TabIndex = 1;
-            label13.Text = "Correo electrónico.";
+            label15.AutoSize = true;
+            label15.BackColor = Color.FromArgb(197, 212, 235);
+            label15.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
+            label15.ForeColor = Color.MidnightBlue;
+            label15.Location = new Point(211, 198);
+            label15.Name = "label15";
+            label15.Size = new Size(207, 30);
+            label15.TabIndex = 3;
+            label15.Text = "Número telefónico.";
             // 
-            // label12
+            // cuiPanel4
             // 
-            label12.AutoSize = true;
-            label12.Font = new Font("Segoe UI Black", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label12.Location = new Point(91, 10);
-            label12.Name = "label12";
-            label12.Size = new Size(258, 30);
-            label12.TabIndex = 0;
-            label12.Text = "3. Contacto de soporte";
+            cuiPanel4.Controls.Add(pictureBox9);
+            cuiPanel4.Controls.Add(pictureBox8);
+            cuiPanel4.Controls.Add(btnNoProducto);
+            cuiPanel4.Controls.Add(btnNoSesion);
+            cuiPanel4.Controls.Add(btnGuardar);
+            cuiPanel4.Controls.Add(btnEliminar);
+            cuiPanel4.Controls.Add(label5);
+            cuiPanel4.Controls.Add(btnEditar);
+            cuiPanel4.Controls.Add(label6);
+            cuiPanel4.Controls.Add(btnAgregar);
+            cuiPanel4.Location = new Point(773, 490);
+            cuiPanel4.Name = "cuiPanel4";
+            cuiPanel4.OutlineThickness = 1F;
+            cuiPanel4.PanelColor = Color.FromArgb(197, 212, 235);
+            cuiPanel4.PanelOutlineColor = Color.FromArgb(64, 128, 128, 128);
+            cuiPanel4.Rounding = new Padding(20);
+            cuiPanel4.Size = new Size(622, 405);
+            cuiPanel4.TabIndex = 7;
             // 
-            // panel7
+            // pictureBox9
             // 
-            panel7.BackColor = Color.FromArgb(255, 249, 196);
-            panel7.Controls.Add(label11);
-            panel7.Controls.Add(label10);
-            panel7.Controls.Add(label9);
-            panel7.Controls.Add(label8);
-            panel7.Controls.Add(label7);
-            panel7.Location = new Point(123, 437);
-            panel7.Name = "panel7";
-            panel7.Size = new Size(666, 269);
-            panel7.TabIndex = 6;
+            pictureBox9.BackColor = Color.FromArgb(197, 212, 235);
+            pictureBox9.Image = (Image)resources.GetObject("pictureBox9.Image");
+            pictureBox9.Location = new Point(72, 287);
+            pictureBox9.Name = "pictureBox9";
+            pictureBox9.Size = new Size(88, 73);
+            pictureBox9.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox9.TabIndex = 8;
+            pictureBox9.TabStop = false;
             // 
-            // label11
+            // pictureBox8
             // 
-            label11.AutoSize = true;
-            label11.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label11.Location = new Point(352, 155);
-            label11.Name = "label11";
-            label11.Size = new Size(270, 84);
-            label11.TabIndex = 4;
-            label11.Text = "*Revisar el inventario antes\r\nde registrar nuevas entradas\r\no salidas.";
+            pictureBox8.BackColor = Color.FromArgb(197, 212, 235);
+            pictureBox8.Image = Properties.Resources.Ayuda1;
+            pictureBox8.Location = new Point(62, 95);
+            pictureBox8.Name = "pictureBox8";
+            pictureBox8.Size = new Size(107, 89);
+            pictureBox8.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox8.TabIndex = 7;
+            pictureBox8.TabStop = false;
             // 
-            // label10
+            // btnEliminar
             // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label10.Location = new Point(352, 71);
-            label10.Name = "label10";
-            label10.Size = new Size(275, 56);
-            label10.TabIndex = 3;
-            label10.Text = "*Mantener actualizada la \r\ninformación de proveedores.";
+            btnEliminar.BackColor = Color.LightCyan;
+            btnEliminar.ForeColor = Color.MidnightBlue;
+            btnEliminar.Location = new Point(189, 160);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(365, 34);
+            btnEliminar.TabIndex = 2;
+            btnEliminar.Text = "  ¿Cómo eliminar un producto?              >";
+            btnEliminar.UseVisualStyleBackColor = false;
             // 
-            // label9
+            // label5
             // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label9.Location = new Point(33, 155);
-            label9.Name = "label9";
-            label9.Size = new Size(288, 56);
-            label9.TabIndex = 2;
-            label9.Text = "*No eliminar productos\r\n con movimientos registrados.";
+            label5.AutoSize = true;
+            label5.BackColor = Color.FromArgb(197, 212, 235);
+            label5.Font = new Font("Segoe UI Symbol", 14F, FontStyle.Bold);
+            label5.ForeColor = Color.MidnightBlue;
+            label5.Location = new Point(31, 20);
+            label5.Name = "label5";
+            label5.Size = new Size(308, 38);
+            label5.TabIndex = 6;
+            label5.Text = "Preguntas frecuentes ";
             // 
-            // label8
+            // btnEditar
             // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.Location = new Point(33, 71);
-            label8.Name = "label8";
-            label8.Size = new Size(244, 56);
-            label8.TabIndex = 1;
-            label8.Text = "*Respaldar la base \r\nde datos periódicamente.";
+            btnEditar.BackColor = Color.LightCyan;
+            btnEditar.ForeColor = Color.MidnightBlue;
+            btnEditar.Location = new Point(189, 81);
+            btnEditar.Name = "btnEditar";
+            btnEditar.Size = new Size(365, 33);
+            btnEditar.TabIndex = 1;
+            btnEditar.Text = "  ¿Cómo editar un producto?                 >                     ";
+            btnEditar.UseVisualStyleBackColor = false;
             // 
-            // label7
+            // btnAgregar
             // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI Black", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label7.Location = new Point(214, 9);
-            label7.Name = "label7";
-            label7.Size = new Size(207, 30);
-            label7.TabIndex = 0;
-            label7.Text = "2.Consejos de uso";
+            btnAgregar.BackColor = Color.LightCyan;
+            btnAgregar.ForeColor = Color.MidnightBlue;
+            btnAgregar.Location = new Point(189, 120);
+            btnAgregar.Name = "btnAgregar";
+            btnAgregar.Size = new Size(365, 34);
+            btnAgregar.TabIndex = 0;
+            btnAgregar.Text = "  ¿Cómo agregar un producto?              >";
+            btnAgregar.UseVisualStyleBackColor = false;
             // 
-            // panel8
+            // cuiPanel2
             // 
-            panel8.Controls.Add(panel2);
-            panel8.Controls.Add(panel7);
-            panel8.Controls.Add(panel4);
-            panel8.Controls.Add(panel5);
-            panel8.Controls.Add(panel3);
-            panel8.Controls.Add(panel6);
-            panel8.Location = new Point(384, 0);
-            panel8.Name = "panel8";
-            panel8.Size = new Size(1515, 968);
-            panel8.TabIndex = 7;
+            cuiPanel2.Controls.Add(pictureBox2);
+            cuiPanel2.Controls.Add(label3);
+            cuiPanel2.Controls.Add(label4);
+            cuiPanel2.Location = new Point(114, 240);
+            cuiPanel2.Name = "cuiPanel2";
+            cuiPanel2.OutlineThickness = 1F;
+            cuiPanel2.PanelColor = Color.FromArgb(197, 212, 235);
+            cuiPanel2.PanelOutlineColor = Color.FromArgb(64, 128, 128, 128);
+            cuiPanel2.Rounding = new Padding(20);
+            cuiPanel2.Size = new Size(1281, 193);
+            cuiPanel2.TabIndex = 8;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.BackColor = Color.FromArgb(197, 212, 235);
+            pictureBox2.Image = Properties.Resources.Ayuda2;
+            pictureBox2.Location = new Point(1010, -11);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(239, 223);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 2;
+            pictureBox2.TabStop = false;
             // 
             // FrmAyuda
             // 
@@ -464,23 +736,26 @@
             Controls.Add(panel1);
             Name = "FrmAyuda";
             Load += FrmAyuda_Load;
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
-            panel4.ResumeLayout(false);
-            panel4.PerformLayout();
-            panel5.ResumeLayout(false);
-            panel5.PerformLayout();
-            panel6.ResumeLayout(false);
-            panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            panel7.ResumeLayout(false);
-            panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             panel8.ResumeLayout(false);
+            cuiPanel5.ResumeLayout(false);
+            cuiPanel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            cuiPanel4.ResumeLayout(false);
+            cuiPanel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
+            cuiPanel2.ResumeLayout(false);
+            cuiPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
         }
 
@@ -490,37 +765,42 @@
         private Panel panel2;
         private Label label2;
         private Label lblTitulo;
-        private Panel panel3;
         private Label label3;
         private Label label4;
-        private Panel panel4;
-        private Panel panel5;
-        private Panel panel6;
-        private Panel panel7;
-        private Button btnAgregar;
-        private Button btnEditar;
-        private Button btnEliminar;
         private Button btnNoProducto;
         private Button btnNoSesion;
         private Button btnGuardar;
-        private Label label5;
         private Label label6;
-        private Label label9;
-        private Label label8;
-        private Label label7;
-        private Label label12;
-        private Label label11;
-        private Label label10;
-        private Label label18;
-        private Label label17;
-        private Label label16;
-        private Label label15;
-        private Label label14;
-        private Label label13;
-        private PictureBox pictureBox3;
-        private PictureBox pictureBox2;
-        private PictureBox pictureBox1;
-        private PictureBox pictureBox4;
         private Panel panel8;
+        private HartUI.Controls.cuiButton btnInicio;
+        private HartUI.Controls.cuiButton btnProductos;
+        private HartUI.Controls.cuiButton cuiButton3;
+        private HartUI.Controls.cuiButton btnVentas;
+        private HartUI.Controls.cuiButton btnAyuda;
+        private HartUI.Controls.cuiButton btnCerrar;
+        private PictureBox pictureBox5;
+        private HartUI.Controls.cuiPanel cuiPanel2;
+        private HartUI.Controls.cuiPanel cuiPanel4;
+        private Button btnEliminar;
+        private Label label5;
+        private Button btnEditar;
+        private Button btnAgregar;
+        private HartUI.Controls.cuiPanel cuiPanel5;
+        private Label label18;
+        private Label label12;
+        private Label label17;
+        private Label label13;
+        private Label label16;
+        private Label label14;
+        private Label label15;
+        private PictureBox pictureBox1;
+        private Label label1;
+        private PictureBox pictureBox3;
+        private PictureBox pictureBox7;
+        private PictureBox pictureBox6;
+        private PictureBox pictureBox4;
+        private PictureBox pictureBox8;
+        private PictureBox pictureBox2;
+        private PictureBox pictureBox9;
     }
 }

@@ -28,19 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             btnModificarProveedores = new Button();
             btnAgregarProveedor = new Button();
             dgvProveedores = new DataGridView();
@@ -78,7 +65,7 @@
             btnModificarProveedores.Name = "btnModificarProveedores";
             btnModificarProveedores.Size = new Size(349, 86);
             btnModificarProveedores.TabIndex = 1;
-            btnModificarProveedores.Text = "Modificar Proveedor";
+            btnModificarProveedores.Text = "Modificar ";
             btnModificarProveedores.UseVisualStyleBackColor = false;
             btnModificarProveedores.Click += button1_Click;
             // 
@@ -91,7 +78,7 @@
             btnAgregarProveedor.Name = "btnAgregarProveedor";
             btnAgregarProveedor.Size = new Size(349, 86);
             btnAgregarProveedor.TabIndex = 2;
-            btnAgregarProveedor.Text = "Agregar Proveedor";
+            btnAgregarProveedor.Text = "+ Agregar proveedor";
             btnAgregarProveedor.UseVisualStyleBackColor = false;
             btnAgregarProveedor.Click += btnAgregarProveedor_Click;
             // 
@@ -125,7 +112,6 @@
             // btnCerrar
             // 
             btnCerrar.BorderRadius = 10;
-            btnCerrar.CustomizableEdges = customizableEdges14;
             btnCerrar.DisabledState.BorderColor = Color.DarkGray;
             btnCerrar.DisabledState.CustomBorderColor = Color.DarkGray;
             btnCerrar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -135,7 +121,6 @@
             btnCerrar.ForeColor = Color.White;
             btnCerrar.Location = new Point(68, 778);
             btnCerrar.Name = "btnCerrar";
-            btnCerrar.ShadowDecoration.CustomizableEdges = customizableEdges15;
             btnCerrar.Size = new Size(234, 53);
             btnCerrar.TabIndex = 7;
             btnCerrar.Text = "Cerrar Sesión";
@@ -144,7 +129,6 @@
             // btnVentas
             // 
             btnVentas.BorderRadius = 10;
-            btnVentas.CustomizableEdges = customizableEdges16;
             btnVentas.DisabledState.BorderColor = Color.DarkGray;
             btnVentas.DisabledState.CustomBorderColor = Color.DarkGray;
             btnVentas.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -154,7 +138,6 @@
             btnVentas.ForeColor = Color.White;
             btnVentas.Location = new Point(68, 615);
             btnVentas.Name = "btnVentas";
-            btnVentas.ShadowDecoration.CustomizableEdges = customizableEdges17;
             btnVentas.Size = new Size(234, 53);
             btnVentas.TabIndex = 8;
             btnVentas.Text = "Ventas";
@@ -163,7 +146,6 @@
             // btnAyuda
             // 
             btnAyuda.BorderRadius = 10;
-            btnAyuda.CustomizableEdges = customizableEdges18;
             btnAyuda.DisabledState.BorderColor = Color.DarkGray;
             btnAyuda.DisabledState.CustomBorderColor = Color.DarkGray;
             btnAyuda.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -173,7 +155,6 @@
             btnAyuda.ForeColor = Color.White;
             btnAyuda.Location = new Point(68, 699);
             btnAyuda.Name = "btnAyuda";
-            btnAyuda.ShadowDecoration.CustomizableEdges = customizableEdges19;
             btnAyuda.Size = new Size(234, 53);
             btnAyuda.TabIndex = 6;
             btnAyuda.Text = "Ayuda";
@@ -182,7 +163,6 @@
             // btnProductos
             // 
             btnProductos.BorderRadius = 10;
-            btnProductos.CustomizableEdges = customizableEdges20;
             btnProductos.DisabledState.BorderColor = Color.DarkGray;
             btnProductos.DisabledState.CustomBorderColor = Color.DarkGray;
             btnProductos.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -192,7 +172,6 @@
             btnProductos.ForeColor = Color.White;
             btnProductos.Location = new Point(68, 445);
             btnProductos.Name = "btnProductos";
-            btnProductos.ShadowDecoration.CustomizableEdges = customizableEdges21;
             btnProductos.Size = new Size(234, 53);
             btnProductos.TabIndex = 9;
             btnProductos.Text = "Productos";
@@ -201,7 +180,6 @@
             // btnProveedores
             // 
             btnProveedores.BorderRadius = 10;
-            btnProveedores.CustomizableEdges = customizableEdges22;
             btnProveedores.DisabledState.BorderColor = Color.DarkGray;
             btnProveedores.DisabledState.CustomBorderColor = Color.DarkGray;
             btnProveedores.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -211,7 +189,6 @@
             btnProveedores.ForeColor = Color.White;
             btnProveedores.Location = new Point(68, 531);
             btnProveedores.Name = "btnProveedores";
-            btnProveedores.ShadowDecoration.CustomizableEdges = customizableEdges23;
             btnProveedores.Size = new Size(234, 53);
             btnProveedores.TabIndex = 7;
             btnProveedores.Text = "Proveedores";
@@ -234,7 +211,6 @@
             guna2CirclePictureBox1.ImageRotate = 0F;
             guna2CirclePictureBox1.Location = new Point(85, 68);
             guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
-            guna2CirclePictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges24;
             guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             guna2CirclePictureBox1.Size = new Size(202, 174);
             guna2CirclePictureBox1.TabIndex = 0;
@@ -243,7 +219,6 @@
             // btnMenu_Inicio
             // 
             btnMenu_Inicio.BorderRadius = 10;
-            btnMenu_Inicio.CustomizableEdges = customizableEdges25;
             btnMenu_Inicio.DisabledState.BorderColor = Color.DarkGray;
             btnMenu_Inicio.DisabledState.CustomBorderColor = Color.DarkGray;
             btnMenu_Inicio.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -253,7 +228,6 @@
             btnMenu_Inicio.ForeColor = Color.White;
             btnMenu_Inicio.Location = new Point(68, 360);
             btnMenu_Inicio.Name = "btnMenu_Inicio";
-            btnMenu_Inicio.ShadowDecoration.CustomizableEdges = customizableEdges26;
             btnMenu_Inicio.Size = new Size(234, 53);
             btnMenu_Inicio.TabIndex = 6;
             btnMenu_Inicio.Text = "Inicio";
@@ -322,13 +296,13 @@
             btnEliminar_Proveedor.Name = "btnEliminar_Proveedor";
             btnEliminar_Proveedor.Size = new Size(349, 86);
             btnEliminar_Proveedor.TabIndex = 5;
-            btnEliminar_Proveedor.Text = "Eliminar Proveedor";
+            btnEliminar_Proveedor.Text = "Eliminar ";
             btnEliminar_Proveedor.UseVisualStyleBackColor = false;
             btnEliminar_Proveedor.Click += btnEliminar_Proveedor_Click;
             // 
             // btnInicio
             // 
-            btnInicio.BackColor = Color.Linen;
+            btnInicio.BackColor = Color.White;
             btnInicio.Controls.Add(panel2);
             btnInicio.Controls.Add(btnEliminar_Proveedor);
             btnInicio.Controls.Add(dgvProveedores);
