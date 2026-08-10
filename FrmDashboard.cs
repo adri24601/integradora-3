@@ -12,398 +12,230 @@ namespace integra_1
 {
     public partial class FrmDashboard : Form
     {
-        string ruta = Path.Combine(Application.StartupPath, "integradora boceto.accdb");
-
-        string cadenaConexion;
 
 
         public FrmDashboard()
         {
             InitializeComponent();
-
-            cadenaConexion = $@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={ruta}";
         }
 
 
         private void FrmDashboard_Load(object sender, EventArgs e)
         {
-            CargarResumen();
-            CargarConfiguracion();
+            MostrarProductos();
+            MostrarProveedores();
         }
 
-
-        private void CargarResumen()
+        private void FrmDashboard_Activated_1(object sender, EventArgs e)
         {
-            OleDbConnection con = new OleDbConnection(cadenaConexion);
-
-            con.Open();
-
-            // Contar productos
-            OleDbCommand cmdProductos = new OleDbCommand("SELECT COUNT(*) FROM Productos", con);
-
-            int totalProductos = Convert.ToInt32(cmdProductos.ExecuteScalar());
-
-            lbCantidadProductos.Text = "Hay " + totalProductos + " productos registrados";
-
-
-            // Contar proveedores
-            OleDbCommand cmdProveedores = new OleDbCommand("SELECT COUNT(*) FROM Proveedores", con);
-
-            int totalProveedores = Convert.ToInt32(cmdProveedores.ExecuteScalar());
-
-            lbCantidadProveedores.Text = "Hay " + totalProveedores + " proveedores registrados";
-
-
-            // Obtener stock mínimo
-            OleDbCommand cmdStockMin = new OleDbCommand("SELECT TOP 1 Stock_minimo FROM Tienda", con);
-
-            int stockMinimo = 5;
-
-            object resultadoStock = cmdStockMin.ExecuteScalar();
-
-            if (resultadoStock != null)
-            {
-                stockMinimo = Convert.ToInt32(resultadoStock);
-            }
-
-
-            // Contar productos con stock bajo
-            OleDbCommand cmdAlerta = new OleDbCommand("SELECT COUNT(*) FROM Productos WHERE Cantidad_Producto <= " + stockMinimo, con);
-
-            int productosBajos = Convert.ToInt32(cmdAlerta.ExecuteScalar());
-
-            lbAlertaStock.Text = productosBajos + " productos con stock mínimo";
-
-            con.Close();
-        }
-
-        private void CargarConfiguracion()
-        {
-            OleDbConnection con = new OleDbConnection(cadenaConexion);
-            con.Open();
-
-            OleDbCommand cmd = new OleDbCommand("SELECT TOP 1 * FROM Tienda", con);
-
-            OleDbDataReader dr = cmd.ExecuteReader();
-
-            if (dr.Read())
-            {
-                txtNomTienda.Text = dr["Nombre"].ToString();
-                txtDirTienda.Text = dr["Direccion"].ToString();
-                txtTelTienda.Text = dr["Telefono"].ToString();
-                txtCorreoTienda.Text = dr["Correo"].ToString();
-
-                numStockMinimo.Value = Convert.ToDecimal(dr["Stock_minimo"]);
-            }
-
-            con.Close();
-        }
-
-        private void btnGuardarTienda_Click(object sender, EventArgs e)
-        {
-            // Verificar que el nombre no esté vacío
-            if (txtNomTienda.Text == "")
-            {
-                MessageBox.Show("Ingrese el nombre de la tienda");
-                txtNomTienda.Focus();
-                return;
-            }
-
-            // Abrir conexión
-            OleDbConnection con = new OleDbConnection(cadenaConexion);
-            con.Open();
-
-            // Verificar si ya existe una tienda
-            OleDbCommand verificar = new OleDbCommand("SELECT COUNT(*) FROM Tienda", con);
-
-            int existe = Convert.ToInt32(verificar.ExecuteScalar());
-
-            if (existe > 0)
-            {
-                MessageBox.Show("La tienda ya está registrada. Use el botón Modificar.");
-                con.Close();
-                return;
-            }
-
-            // Guardar datos
-            string insertar = "INSERT INTO Tienda (Nombre, Direccion, Telefono, Correo, Stock_minimo) " + "VALUES ('" + txtNomTienda.Text + "', '" + txtDirTienda.Text + "', '" + txtTelTienda.Text + "', '" + txtCorreoTienda.Text + "', " + numStockMinimo.Value + ")";
-
-            OleDbCommand cmd = new OleDbCommand(insertar, con);
-            cmd.ExecuteNonQuery();
-
-            MessageBox.Show("Tienda guardada correctamente");
-
-            con.Close();
-
-            // Actualizar resumen
-            CargarResumen();
-        }
-
-        private void btnModificarTienda_Click_1(object sender, EventArgs e)
-        {
-            // Abrir conexión
-            OleDbConnection con = new OleDbConnection(cadenaConexion);
-            con.Open();
-
-            string actualizar = "UPDATE Tienda SET " + "Nombre='" + txtNomTienda.Text + "', " + "Direccion='" + txtDirTienda.Text + "', " + "Telefono='" + txtTelTienda.Text + "', " + "Correo='" + txtCorreoTienda.Text + "', " + "Stock_minimo=" + numStockMinimo.Value;
-
-            OleDbCommand cmd = new OleDbCommand(actualizar, con);
-            cmd.ExecuteNonQuery();
-
-            MessageBox.Show("Tienda modificada correctamente");
-
-            con.Close();
-
-            // Actualizar resumen
-            CargarResumen();
-        }
-
-        private void btnCambiarLogo_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog abrir = new OpenFileDialog();
-
-            abrir.Filter = "Archivos de imagen|*.jpg;*.png;*.jpeg";
-
-            if (abrir.ShowDialog() == DialogResult.OK)
-            {
-                picLogoTienda.Image = Image.FromFile(abrir.FileName);
-
-                picLogoTienda.SizeMode = PictureBoxSizeMode.Zoom;
-            }
-        }
-
-
-        // PICTUREBOX PRODUCTOS EN STOCK MINIMO
-
-        private void MostrarProductosStockMinimo()
-        {
-            // Crear conexión con la base de datos
-            OleDbConnection con = new OleDbConnection(cadenaConexion);
-
-            con.Open();
-
-
-            // Consulta para buscar productos que tengan
-            // una cantidad menor o igual al stock mínimo configurado
-            string consulta = @"SELECT Nombre_Producto, Cantidad_Producto FROM Productos WHERE Cantidad_Producto <= (SELECT TOP 1 Stock_minimo FROM Tienda)";
-
-
-            // Ejecutar la consulta
-            OleDbCommand cmd = new OleDbCommand(consulta, con);
-
-
-            // Leer los datos encontrados
-            OleDbDataReader dr = cmd.ExecuteReader();
-
-
-            // Variable donde se guardará el mensaje
-            string mensaje = "Productos con stock mínimo:\n\n";
-
-
-            // Sirve para saber si encontró productos
-            bool hayProductos = false;
-
-
-            // Recorrer los productos encontrados
-            while (dr.Read())
-            {
-                // Indica que sí encontró productos
-                hayProductos = true;
-
-
-                // Agrega el nombre y cantidad al mensaje
-                mensaje += dr["Nombre_Producto"].ToString() + ":  Cantidad: " + dr["Cantidad_Producto"].ToString() + "\n";
-            }
-
-            // Cerrar conexión
-            con.Close();
-
-            // Si encontró productos muestra la lista
-            if (hayProductos)
-            {
-                MessageBox.Show(mensaje, "Productos con Stock Mínimo", MessageBoxButtons.OK, MessageBoxIcon.None);
-            }
-            else
-            {
-                // Si no encontró productos muestra este mensaje
-                MessageBox.Show("No hay productos con stock mínimo.", "Stock", MessageBoxButtons.OK, MessageBoxIcon.None);
-            }
+            ActualizarAlertaStock();
         }
 
         private void pictureBoxAlertas_Click(object sender, EventArgs e)
         {
             MostrarProductosStockMinimo();
         }
-
-        // PICTUREBOX PRODUCTOS TOTALES
-
         private void picProductos_Click(object sender, EventArgs e)
         {
-            MostrarProductos();
+
+        }
+
+        private void picProveedores_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void MostrarProductos()
         {
-            OleDbConnection con = new OleDbConnection(cadenaConexion);
+            string ruta = @"C:\Users\LPC\Desktop\REPOSITORIO 3\integradora boceto.accdb";
 
-            con.Open();
+            string seguirRuta =
+                $@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={ruta}";
 
-            string consulta = "SELECT Nombre_Producto, Cantidad_Producto FROM Productos";
-
-            OleDbCommand cmd = new OleDbCommand(consulta, con);
-
-            OleDbDataReader dr = cmd.ExecuteReader();
-
-            string mensaje = "Productos registrados:\n\n";
-
-            bool hayProductos = false;
-
-            while (dr.Read())
+            using (OleDbConnection conexionBase =
+                   new OleDbConnection(seguirRuta))
             {
-                hayProductos = true;
+                conexionBase.Open();
 
-                mensaje += dr["Nombre_Producto"].ToString() + ": Cantidad: " + dr["Cantidad_Producto"].ToString() + "\n";
+                string consultaTabla = "SELECT COUNT(*) FROM Productos";
+
+                OleDbCommand ejecutar = new OleDbCommand(consultaTabla, conexionBase);
+
+                int totalProductos = Convert.ToInt32(ejecutar.ExecuteScalar());
+
+                lbCantidadProductos.Text = "Hay " + totalProductos + " tipos de productos en el inventario";
             }
-
-            con.Close();
-
-            if (hayProductos)
-            {
-                MessageBox.Show(mensaje, "Productos", MessageBoxButtons.OK, MessageBoxIcon.None);
-            }
-            else
-            {
-                MessageBox.Show("No hay productos registrados.", "Productos", MessageBoxButtons.OK, MessageBoxIcon.None);
-            }
-        }
-
-
-        // PICTUREBOX TODOS LOS PROVEEDORES
-
-        private void picProveedores_Click(object sender, EventArgs e)
-        {
-            MostrarProveedores();
         }
 
         private void MostrarProveedores()
         {
-            OleDbConnection con = new OleDbConnection(cadenaConexion);
+            string ruta = @"C:\Users\LPC\Desktop\REPOSITORIO 3\integradora boceto.accdb";
 
-            con.Open();
+            string seguirRuta = $@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={ruta}";
 
-            string consulta = "SELECT Proveedor_Nombre FROM Proveedores";
-
-            OleDbCommand cmd = new OleDbCommand(consulta, con);
-
-            OleDbDataReader dr = cmd.ExecuteReader();
-
-            string mensaje = "Proveedores registrados:\n\n";
-
-            bool hayProveedores = false;
-
-            while (dr.Read())
+            using (OleDbConnection conexionBase = new OleDbConnection(seguirRuta))
             {
-                hayProveedores = true;
+                conexionBase.Open();
 
-                mensaje += "- " + dr["Proveedor_Nombre"].ToString() + "\n";
-            }
+                string consultarTabla = "SELECT COUNT(*) FROM Proveedores";
 
-            con.Close();
+                OleDbCommand ejecutar = new OleDbCommand(consultarTabla, conexionBase);
 
-            if (hayProveedores)
-            {
-                MessageBox.Show(mensaje, "Proveedores", MessageBoxButtons.OK, MessageBoxIcon.None);
-            }
-            else
-            {
-                MessageBox.Show("No hay proveedores registrados.", "Proveedores", MessageBoxButtons.OK, MessageBoxIcon.None);
+                int totalProveedores = Convert.ToInt32(ejecutar.ExecuteScalar());
+
+                lbCantidadProveedores.Text = "Hay " + totalProveedores + " proveedores registrados";
             }
         }
 
 
-
-
-        private void panel2_Paint_1(object sender, PaintEventArgs e)
+        private void btnGuardarStockMinimo_Click(object sender, EventArgs e)
         {
+            string stockMinimo = texStockMinimo.Text;
+
+            if (stockMinimo == "")
+            {
+                MessageBox.Show("Ingrese el stock mínimo");
+                return;
+            }
+
+            string ruta = @"C:\Users\LPC\Desktop\REPOSITORIO 3\integradora boceto.accdb";
+
+            string seguirRuta = $@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={ruta}";
+
+            using (OleDbConnection conexionBase = new OleDbConnection(seguirRuta))
+            {
+                conexionBase.Open();
+
+                string insertarValor = "UPDATE Tienda SET Stock_minimo = ?";
+
+                OleDbCommand ejecutar = new OleDbCommand(insertarValor, conexionBase);
+
+                ejecutar.Parameters.AddWithValue("?", stockMinimo);
+
+                ejecutar.ExecuteNonQuery();
+
+                MessageBox.Show("Stock mínimo guardado");
+            }
+        }
+
+        private void MostrarProductosStockMinimo()
+        {
+            string ruta = @"C:\Users\LPC\Desktop\REPOSITORIO 3\integradora boceto.accdb";
+
+            string seguirRuta = $@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={ruta}";
+
+            string consulta = @"SELECT Nombre_Producto, Cantidad_Producto
+                                FROM Productos, Tienda
+                                WHERE Cantidad_Producto <= Stock_minimo";
+
+            using (OleDbConnection conexionBase = new OleDbConnection(seguirRuta))
+            {
+                conexionBase.Open();
+
+                OleDbCommand ejecutar = new OleDbCommand(consulta, conexionBase);
+
+                OleDbDataReader lector = ejecutar.ExecuteReader();
+
+                string productos = "";
+
+                int cantidadProductos = 0;
+
+                while (lector.Read())
+                {
+                    string nombreProducto = lector["Nombre_Producto"].ToString();
+
+                    string cantidad = lector["Cantidad_Producto"].ToString();
+
+                    productos += nombreProducto + " - Cantidad: " + cantidad + "\n";
+
+                    cantidadProductos++;
+                }
+
+                // Mostrar cantidad en el Label
+                lbAlertaStock.Text = cantidadProductos + " productos se encuentran en stock mínimo";
+
+                // Mostrar los productos al hacer clic
+                if (productos != "")
+                {
+                    MessageBox.Show("Productos con stock mínimo:\n\n" + productos);
+                }
+                else
+                {
+                    MessageBox.Show("No hay productos con stock mínimo");
+                }
+            }
+
+            ActualizarAlertaStock();
 
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
 
+        private void ActualizarAlertaStock()
+        {
+            string ruta = @"C:\Users\LPC\Desktop\REPOSITORIO 3\integradora boceto.accdb";
+
+            string seguirRuta = $@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={ruta}";
+
+            string consulta = @"SELECT COUNT(*)
+                                FROM Productos, Tienda
+                                WHERE Cantidad_Producto <= Stock_minimo";
+
+            using (OleDbConnection conexionBase = new OleDbConnection(seguirRuta))
+            {
+                conexionBase.Open();
+
+                OleDbCommand ejecutar = new OleDbCommand(consulta, conexionBase);
+
+                int cantidadProductos = Convert.ToInt32(ejecutar.ExecuteScalar());
+
+                lbAlertaStock.Text = cantidadProductos + " productos se encuentran en stock mínimo";
+            }
         }
 
 
-        private void btnGuardarLogo_Click(object sender, EventArgs e)
-        {
 
 
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
 
 
-        private void lbMoneda_Click(object sender, EventArgs e)
-        {
 
-        }
 
-        private void lbAlerta_Click(object sender, EventArgs e)
-        {
 
-        }
 
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
 
-        }
 
-        private void label11_Click(object sender, EventArgs e)
-        {
 
-        }
 
-        private void label8_Click(object sender, EventArgs e)
-        {
-        }
 
-        private void panel8_Paint(object sender, PaintEventArgs e)
-        {
 
-        }
 
-        private void pictureBox3_Click_1(object sender, EventArgs e)
-        {
 
-        }
 
-        private void label5_Click(object sender, EventArgs e)
-        {
 
-        }
 
-        private void pictureBox4_Click(object sender, EventArgs e)
-        {
 
-        }
 
-        private void txtNomTienda_TextChanged(object sender, EventArgs e)
-        {
 
-        }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
 
-        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         private void btnProveedores_Click(object sender, EventArgs e)
         {
@@ -444,6 +276,75 @@ namespace integra_1
             frm.Show();
             this.Hide();
         }
+
+
+        private void cuiPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void panel8_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox3_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
 

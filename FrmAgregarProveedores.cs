@@ -19,51 +19,80 @@ namespace integra_1
 
         private void btnGuardarProveedor_Click(object sender, EventArgs e)
         {
-            // 1. Validar que no dejen ningún campo vacío
-            if (string.IsNullOrEmpty(txtId_Proveedor.Text) || string.IsNullOrEmpty(txtProveedor_Nombre.Text) ||
-                string.IsNullOrEmpty(txtProveedor_Empresa.Text) || string.IsNullOrEmpty(txtProveedor_Telefono.Text) ||
-                string.IsNullOrEmpty(txtProveedor_Correo.Text) || string.IsNullOrEmpty(txtProveedor_Direccion.Text))
+            string nombre = txtProveedor_Nombre.Text;
+            string IDProveedor = txtId_Proveedor.Text;
+            string empresa = txtProveedor_Empresa.Text;
+            string telefono = txtProveedor_Telefono.Text;
+            string correo = txtProveedor_Correo.Text;
+            string direccion = txtProveedor_Direccion.Text;
+            string IDProducto = txtId_Productos.Text;
+
+            if (nombre == "")
             {
-                MessageBox.Show("Por favor, llena todos los campos necesarios.");
+                MessageBox.Show("Ingresa el nombre del proveedor");
                 return;
             }
 
-            // RUTA DE BASE DE DATOS
-
-            string ruta = Path.Combine(Application.StartupPath, "integradora boceto.accdb");
-
-            string cadenaConexion = $@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={ruta}";
-
-
-            // 3. Consulta SQL completa con los 4 campos (los signos '?' se sustituyen en orden exacto abajo)
-            string consulta = "INSERT INTO Proveedores ([Id_Proveedor], [Proveedor_Nombre], [Proveedor_Empresa], [Proveedor_Telefono], [Proveedor_Correo], [Proveedor_Direccion]) VALUES (?, ?, ?, ?, ?, ?);";
-
-            try
+            if (IDProveedor == "")
             {
-                using (OleDbConnection conexion = new OleDbConnection(cadenaConexion))
-                {
-                    using (OleDbCommand comando = new OleDbCommand(consulta, conexion))
-                    {
-                        // Pasamos los parámetros en el mismo orden que aparecen en el INSERT
-                        comando.Parameters.AddWithValue("@id_proveedor", Convert.ToInt32(txtId_Proveedor.Text));
-                        comando.Parameters.AddWithValue("@nombre_proveedor", txtProveedor_Nombre.Text);
-                        comando.Parameters.AddWithValue("@empresa_proveedor", txtProveedor_Empresa.Text);
-                        comando.Parameters.AddWithValue("@telefono_proveedor", txtProveedor_Telefono.Text);
-                        comando.Parameters.AddWithValue("@correo_proveedor", txtProveedor_Correo.Text);
-                        comando.Parameters.AddWithValue("@direccion_proveedor", txtProveedor_Direccion.Text);
-
-                        conexion.Open();
-                        comando.ExecuteNonQuery(); // Guarda la fila completa en Access
-
-                        MessageBox.Show("Proveedor agregado correctamente");
-
-                        this.Close(); // Cierra la ventana de captura al terminar
-                    }
-                }
+                MessageBox.Show("Ingresa ID_Proveedor");
+                return;
             }
-            catch (Exception ex)
+
+            if (empresa == "")
             {
-                MessageBox.Show("Error al guardar toda la información: " + ex.Message);
+                MessageBox.Show("Ingresa la empresa del proveedor");
+                return;
+            }
+
+            if (telefono == "")
+            {
+                MessageBox.Show("Ingresa el teléfono del proveedor");
+                return;
+            }
+
+            if (correo == "")
+            {
+                MessageBox.Show("Ingresa el correo del proveedor");
+                return;
+            }
+
+            if (direccion == "")
+            {
+                MessageBox.Show("Ingresa la dirección del proveedor");
+                return;
+            }
+
+            if (IDProducto == "")
+            {
+                MessageBox.Show("Ingresa ID_Producto");
+                return;
+            }
+
+            string ruta = @"C:\Users\LPC\Desktop\REPOSITORIO 3\integradora boceto.accdb";
+
+            string seguirRuta = $@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={ruta}";
+
+            using (OleDbConnection conexionBase = new OleDbConnection(seguirRuta))
+            {
+                conexionBase.Open();
+
+                string instruccion = @"INSERT INTO Proveedores (Proveedor_Nombre, Proveedor_Empresa, Proveedor_Telefono, Proveedor_Correo, Proveedor_Direccion, Id_Proveedor, Id_Producto)
+                                                   VALUES (@Nombre, @Empresa, @Telefono, @Correo, @Direccion, @ID, @IDProducto)";
+
+                OleDbCommand ejecutar = new OleDbCommand(instruccion, conexionBase);
+
+                ejecutar.Parameters.AddWithValue("@Nombre", nombre);
+                ejecutar.Parameters.AddWithValue("@Empresa", empresa);
+                ejecutar.Parameters.AddWithValue("@Telefono", telefono);
+                ejecutar.Parameters.AddWithValue("@Correo", correo);
+                ejecutar.Parameters.AddWithValue("@Direccion", direccion);
+                ejecutar.Parameters.AddWithValue("@ID", IDProveedor);
+                ejecutar.Parameters.AddWithValue("@IDProducto", IDProducto);
+
+                ejecutar.ExecuteNonQuery();
+
+                MessageBox.Show("Se ha agregado proveedor");
             }
         }
 
@@ -75,102 +104,45 @@ namespace integra_1
                 return;
             }
 
-            // RUTA DE BASE DE DATOS
+            string ruta = @"C:\Users\LPC\Desktop\REPOSITORIO 3\integradora boceto.accdb";
 
-            string ruta = Path.Combine(Application.StartupPath, "integradora boceto.accdb");
+            string seguirRuta = $@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={ruta}";
 
-            string cadenaConexion = $@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={ruta}";
-
-            string consulta = "UPDATE Proveedores SET " + "Proveedor_Nombre = ?, " + "Proveedor_Empresa = ?, " + "Proveedor_Telefono = ?, " + "Proveedor_Correo = ?, " + "Proveedor_Direccion = ? " + "WHERE Id_Proveedor = ?";
-
-            try
+            using (OleDbConnection conexionBase = new OleDbConnection(seguirRuta))
             {
-                using (OleDbConnection conexion = new OleDbConnection(cadenaConexion))
+                conexionBase.Open();
+
+                string instruccion = @"UPDATE Proveedores SET 
+                       Proveedor_Nombre = @Nombre,
+                       Proveedor_Empresa = @Empresa,
+                       Proveedor_Telefono = @Telefono,
+                       Proveedor_Correo = @Correo,
+                       Proveedor_Direccion = @Direccion
+                       WHERE Id_Proveedor = @ID";
+
+                OleDbCommand ejecutar = new OleDbCommand(instruccion, conexionBase);
+
+                ejecutar.Parameters.AddWithValue("@Nombre", txtProveedor_Nombre.Text);
+                ejecutar.Parameters.AddWithValue("@Empresa", txtProveedor_Empresa.Text);
+                ejecutar.Parameters.AddWithValue("@Telefono", txtProveedor_Telefono.Text);
+                ejecutar.Parameters.AddWithValue("@Correo", txtProveedor_Correo.Text);
+                ejecutar.Parameters.AddWithValue("@Direccion", txtProveedor_Direccion.Text);
+                ejecutar.Parameters.AddWithValue("@ID", txtId_Proveedor.Text);
+
+                int filasModificadas = ejecutar.ExecuteNonQuery();
+
+                if (filasModificadas > 0)
                 {
-                    using (OleDbCommand comando = new OleDbCommand(consulta, conexion))
-                    {
-                        comando.Parameters.AddWithValue("@proveedor_nombre", txtProveedor_Nombre.Text);
-                        comando.Parameters.AddWithValue("proveedor_empresa", txtProveedor_Empresa.Text);
-                        comando.Parameters.AddWithValue("proveedor_telefono", txtProveedor_Telefono.Text);
-                        comando.Parameters.AddWithValue("proveedor_correo", txtProveedor_Correo.Text);
-                        comando.Parameters.AddWithValue("proveedor_direccion", txtProveedor_Direccion.Text);
-                        comando.Parameters.AddWithValue("id_proveedor", Convert.ToInt32(txtId_Proveedor.Text));
-
-                        conexion.Open();
-
-                        int filasAfectadas = comando.ExecuteNonQuery();
-
-                        if (filasAfectadas > 0)
-                        {
-                            MessageBox.Show("Proveedor actualizado correctamente");
-                            this.Close();
-                        }
-                        else
-                        {
-                            MessageBox.Show("No se encontro el proveedor");
-                        }
-
-                    }
+                    MessageBox.Show("Se ha modificado la información del proveedor");
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al actualizar: " + ex.Message);
+                else
+                {
+                    MessageBox.Show("No se encontró el proveedor.");
+                }
             }
         }
 
-        private void btnProveedor_Click(object sender, EventArgs e) // Boton ELiminar proveedor
-        {
-            int filasAfectadas = 0;
 
-            if (string.IsNullOrEmpty(txtId_Proveedor.Text))
-            {
-                MessageBox.Show("Seleccione el proveedor que desea eliminar");
-                return;
-            }
-
-            DialogResult respuesta = MessageBox.Show("¿Seguro que quieres eliminar este proveedor de la base de datos?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-            if (respuesta == DialogResult.No)
-            {
-                return;
-            }
-
-            // RUTA DE BASE DE DATOS
-            string ruta = Path.Combine(Application.StartupPath, "integradora boceto.accdb");
-            string cadenaConexion = $@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={ruta}";
-
-            string consulta = "DELETE FROM Proveedores WHERE Id_Proveedor = ?";
-
-            try
-            {
-                using (OleDbConnection conexion = new OleDbConnection(cadenaConexion))
-                {
-                    using (OleDbCommand comando = new OleDbCommand(consulta, conexion))
-                    {
-                        // Solo dejamos el parámetro que pide el '?' de la consulta anterior
-                        comando.Parameters.AddWithValue("@id_proveedor", Convert.ToInt32(txtId_Proveedor.Text));
-                        conexion.Open();
-
-                        filasAfectadas = comando.ExecuteNonQuery();
-
-                        if (filasAfectadas > 0)
-                        {
-                            MessageBox.Show("Proveedor eliminado correctamente");
-                            this.Close();
-                        }
-                        else
-                        {
-                            MessageBox.Show("No se encontro el proveedor");
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al eliminar: " + ex.Message);
-            }
-        }
 
         private void FrmAgregarProveedores_Load(object sender, EventArgs e)
         {

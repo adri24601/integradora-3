@@ -21,165 +21,107 @@ namespace integra_1
 
         private void button1_Click(object sender, EventArgs e)  // Boton Guardar
         {
+            string nombre = txtNombre_Producto.Text;
+            string IDProducto = txtId_Producto.Text;
+            string marca = txtMarca_Producto.Text;
+            string cantidad = txtCantidad_Producto.Text;
+            string precio = txtPrecio_Producto.Text;
 
-            if (string.IsNullOrEmpty(txtNombre_Producto.Text) || string.IsNullOrEmpty(txtMarca_Producto.Text)
-                || string.IsNullOrEmpty(txtPrecio_Producto.Text) || string.IsNullOrEmpty(txtCantidad_Producto.Text)
-                || string.IsNullOrEmpty(txtImagen.Text) || string.IsNullOrEmpty(txtId_Proveedor.Text))
+            if(nombre == "")
             {
-                MessageBox.Show("Por favor, llena todos los campos necesarios.");
+                MessageBox.Show("Ingresa el nombre producto");
                 return;
             }
 
-
-            // 2. Establecer ruta
-            string ruta = Path.Combine(Application.StartupPath, "integradora boceto.accdb");
-            string cadenaConexion = $@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={ruta}";
-
-            // Usar UPDATE para crear un nuevo registro 
-            // INSERT crea otro registro de la misma información,  siempre y cuando cambie el Id_Producto
-
-            // 3. Consulta SQL completa con los 4 campos (los signos '?' se sustituyen en orden exacto abajo)
-            string consulta = "INSERT INTO Productos " + "(Id_Producto, Nombre_Producto, Marca_Producto, Precio_Producto, Cantidad_Producto, Imagen_Producto, Id_Proveedor) " + "VALUES (?, ?, ?, ?, ?, ?, ?)";
-
-            try
+            if(IDProducto == "")
             {
-                using (OleDbConnection conexion = new OleDbConnection(cadenaConexion))
-                {
-                    using (OleDbCommand comando = new OleDbCommand(consulta, conexion))
-                    {
-                        // Pasamos los parámetros en el mismo orden que aparecen en el INSERT
-                        comando.Parameters.AddWithValue("@id_producto", Convert.ToInt32(txtId_Producto.Text));
-                        comando.Parameters.AddWithValue("@nombre_producto", txtNombre_Producto.Text);
-                        comando.Parameters.AddWithValue("@marca_producto", txtMarca_Producto.Text);
-
-                        // Convertimos el texto del precio a número decimal/entero para que Access lo guarde bien
-                        comando.Parameters.AddWithValue("@precio_producto", Convert.ToDecimal(txtPrecio_Producto.Text));
-
-                        comando.Parameters.AddWithValue("@cantidad_producto", Convert.ToInt32(txtCantidad_Producto.Text));
-
-
-                        // Por ahora pasamos el texto de la imagen (como "arroz.png" o el link)
-                        comando.Parameters.AddWithValue("@imagen_producto", txtImagen.Text);
-                        comando.Parameters.AddWithValue("@id_proveedor", Convert.ToInt32(txtId_Proveedor.Text));
-
-                        conexion.Open();
-                        comando.ExecuteNonQuery(); // Guarda la fila completa en Access
-
-                        MessageBox.Show("Producto agregado correctamente.");
-
-                        this.Close(); // Cierra la ventana de captura al terminar
-                    }
-                }
+                MessageBox.Show("Ingresa ID_Producto");
+                return;
             }
-            catch (Exception ex)
+
+            if(marca == "")
             {
-                MessageBox.Show("Error al guardar toda la información: " + ex.Message);
+                MessageBox.Show("Ingresa la marca del producto");
+                return;
             }
+
+            if(cantidad == "")
+            {
+                MessageBox.Show("Ingresa la cantidad disponible");
+                return;
+            }
+
+            if(precio == "")
+            {
+                MessageBox.Show("Ingresa precio del producto");
+                return;
+            }
+
+            string ruta = @"C:\Users\LPC\Desktop\REPOSITORIO 3\integradora boceto.accdb";
+
+            string seguirRuta = $@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={ruta}";
+
+            using (OleDbConnection conexionBase = new OleDbConnection(seguirRuta))
+            {
+                conexionBase.Open();
+
+                string instruccion = @"INSERT INTO Productos (Nombre_Producto, Marca_Producto, Precio_Producto, Cantidad_Producto, Id_Producto) 
+                                                      VALUES (@Nombre, @Marca, @Precio, @Cantidad, @ID)";
+
+                OleDbCommand ejecutar = new OleDbCommand(instruccion, conexionBase);
+
+                ejecutar.Parameters.AddWithValue("@Nombre", nombre);
+                ejecutar.Parameters.AddWithValue("@Marca", marca);
+                ejecutar.Parameters.AddWithValue("@Precio", precio);
+                ejecutar.Parameters.AddWithValue("@Cantidad", cantidad);
+                ejecutar.Parameters.AddWithValue("@ID", IDProducto);
+
+                ejecutar.ExecuteNonQuery();
+
+                MessageBox.Show("Se ha agregado producto");
+            }
+
         }
 
         private void button3_Click(object sender, EventArgs e) // Button Modificar/Editar
         {
-            // Verificar la existencia de la Id_Producto
-            if (string.IsNullOrEmpty(txtId_Producto.Text))
+            string ruta = @"C:\Users\LPC\Desktop\REPOSITORIO 3\integradora boceto.accdb";
+
+            string seguirRuta = $@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={ruta}";
+
+            using (OleDbConnection conexionBase = new OleDbConnection(seguirRuta))
             {
-                MessageBox.Show("Seleccione el ID del producto que desea editar");
-                return;
-            }
+                conexionBase.Open();
 
-            // 2. Establecer ruta 
-            string ruta = Path.Combine(Application.StartupPath, "integradora boceto.accdb");
-            string cadenaConexion = $@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={ruta}";
+                string instruccion = @"UPDATE Productos SET 
+                               Nombre_Producto = @Nombre,
+                               Marca_Producto = @Marca,
+                               Precio_Producto = @Precio,
+                               Cantidad_Producto = @Cantidad
+                               WHERE Id_Producto = @ID";
 
-            string consulta = "UPDATE Productos SET " + "Nombre_Producto = ?, " + "Marca_Producto = ?, " + "Precio_Producto = ?, " + "Cantidad_Producto = ?, " + "Imagen_Producto = ?, " + "Id_Proveedor = ? " + "WHERE Id_Producto = ?";
+                OleDbCommand ejecutar = new OleDbCommand(instruccion, conexionBase);
 
-            try
-            {
-                using (OleDbConnection conexion = new OleDbConnection(cadenaConexion))
+                ejecutar.Parameters.AddWithValue("@Nombre", txtNombre_Producto.Text);
+                ejecutar.Parameters.AddWithValue("@Marca", txtMarca_Producto.Text);
+                ejecutar.Parameters.AddWithValue("@Precio", txtPrecio_Producto.Text);
+                ejecutar.Parameters.AddWithValue("@Cantidad", txtCantidad_Producto.Text);
+                ejecutar.Parameters.AddWithValue("@ID", txtId_Producto.Text);
+
+                int filasModificadas = ejecutar.ExecuteNonQuery();
+
+                if (filasModificadas > 0)
                 {
-                    using (OleDbCommand comando = new OleDbCommand(consulta, conexion))
-                    {
-                        // Los parámetros deben estar en el mismo orden que los ?
-                        comando.Parameters.AddWithValue("@nombre_producto", txtNombre_Producto.Text);
-                        comando.Parameters.AddWithValue("@marca_producto", txtMarca_Producto.Text);
-                        comando.Parameters.AddWithValue("@precio_producto", Convert.ToDecimal(txtPrecio_Producto.Text));
-                        comando.Parameters.AddWithValue("@cantidad_producto", Convert.ToInt32(txtCantidad_Producto.Text));
-                        comando.Parameters.AddWithValue("@imagen_producto", txtImagen.Text);
-                        comando.Parameters.AddWithValue("@id_proveedor", Convert.ToInt32(txtId_Proveedor.Text));
-                        comando.Parameters.AddWithValue("@id_producto", Convert.ToInt32(txtId_Producto.Text));
-
-                        conexion.Open();
-
-                        int filasAfectadas = comando.ExecuteNonQuery();
-
-
-                        if (filasAfectadas > 0)
-                        {
-                            MessageBox.Show("Producto actualizado correctamente.");
-                            this.Close();
-                        }
-                        else
-                        {
-                            MessageBox.Show("No se encontró el producto.");
-                        }
-                    }
+                    MessageBox.Show("Se ha modificado la información del producto");
+                }
+                else
+                {
+                    MessageBox.Show("No se encontró el producto.");
                 }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al actualizar: " + ex.Message);
-            }
-
         }
 
-        private void button2_Click(object sender, EventArgs e)  // Boton eliminar
-        {
-            int filasAfectadas = 0;
 
-            if (string.IsNullOrEmpty(txtId_Producto.Text))
-            {
-                MessageBox.Show("Seleccione el producto que desea eliminar.");
-                return;
-            }
-
-            DialogResult respuesta = MessageBox.Show("¿Seguro que quieres eliminar este producto de la base de datos?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-            if (respuesta == DialogResult.No)
-            {
-                return;
-            }
-
-            string ruta = Path.Combine(Application.StartupPath, "integradora boceto.accdb");
-            string cadenaConexion = $@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={ruta}";
-            string consulta = "DELETE FROM Productos WHERE Id_Producto = ?";
-
-            try
-            {
-                using (OleDbConnection conexion = new OleDbConnection(cadenaConexion))
-                {
-                    using (OleDbCommand comando = new OleDbCommand(consulta, conexion))
-                    {
-                        comando.Parameters.AddWithValue("@id_producto", txtId_Producto.Text);
-                        conexion.Open();
-
-                        filasAfectadas = comando.ExecuteNonQuery();
-
-                        if (filasAfectadas > 0)
-                        {
-                            MessageBox.Show("Producto eliminado correctamente.");
-                            this.Close();
-                        }
-                        else
-                        {
-                            MessageBox.Show("No se encontró el producto.");
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al eliminar: " + ex.Message);
-            }
-        }
 
         private void FrmAgregarProductos_Load(object sender, EventArgs e)
         {

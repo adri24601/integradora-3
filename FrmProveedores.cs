@@ -16,40 +16,34 @@ namespace integra_1
             InitializeComponent();
         }
 
-        // 1. Creamos la función que limpia y vuelve a rellenar la tabla
-        private void CargarProveedores() // LISTO
+
+        private void CargarProveedores() 
         {
-            // RUTA DE BASE DE DATOS
+            string ruta = @"C:\Users\LPC\Desktop\REPOSITORIO 3\integradora boceto.accdb";
 
-            string ruta = Path.Combine(Application.StartupPath, "integradora boceto.accdb");
-
-            string cadenaConexion = $@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={ruta}";
+            string seguirRuta = $@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={ruta}";
 
             string consulta = "SELECT * FROM Proveedores";
 
             try
             {
-                using (OleDbConnection conexion = new OleDbConnection(cadenaConexion))
+                using (OleDbConnection conexion = new OleDbConnection(seguirRuta))
                 {
-                    // adaptador sirve como puente, hace la consulta, y se encarga de abir y cerrar la conexión
                     OleDbDataAdapter adaptador = new OleDbDataAdapter(consulta, conexion);
 
-                    // creamos tabla en memorio para guardar lo que traiga Access
                     System.Data.DataTable tablaProveedores = new System.Data.DataTable();
 
-                    // Llenamos la tabla de memoria con los datos
                     adaptador.Fill(tablaProveedores);
 
-                    // Le decimos a dgvProveedores que su fuente de datos es la tabla de Access
                     dgvProveedores.DataSource = tablaProveedores;
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al cargar proveedores: " + ex.Message);
+                MessageBox.Show("Error al cargar dgv:  " + ex.Message);
             }
-
         }
+
         private void FrmProveedores_Load(object sender, EventArgs e) // LISTO
         {
             CargarProveedores();
@@ -58,27 +52,28 @@ namespace integra_1
 
         private void button1_Click(object sender, EventArgs e) // Boton Modificar
         {
-            // 1. Validamos que haya una fila seleccionada en tu tabla
             if (dgvProveedores.CurrentRow == null)
             {
                 MessageBox.Show("Seleccione un proveedor");
                 return;
             }
 
-            FrmAgregarProveedores ventana = new FrmAgregarProveedores();
+            FrmAgregarProveedores abrir = new FrmAgregarProveedores();
 
-            // Indicar que es una modificación 
-            ventana.EsEdicion = true;
+            abrir.EsEdicion = true;
 
-            ventana.txtId_Proveedor.Text = dgvProveedores.CurrentRow.Cells["Id_Proveedor"].Value.ToString();
-            ventana.txtProveedor_Nombre.Text = dgvProveedores.CurrentRow.Cells["Proveedor_Nombre"].Value.ToString();
-            ventana.txtProveedor_Empresa.Text = dgvProveedores.CurrentRow.Cells["Proveedor_Empresa"].Value.ToString();
-            ventana.txtProveedor_Telefono.Text = dgvProveedores.CurrentRow.Cells["Proveedor_Telefono"].Value.ToString();
-            ventana.txtProveedor_Correo.Text = dgvProveedores.CurrentRow.Cells["Proveedor_Correo"].Value.ToString();
-            ventana.txtProveedor_Direccion.Text = dgvProveedores.CurrentRow.Cells["Proveedor_Direccion"].Value.ToString();
+            abrir.btnGuardarProveedor.Visible = false;
+            abrir.btnGuardarProveedor.Enabled = false;
+
+            abrir.txtId_Proveedor.Text = dgvProveedores.CurrentRow.Cells["Id_Proveedor"].Value.ToString();
+            abrir.txtProveedor_Nombre.Text = dgvProveedores.CurrentRow.Cells["Proveedor_Nombre"].Value.ToString();
+            abrir.txtProveedor_Empresa.Text = dgvProveedores.CurrentRow.Cells["Proveedor_Empresa"].Value.ToString();
+            abrir.txtProveedor_Telefono.Text = dgvProveedores.CurrentRow.Cells["Proveedor_Telefono"].Value.ToString();
+            abrir.txtProveedor_Correo.Text = dgvProveedores.CurrentRow.Cells["Proveedor_Correo"].Value.ToString();
+            abrir.txtProveedor_Direccion.Text = dgvProveedores.CurrentRow.Cells["Proveedor_Direccion"].Value.ToString();
 
 
-            ventana.ShowDialog();
+            abrir.ShowDialog();
 
             // Recargar la tabla
             CargarProveedores();
@@ -88,10 +83,14 @@ namespace integra_1
 
         private void btnAgregarProveedor_Click(object sender, EventArgs e)  // Boton AgregarProveedor
         {
-            FrmAgregarProveedores ventanaAgregar = new FrmAgregarProveedores();
-            ventanaAgregar.ShowDialog();
+            FrmAgregarProveedores abrir = new FrmAgregarProveedores();
 
-            // Metodo para ACTUALIZAR LA TABLA
+            abrir.btnModificarProveedor.Visible = false;
+
+            abrir.btnModificarProveedor.Enabled = false;
+
+            abrir.ShowDialog();
+
             CargarProveedores();
 
         }
@@ -100,45 +99,32 @@ namespace integra_1
         {
             if (dgvProveedores.CurrentRow == null)
             {
-                MessageBox.Show("Selecciona el proveedor");
+                MessageBox.Show("Seleccione un proveedor");
                 return;
-
             }
 
-            // Pregunta si desea eliminar el proveedor seleccionado
             DialogResult respuesta = MessageBox.Show("¿Desea eliminar este proveedor?", "Eliminar", MessageBoxButtons.YesNo);
 
             if (respuesta == DialogResult.Yes)
             {
-                // RUTA DE BASE DE DATOS
+                string ruta = @"C:\Users\LPC\Desktop\REPOSITORIO 3\integradora boceto.accdb";
 
-                // 1. Establecer la ruta de la base de datos
-                string ruta = Path.Combine(Application.StartupPath, "integradora boceto.accdb");
+                string seguirRuta = $@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={ruta}";
 
-                // 2. Realizar la conexión con ACESS usando la ruta
-                string cadenaConexion = $@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={ruta}";
-
-                MessageBox.Show(ruta);
-
-                using (OleDbConnection conexion = new OleDbConnection(cadenaConexion))
+                using (OleDbConnection conexionBase = new OleDbConnection(seguirRuta))
                 {
-                    // 4. Abre la conexión
-                    conexion.Open();
+                    conexionBase.Open();
 
-                    // 5. 
-                    string consulta = "DELETE FROM Proveedores WHERE Id_Proveedor = ? ";
+                    string consulta = "DELETE FROM Proveedores WHERE Id_Proveedor = ?";
 
-                    // 6. Ejecuta la consulta
-                    OleDbCommand comando = new OleDbCommand(consulta, conexion);
+                    OleDbCommand comando = new OleDbCommand(consulta, conexionBase);
 
-                    // 7. Toma la ID del producto a eliminar
                     comando.Parameters.AddWithValue("Id_Proveedor", dgvProveedores.CurrentRow.Cells["Id_Proveedor"].Value);
 
-                    // 8. Ejecuta la eliminación
                     comando.ExecuteNonQuery();
                 }
 
-                // Confirmar eliminación
+                // Confirmación de eliminación
                 MessageBox.Show("Proveedor eliminado del sistema");
 
                 CargarProveedores();
@@ -200,6 +186,11 @@ namespace integra_1
         }
 
         private void btnInicio_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, PaintEventArgs e)
         {
 
         }

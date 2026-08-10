@@ -31,7 +31,6 @@
             txtNombre_Producto = new TextBox();
             txtId_Producto = new TextBox();
             btnGuardar = new Button();
-            label1 = new Label();
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
@@ -39,11 +38,9 @@
             txtMarca_Producto = new TextBox();
             txtPrecio_Producto = new TextBox();
             label6 = new Label();
-            btnEliminar = new Button();
             btnModificar_Producto = new Button();
             label7 = new Label();
             txtCantidad_Producto = new TextBox();
-            txtImagen = new TextBox();
             panel1 = new Panel();
             btnCerrar = new Guna.UI2.WinForms.Guna2Button();
             btnAyuda = new Guna.UI2.WinForms.Guna2Button();
@@ -59,8 +56,6 @@
             label10 = new Label();
             label9 = new Label();
             lbInformacionProd = new Label();
-            label8 = new Label();
-            txtId_Proveedor = new TextBox();
             panelContenido = new Panel();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).BeginInit();
@@ -101,18 +96,6 @@
             btnGuardar.Text = "Guardar";
             btnGuardar.UseVisualStyleBackColor = false;
             btnGuardar.Click += button1_Click;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Historic", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.FromArgb(49, 62, 200);
-            label1.Location = new Point(952, 513);
-            label1.Margin = new Padding(4, 0, 4, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(89, 28);
-            label1.TabIndex = 3;
-            label1.Text = "Imagen ";
             // 
             // label2
             // 
@@ -187,19 +170,6 @@
             label6.Text = "Precio de venta";
             label6.Click += label6_Click;
             // 
-            // btnEliminar
-            // 
-            btnEliminar.BackColor = Color.FromArgb(253, 77, 77);
-            btnEliminar.Font = new Font("Segoe UI Historic", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnEliminar.ForeColor = Color.White;
-            btnEliminar.Location = new Point(631, 819);
-            btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(211, 75);
-            btnEliminar.TabIndex = 12;
-            btnEliminar.Text = "Eliminar ";
-            btnEliminar.UseVisualStyleBackColor = false;
-            btnEliminar.Click += button2_Click;
-            // 
             // btnModificar_Producto
             // 
             btnModificar_Producto.BackColor = Color.FromArgb(94, 167, 239);
@@ -232,14 +202,6 @@
             txtCantidad_Producto.Size = new Size(288, 31);
             txtCantidad_Producto.TabIndex = 16;
             txtCantidad_Producto.TextChanged += textBox1_TextChanged;
-            // 
-            // txtImagen
-            // 
-            txtImagen.BackColor = SystemColors.GradientInactiveCaption;
-            txtImagen.Location = new Point(940, 566);
-            txtImagen.Name = "txtImagen";
-            txtImagen.Size = new Size(300, 31);
-            txtImagen.TabIndex = 17;
             // 
             // panel1
             // 
@@ -447,42 +409,17 @@
             lbInformacionProd.TabIndex = 20;
             lbInformacionProd.Text = "Registro de Producto";
             // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Segoe UI Historic", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label8.ForeColor = Color.FromArgb(49, 62, 200);
-            label8.Location = new Point(631, 648);
-            label8.Name = "label8";
-            label8.Size = new Size(191, 38);
-            label8.TabIndex = 21;
-            label8.Text = "ID Proveedor";
-            label8.Click += label8_Click_1;
-            // 
-            // txtId_Proveedor
-            // 
-            txtId_Proveedor.BackColor = SystemColors.GradientInactiveCaption;
-            txtId_Proveedor.Location = new Point(631, 698);
-            txtId_Proveedor.Name = "txtId_Proveedor";
-            txtId_Proveedor.Size = new Size(329, 31);
-            txtId_Proveedor.TabIndex = 22;
-            // 
             // panelContenido
             // 
             panelContenido.BackColor = Color.White;
-            panelContenido.Controls.Add(btnEliminar);
             panelContenido.Controls.Add(panel2);
             panelContenido.Controls.Add(lbInformacionProd);
-            panelContenido.Controls.Add(label8);
-            panelContenido.Controls.Add(txtId_Proveedor);
             panelContenido.Controls.Add(btnGuardar);
             panelContenido.Controls.Add(label4);
-            panelContenido.Controls.Add(txtImagen);
             panelContenido.Controls.Add(btnModificar_Producto);
             panelContenido.Controls.Add(txtId_Producto);
             panelContenido.Controls.Add(label2);
             panelContenido.Controls.Add(label6);
-            panelContenido.Controls.Add(label1);
             panelContenido.Controls.Add(txtNombre_Producto);
             panelContenido.Controls.Add(label7);
             panelContenido.Controls.Add(txtCantidad_Producto);
@@ -521,29 +458,22 @@
         }
 
         #endregion
-        private Button btnGuardar;
-        private Label label1;
         private Label label2;
         private Label label3;
         private Label label4;
         private Label label5;
         private Label label6;
-        private Button btnEliminar;
-        private Button btnModificar_Producto;
         private Label label7;
         public TextBox txtNombre_Producto;
         public TextBox txtId_Producto;
         public TextBox txtMarca_Producto;
         public TextBox txtPrecio_Producto;
-        public TextBox txtImagen;
         private Panel panel1;
         private Panel panel2;
         private Label lbInformacionProd;
         private Label label10;
         private Label label9;
         public TextBox txtCantidad_Producto;
-        private Label label8;
-        public TextBox txtId_Proveedor;
         private Panel panelContenido;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
         private Label label11;
@@ -555,5 +485,7 @@
         private Guna.UI2.WinForms.Guna2Button btnAyuda;
         private PictureBox picBoxUsuario;
         private PictureBox picBoxApartados;
+        public Button btnGuardar;
+        public Button btnModificar_Producto;
     }
 }

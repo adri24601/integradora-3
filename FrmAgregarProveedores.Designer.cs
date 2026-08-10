@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             btnModificarProveedor = new Button();
-            btnProveedor_Eliminar = new Button();
             btnGuardarProveedor = new Button();
             txtId_Proveedor = new TextBox();
             txtProveedor_Nombre = new TextBox();
@@ -60,6 +59,7 @@
             label8 = new Label();
             label7 = new Label();
             panel3 = new Panel();
+            txtId_Productos = new TextBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).BeginInit();
             panel2.SuspendLayout();
@@ -80,19 +80,6 @@
             btnModificarProveedor.Text = "Modificar";
             btnModificarProveedor.UseVisualStyleBackColor = false;
             btnModificarProveedor.Click += btnModificarProveedor_Click;
-            // 
-            // btnProveedor_Eliminar
-            // 
-            btnProveedor_Eliminar.BackColor = Color.FromArgb(253, 77, 77);
-            btnProveedor_Eliminar.Font = new Font("Segoe UI Historic", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnProveedor_Eliminar.ForeColor = Color.White;
-            btnProveedor_Eliminar.Location = new Point(723, 802);
-            btnProveedor_Eliminar.Name = "btnProveedor_Eliminar";
-            btnProveedor_Eliminar.Size = new Size(211, 75);
-            btnProveedor_Eliminar.TabIndex = 1;
-            btnProveedor_Eliminar.Text = "Eliminar";
-            btnProveedor_Eliminar.UseVisualStyleBackColor = false;
-            btnProveedor_Eliminar.Click += btnProveedor_Click;
             // 
             // btnGuardarProveedor
             // 
@@ -438,9 +425,9 @@
             // panel3
             // 
             panel3.BackColor = Color.White;
+            panel3.Controls.Add(txtId_Productos);
             panel3.Controls.Add(panel2);
             panel3.Controls.Add(label8);
-            panel3.Controls.Add(btnProveedor_Eliminar);
             panel3.Controls.Add(btnGuardarProveedor);
             panel3.Controls.Add(btnModificarProveedor);
             panel3.Controls.Add(txtProveedor_Direccion);
@@ -459,6 +446,13 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(1515, 968);
             panel3.TabIndex = 21;
+            // 
+            // txtId_Productos
+            // 
+            txtId_Productos.Location = new Point(1051, 414);
+            txtId_Productos.Name = "txtId_Productos";
+            txtId_Productos.Size = new Size(150, 31);
+            txtId_Productos.TabIndex = 20;
             // 
             // FrmAgregarProveedores
             // 
@@ -485,10 +479,6 @@
         }
 
         #endregion
-
-        private Button btnModificarProveedor;
-        private Button btnProveedor_Eliminar;
-        private Button btnGuardarProveedor;
         private Label label1;
         private Label label2;
         private Label label3;
@@ -518,5 +508,8 @@
         private Guna.UI2.WinForms.Guna2Button btnCerrar;
         private Guna.UI2.WinForms.Guna2Button btnAyuda;
         private Guna.UI2.WinForms.Guna2Button btnVentas;
+        public Button btnModificarProveedor;
+        public Button btnGuardarProveedor;
+        private TextBox txtId_Productos;
     }
 }
