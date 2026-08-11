@@ -35,6 +35,14 @@ namespace integra_1
 
                     adaptador.Fill(tablaProveedores);
 
+                    tablaProveedores.Columns["Id_Proveedor"].ColumnName = "Id_Proveedor";
+                    tablaProveedores.Columns["Proveedor_Nombre"].ColumnName = "Nombre";
+                    tablaProveedores.Columns["Proveedor_Empresa"].ColumnName = "Empresa";
+                    tablaProveedores.Columns["Proveedor_Telefono"].ColumnName = "Telefono";
+                    tablaProveedores.Columns["Proveedor_Correo"].ColumnName = "Correo";
+                    tablaProveedores.Columns["Proveedor_Direccion"].ColumnName = "Direccion";
+                    tablaProveedores.Columns["Id_Producto"].ColumnName = "Id_Producto";
+
                     dgvProveedores.DataSource = tablaProveedores;
                 }
             }
@@ -65,19 +73,25 @@ namespace integra_1
             abrir.btnGuardarProveedor.Visible = false;
             abrir.btnGuardarProveedor.Enabled = false;
 
+            abrir.lb_IDProveedor.Visible = false;
+            abrir.lb_IDProveedor.Enabled = false;
+
+            abrir.txtId_Proveedor.Visible = false;
+            abrir.txtId_Proveedor.Enabled = false;
+
             abrir.txtId_Proveedor.Text = dgvProveedores.CurrentRow.Cells["Id_Proveedor"].Value.ToString();
-            abrir.txtProveedor_Nombre.Text = dgvProveedores.CurrentRow.Cells["Proveedor_Nombre"].Value.ToString();
-            abrir.txtProveedor_Empresa.Text = dgvProveedores.CurrentRow.Cells["Proveedor_Empresa"].Value.ToString();
-            abrir.txtProveedor_Telefono.Text = dgvProveedores.CurrentRow.Cells["Proveedor_Telefono"].Value.ToString();
-            abrir.txtProveedor_Correo.Text = dgvProveedores.CurrentRow.Cells["Proveedor_Correo"].Value.ToString();
-            abrir.txtProveedor_Direccion.Text = dgvProveedores.CurrentRow.Cells["Proveedor_Direccion"].Value.ToString();
+            abrir.txtProveedor_Nombre.Text = dgvProveedores.CurrentRow.Cells["Nombre"].Value.ToString();
+            abrir.txtProveedor_Empresa.Text = dgvProveedores.CurrentRow.Cells["Empresa"].Value.ToString();
+            abrir.txtProveedor_Telefono.Text = dgvProveedores.CurrentRow.Cells["Telefono"].Value.ToString();
+            abrir.txtProveedor_Correo.Text = dgvProveedores.CurrentRow.Cells["Correo"].Value.ToString();
+            abrir.txtProveedor_Direccion.Text = dgvProveedores.CurrentRow.Cells["Direccion"].Value.ToString();
+            abrir.txtId_Productos.Text = dgvProveedores.CurrentRow.Cells["Id_Producto"].Value.ToString();
 
 
             abrir.ShowDialog();
 
             // Recargar la tabla
             CargarProveedores();
-
 
         }
 
@@ -86,8 +100,13 @@ namespace integra_1
             FrmAgregarProveedores abrir = new FrmAgregarProveedores();
 
             abrir.btnModificarProveedor.Visible = false;
-
             abrir.btnModificarProveedor.Enabled = false;
+
+            abrir.lb_IDProveedor.Visible = false;
+            abrir.lb_IDProveedor.Enabled = false;
+
+            abrir.txtId_Proveedor.Visible = false;
+            abrir.txtId_Proveedor.Enabled = false;
 
             abrir.ShowDialog();
 

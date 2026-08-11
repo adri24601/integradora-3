@@ -33,12 +33,6 @@ namespace integra_1
                 return;
             }
 
-            if (IDProveedor == "")
-            {
-                MessageBox.Show("Ingresa ID_Proveedor");
-                return;
-            }
-
             if (empresa == "")
             {
                 MessageBox.Show("Ingresa la empresa del proveedor");
@@ -77,8 +71,8 @@ namespace integra_1
             {
                 conexionBase.Open();
 
-                string instruccion = @"INSERT INTO Proveedores (Proveedor_Nombre, Proveedor_Empresa, Proveedor_Telefono, Proveedor_Correo, Proveedor_Direccion, Id_Proveedor, Id_Producto)
-                                                   VALUES (@Nombre, @Empresa, @Telefono, @Correo, @Direccion, @ID, @IDProducto)";
+                string instruccion = @"INSERT INTO Proveedores (Proveedor_Nombre, Proveedor_Empresa, Proveedor_Telefono, Proveedor_Correo, Proveedor_Direccion, Id_Producto)
+                                                   VALUES (@Nombre, @Empresa, @Telefono, @Correo, @Direccion, @IDProducto)";
 
                 OleDbCommand ejecutar = new OleDbCommand(instruccion, conexionBase);
 
@@ -87,7 +81,6 @@ namespace integra_1
                 ejecutar.Parameters.AddWithValue("@Telefono", telefono);
                 ejecutar.Parameters.AddWithValue("@Correo", correo);
                 ejecutar.Parameters.AddWithValue("@Direccion", direccion);
-                ejecutar.Parameters.AddWithValue("@ID", IDProveedor);
                 ejecutar.Parameters.AddWithValue("@IDProducto", IDProducto);
 
                 ejecutar.ExecuteNonQuery();
@@ -117,7 +110,8 @@ namespace integra_1
                        Proveedor_Empresa = @Empresa,
                        Proveedor_Telefono = @Telefono,
                        Proveedor_Correo = @Correo,
-                       Proveedor_Direccion = @Direccion
+                       Proveedor_Direccion = @Direccion, 
+                       Id_Producto = @IDProducto
                        WHERE Id_Proveedor = @ID";
 
                 OleDbCommand ejecutar = new OleDbCommand(instruccion, conexionBase);
@@ -127,6 +121,7 @@ namespace integra_1
                 ejecutar.Parameters.AddWithValue("@Telefono", txtProveedor_Telefono.Text);
                 ejecutar.Parameters.AddWithValue("@Correo", txtProveedor_Correo.Text);
                 ejecutar.Parameters.AddWithValue("@Direccion", txtProveedor_Direccion.Text);
+                ejecutar.Parameters.AddWithValue("@IDProducto", txtId_Productos.Text);
                 ejecutar.Parameters.AddWithValue("@ID", txtId_Proveedor.Text);
 
                 int filasModificadas = ejecutar.ExecuteNonQuery();

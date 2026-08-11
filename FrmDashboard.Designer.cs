@@ -258,6 +258,7 @@
             picBoxUsuario.SizeMode = PictureBoxSizeMode.Zoom;
             picBoxUsuario.TabIndex = 21;
             picBoxUsuario.TabStop = false;
+            picBoxUsuario.Click += picBoxUsuario_Click;
             // 
             // label7
             // 

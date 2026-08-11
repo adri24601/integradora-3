@@ -33,12 +33,6 @@ namespace integra_1
                 return;
             }
 
-            if(IDProducto == "")
-            {
-                MessageBox.Show("Ingresa ID_Producto");
-                return;
-            }
-
             if(marca == "")
             {
                 MessageBox.Show("Ingresa la marca del producto");
@@ -65,8 +59,8 @@ namespace integra_1
             {
                 conexionBase.Open();
 
-                string instruccion = @"INSERT INTO Productos (Nombre_Producto, Marca_Producto, Precio_Producto, Cantidad_Producto, Id_Producto) 
-                                                      VALUES (@Nombre, @Marca, @Precio, @Cantidad, @ID)";
+                string instruccion = @"INSERT INTO Productos (Nombre_Producto, Marca_Producto, Precio_Producto, Cantidad_Producto) 
+                                                      VALUES (@Nombre, @Marca, @Precio, @Cantidad)";
 
                 OleDbCommand ejecutar = new OleDbCommand(instruccion, conexionBase);
 
@@ -74,7 +68,6 @@ namespace integra_1
                 ejecutar.Parameters.AddWithValue("@Marca", marca);
                 ejecutar.Parameters.AddWithValue("@Precio", precio);
                 ejecutar.Parameters.AddWithValue("@Cantidad", cantidad);
-                ejecutar.Parameters.AddWithValue("@ID", IDProducto);
 
                 ejecutar.ExecuteNonQuery();
 

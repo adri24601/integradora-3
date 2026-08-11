@@ -36,7 +36,7 @@
             txtProveedor_Telefono = new TextBox();
             txtProveedor_Correo = new TextBox();
             txtProveedor_Direccion = new TextBox();
-            label1 = new Label();
+            lb_IDProveedor = new Label();
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
@@ -60,6 +60,7 @@
             label7 = new Label();
             panel3 = new Panel();
             txtId_Productos = new TextBox();
+            label12 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).BeginInit();
             panel2.SuspendLayout();
@@ -142,16 +143,16 @@
             txtProveedor_Direccion.Size = new Size(480, 31);
             txtProveedor_Direccion.TabIndex = 8;
             // 
-            // label1
+            // lb_IDProveedor
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Historic", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.FromArgb(49, 62, 200);
-            label1.Location = new Point(646, 360);
-            label1.Name = "label1";
-            label1.Size = new Size(187, 38);
-            label1.TabIndex = 9;
-            label1.Text = "Id Proveedor";
+            lb_IDProveedor.AutoSize = true;
+            lb_IDProveedor.Font = new Font("Segoe UI Historic", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lb_IDProveedor.ForeColor = Color.FromArgb(49, 62, 200);
+            lb_IDProveedor.Location = new Point(646, 360);
+            lb_IDProveedor.Name = "lb_IDProveedor";
+            lb_IDProveedor.Size = new Size(187, 38);
+            lb_IDProveedor.TabIndex = 9;
+            lb_IDProveedor.Text = "Id Proveedor";
             // 
             // label2
             // 
@@ -425,6 +426,7 @@
             // panel3
             // 
             panel3.BackColor = Color.White;
+            panel3.Controls.Add(label12);
             panel3.Controls.Add(txtId_Productos);
             panel3.Controls.Add(panel2);
             panel3.Controls.Add(label8);
@@ -437,7 +439,7 @@
             panel3.Controls.Add(txtProveedor_Correo);
             panel3.Controls.Add(txtProveedor_Nombre);
             panel3.Controls.Add(label4);
-            panel3.Controls.Add(label1);
+            panel3.Controls.Add(lb_IDProveedor);
             panel3.Controls.Add(txtProveedor_Telefono);
             panel3.Controls.Add(label3);
             panel3.Controls.Add(txtId_Proveedor);
@@ -453,6 +455,15 @@
             txtId_Productos.Name = "txtId_Productos";
             txtId_Productos.Size = new Size(150, 31);
             txtId_Productos.TabIndex = 20;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Location = new Point(1014, 354);
+            label12.Name = "label12";
+            label12.Size = new Size(108, 25);
+            label12.TabIndex = 21;
+            label12.Text = "Id_Producto";
             // 
             // FrmAgregarProveedores
             // 
@@ -510,6 +521,8 @@
         private Guna.UI2.WinForms.Guna2Button btnVentas;
         public Button btnModificarProveedor;
         public Button btnGuardarProveedor;
-        private TextBox txtId_Productos;
+        public Label lb_IDProveedor;
+        private Label label12;
+        public TextBox txtId_Productos;
     }
 }

@@ -303,6 +303,16 @@ namespace integra_1.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap pngwing_com__7_ {
+            get {
+                object obj = ResourceManager.GetObject("pngwing.com (7)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap re4 {
             get {
                 object obj = ResourceManager.GetObject("re4", resourceCulture);

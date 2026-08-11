@@ -193,7 +193,11 @@ namespace integra_1
         }
 
 
-
+        private void picBoxUsuario_Click(object sender, EventArgs e)
+        {
+            FrmUsuario frm = new FrmUsuario();
+            frm.Show();
+        }
 
 
 

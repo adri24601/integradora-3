@@ -39,11 +39,17 @@ namespace integra_1
             {
                 using (OleDbConnection conexion = new OleDbConnection(seguirRuta))
                 {
-                    OleDbDataAdapter adaptador = new OleDbDataAdapter(consulta, conexion);
+                    OleDbDataAdapter ejecutar = new OleDbDataAdapter(consulta, conexion);
 
                     System.Data.DataTable tablaProductos = new System.Data.DataTable();
 
-                    adaptador.Fill(tablaProductos);
+                    ejecutar.Fill(tablaProductos);
+
+                    tablaProductos.Columns["Id_Producto"].ColumnName = "Id_Producto";
+                    tablaProductos.Columns["Nombre_Producto"].ColumnName = "Nombre";
+                    tablaProductos.Columns["Marca_Producto"].ColumnName = "Marca";
+                    tablaProductos.Columns["Precio_Producto"].ColumnName = "Precio";
+                    tablaProductos.Columns["Cantidad_Producto"].ColumnName = "Cantidad";
                     
                     dgvProductos.DataSource = tablaProductos;
 
@@ -63,6 +69,13 @@ namespace integra_1
 
             abrir.btnModificar_Producto.Visible = false;
             abrir.btnModificar_Producto.Enabled = false;
+
+            abrir.lb_IDProducto.Visible = false;
+            abrir.lb_IDProducto.Enabled = false;
+
+            abrir.txtId_Producto.Visible = false;
+            abrir.txtId_Producto.Enabled = false;
+
             abrir.ShowDialog();
 
             CargarProducto();
@@ -87,13 +100,19 @@ namespace integra_1
             abrir.btnGuardar.Visible = false;
             abrir.btnGuardar.Enabled = false;
 
+            abrir.lb_IDProducto.Visible = false;
+            abrir.lb_IDProducto.Enabled = false;
+
+            abrir.txtId_Producto.Visible = false;
+            abrir.txtId_Producto.Enabled = false;
+
             abrir.EsEdicion = true;
 
             abrir.txtId_Producto.Text = dgvProductos.CurrentRow.Cells["Id_Producto"].Value.ToString();
-            abrir.txtNombre_Producto.Text = dgvProductos.CurrentRow.Cells["Nombre_Producto"].Value.ToString();
-            abrir.txtMarca_Producto.Text = dgvProductos.CurrentRow.Cells["Marca_Producto"].Value.ToString();
-            abrir.txtPrecio_Producto.Text = dgvProductos.CurrentRow.Cells["Precio_Producto"].Value.ToString();
-            abrir.txtCantidad_Producto.Text = dgvProductos.CurrentRow.Cells["Cantidad_Producto"].Value.ToString();
+            abrir.txtNombre_Producto.Text = dgvProductos.CurrentRow.Cells["Nombre"].Value.ToString();
+            abrir.txtMarca_Producto.Text = dgvProductos.CurrentRow.Cells["Marca"].Value.ToString();
+            abrir.txtPrecio_Producto.Text = dgvProductos.CurrentRow.Cells["Precio"].Value.ToString();
+            abrir.txtCantidad_Producto.Text = dgvProductos.CurrentRow.Cells["Cantidad"].Value.ToString();
 
             abrir.ShowDialog();
 
