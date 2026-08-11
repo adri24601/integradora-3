@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmUsuario));
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -50,12 +51,13 @@
             txtNombrePropietario = new TextBox();
             label11 = new Label();
             panel1 = new Panel();
+            link_RegresarLogin = new LinkLabel();
             btnConfiguracionTienda = new HartUI.Controls.cuiButton();
-            pictureBox1 = new PictureBox();
+            picBoxCerrar = new PictureBox();
             cuiPanel1.SuspendLayout();
             cuiPanel2.SuspendLayout();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picBoxCerrar).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -286,8 +288,9 @@
             // panel1
             // 
             panel1.BackColor = Color.White;
+            panel1.Controls.Add(link_RegresarLogin);
             panel1.Controls.Add(btnConfiguracionTienda);
-            panel1.Controls.Add(pictureBox1);
+            panel1.Controls.Add(picBoxCerrar);
             panel1.Controls.Add(cuiPanel1);
             panel1.Controls.Add(cuiPanel2);
             panel1.Controls.Add(label1);
@@ -295,6 +298,19 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(804, 865);
             panel1.TabIndex = 13;
+            // 
+            // link_RegresarLogin
+            // 
+            link_RegresarLogin.AutoSize = true;
+            link_RegresarLogin.Font = new Font("Segoe UI Symbol", 12F, FontStyle.Bold);
+            link_RegresarLogin.LinkColor = Color.RoyalBlue;
+            link_RegresarLogin.Location = new Point(623, 785);
+            link_RegresarLogin.Name = "link_RegresarLogin";
+            link_RegresarLogin.Size = new Size(114, 32);
+            link_RegresarLogin.TabIndex = 15;
+            link_RegresarLogin.TabStop = true;
+            link_RegresarLogin.Text = "Regresar";
+            link_RegresarLogin.LinkClicked += link_RegresarLogin_LinkClicked;
             // 
             // btnConfiguracionTienda
             // 
@@ -334,15 +350,16 @@
             btnConfiguracionTienda.TextSpacing = 2;
             btnConfiguracionTienda.Click += btnConfiguracionTienda_Click;
             // 
-            // pictureBox1
+            // picBoxCerrar
             // 
-            pictureBox1.Image = Properties.Resources.pngwing_com__7_;
-            pictureBox1.Location = new Point(639, 27);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(98, 93);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 13;
-            pictureBox1.TabStop = false;
+            picBoxCerrar.Image = (Image)resources.GetObject("picBoxCerrar.Image");
+            picBoxCerrar.Location = new Point(756, 11);
+            picBoxCerrar.Name = "picBoxCerrar";
+            picBoxCerrar.Size = new Size(37, 41);
+            picBoxCerrar.SizeMode = PictureBoxSizeMode.Zoom;
+            picBoxCerrar.TabIndex = 13;
+            picBoxCerrar.TabStop = false;
+            picBoxCerrar.Click += picBoxCerrar_Click;
             // 
             // FrmUsuario
             // 
@@ -359,7 +376,7 @@
             cuiPanel2.PerformLayout();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picBoxCerrar).EndInit();
             ResumeLayout(false);
         }
 
@@ -375,7 +392,6 @@
         private HartUI.Controls.cuiPanel cuiPanel1;
         private HartUI.Controls.cuiPanel cuiPanel2;
         private Panel panel1;
-        private PictureBox pictureBox1;
         private Label label11;
         private Label label10;
         private TextBox txtContrasenaTienda;
@@ -388,5 +404,7 @@
         private HartUI.Controls.cuiButton btnConfiguracionTienda;
         public Label lb_idTienda;
         public TextBox txtID_Tienda;
+        public PictureBox picBoxCerrar;
+        public LinkLabel link_RegresarLogin;
     }
 }

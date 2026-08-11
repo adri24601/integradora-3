@@ -224,6 +224,9 @@ namespace integra_1
 
             abrir.txtID_Tienda.Visible = false;
             abrir.txtID_Tienda.Enabled = false;
+
+            abrir.link_RegresarLogin.Visible = false;
+            abrir.link_RegresarLogin.Enabled = false;
         }
 
         private void picBoxApartados_Click(object sender, EventArgs e)

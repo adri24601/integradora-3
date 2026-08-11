@@ -33,6 +33,8 @@
             label2 = new Label();
             panel1 = new Panel();
             cuiPanel1 = new HartUI.Controls.cuiPanel();
+            label3 = new Label();
+            linkLabel1 = new LinkLabel();
             pictureBox2 = new PictureBox();
             texContrasena = new HartUI.Controls.cuiTextBox();
             texUsuario = new HartUI.Controls.cuiTextBox();
@@ -92,6 +94,8 @@
             // 
             // cuiPanel1
             // 
+            cuiPanel1.Controls.Add(label3);
+            cuiPanel1.Controls.Add(linkLabel1);
             cuiPanel1.Controls.Add(pictureBox2);
             cuiPanel1.Controls.Add(label2);
             cuiPanel1.Controls.Add(texContrasena);
@@ -105,8 +109,34 @@
             cuiPanel1.PanelColor = Color.White;
             cuiPanel1.PanelOutlineColor = Color.FromArgb(64, 128, 128, 128);
             cuiPanel1.Rounding = new Padding(30);
-            cuiPanel1.Size = new Size(519, 712);
+            cuiPanel1.Size = new Size(519, 753);
             cuiPanel1.TabIndex = 6;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.BackColor = Color.White;
+            label3.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label3.ForeColor = SystemColors.ControlDarkDark;
+            label3.Location = new Point(96, 684);
+            label3.Name = "label3";
+            label3.Size = new Size(235, 28);
+            label3.TabIndex = 10;
+            label3.Text = "¿Olvidaste tu contraseña?";
+            // 
+            // linkLabel1
+            // 
+            linkLabel1.AutoSize = true;
+            linkLabel1.BackColor = Color.White;
+            linkLabel1.Font = new Font("Segoe UI Symbol", 10F);
+            linkLabel1.LinkColor = Color.RoyalBlue;
+            linkLabel1.Location = new Point(327, 684);
+            linkLabel1.Name = "linkLabel1";
+            linkLabel1.Size = new Size(105, 28);
+            linkLabel1.TabIndex = 9;
+            linkLabel1.TabStop = true;
+            linkLabel1.Text = "Recuperar ";
+            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
             // 
             // pictureBox2
             // 
@@ -229,5 +259,7 @@
         private HartUI.Controls.cuiTextBox texContrasena;
         private HartUI.Controls.cuiTextBox texUsuario;
         private PictureBox pictureBox2;
+        private LinkLabel linkLabel1;
+        private Label label3;
     }
 }

@@ -273,6 +273,16 @@ namespace integra_1.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap pngwing_com__10_ {
+            get {
+                object obj = ResourceManager.GetObject("pngwing.com (10)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pngwing_com__3_ {
             get {
                 object obj = ResourceManager.GetObject("pngwing.com (3)", resourceCulture);
@@ -313,6 +323,26 @@ namespace integra_1.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap pngwing_com__8_ {
+            get {
+                object obj = ResourceManager.GetObject("pngwing.com (8)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pngwing_com__9_ {
+            get {
+                object obj = ResourceManager.GetObject("pngwing.com (9)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap re4 {
             get {
                 object obj = ResourceManager.GetObject("re4", resourceCulture);
@@ -336,6 +366,16 @@ namespace integra_1.Properties {
         internal static System.Drawing.Bitmap Salir21 {
             get {
                 object obj = ResourceManager.GetObject("Salir21", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Salir22 {
+            get {
+                object obj = ResourceManager.GetObject("Salir22", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

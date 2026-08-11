@@ -99,5 +99,16 @@ namespace integra_1
             }
         }
 
+        private void picBoxCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void link_RegresarLogin_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Form1 abrir = new Form1();
+            abrir.Show();
+            this.Hide();
+        }
     }
 } 
