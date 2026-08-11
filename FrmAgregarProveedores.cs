@@ -201,5 +201,10 @@ namespace integra_1
             frm.Show();
             this.Hide();
         }
+
+        private void picBoxCerrarPanell_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

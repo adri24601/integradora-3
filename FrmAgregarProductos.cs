@@ -27,25 +27,25 @@ namespace integra_1
             string cantidad = txtCantidad_Producto.Text;
             string precio = txtPrecio_Producto.Text;
 
-            if(nombre == "")
+            if (nombre == "")
             {
                 MessageBox.Show("Ingresa el nombre producto");
                 return;
             }
 
-            if(marca == "")
+            if (marca == "")
             {
                 MessageBox.Show("Ingresa la marca del producto");
                 return;
             }
 
-            if(cantidad == "")
+            if (cantidad == "")
             {
                 MessageBox.Show("Ingresa la cantidad disponible");
                 return;
             }
 
-            if(precio == "")
+            if (precio == "")
             {
                 MessageBox.Show("Ingresa precio del producto");
                 return;
@@ -258,6 +258,11 @@ namespace integra_1
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void picBoxCerrarPanel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
