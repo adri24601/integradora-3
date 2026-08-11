@@ -15,64 +15,11 @@ namespace integra_1
             InitializeComponent();
         }
 
-
-        private void btnCerrar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            FrmDashboard frm = new FrmDashboard();
-            frm.Show();
-            this.Hide();
-        }
-
         private void FrmAyuda_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void btnProductos_Click(object sender, EventArgs e)
-        {
-            FrmProductos frm = new FrmProductos();
-            frm.Show();
-            this.Hide();
-        }
-
-        private void btnProveedores_Click(object sender, EventArgs e)
-        {
-            FrmProveedores frm = new FrmProveedores();
-            frm.Show();
-            this.Hide();
-        }
-
-        private void btnVentas_Click(object sender, EventArgs e)
-        {
-            FrmVentas frm = new FrmVentas();
-            frm.Show();
-            this.Hide();
-        }
-
-        private void btnReportes_Click(object sender, EventArgs e)
-        {
-            FrmReportes frm = new FrmReportes();
-            frm.Show();
-            this.Hide();
-        }
-
-        private void btnAyuda_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnCerrar_Sesion_Click(object sender, EventArgs e)
-        {
-            Form1 frm = new Form1();
-            frm.Show();
-
-            this.Hide();
-        }
         private void btnAgregarProducto_Click(object sender, EventArgs e)
         {
             string mensaje = "Para agregar un producto:\n\n" +
@@ -141,6 +88,63 @@ namespace integra_1
         private void btnNoProducto_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void picBoxUsuario_Click(object sender, EventArgs e)
+        {
+            FrmUsuario abrir = new FrmUsuario();
+            abrir.Show();
+
+            abrir.lb_idTienda.Visible = false;
+            abrir.lb_idTienda.Enabled = false;
+
+            abrir.txtID_Tienda.Visible = false;
+            abrir.txtID_Tienda.Enabled = false;
+        }
+
+        private void btnInicio_Click(object sender, EventArgs e)
+        {
+            FrmDashboard frm = new FrmDashboard();
+            frm.Show();
+            this.Hide();
+        }
+
+        private void btnProductos_Click_1(object sender, EventArgs e)
+        {
+            FrmProductos frm = new FrmProductos();
+            frm.Show();
+            this.Hide();
+        }
+
+        private void cuiButton3_Click(object sender, EventArgs e) // btnProveedores
+        {
+            FrmProveedores frm = new FrmProveedores();
+            frm.Show();
+            this.Hide();
+        }
+
+        private void btnVentas_Click_1(object sender, EventArgs e)
+        {
+            FrmVentas frm = new FrmVentas();
+            frm.Show();
+            this.Hide();
+        }
+
+        private void btnAyuda_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCerrar_Click_1(object sender, EventArgs e)
+        {
+            Form1 frm = new Form1();
+            frm.Show();
+            this.Hide();
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Bienvenido al sistema de control de inventario");
         }
     }
 }

@@ -17,7 +17,7 @@ namespace integra_1
         }
 
 
-        private void CargarProveedores() 
+        private void CargarProveedores()
         {
             string ruta = @"C:\Users\LPC\Desktop\REPOSITORIO 3\integradora boceto.accdb";
 
@@ -212,6 +212,23 @@ namespace integra_1
         private void button1_Click(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void picBoxUsuarios_Click(object sender, EventArgs e)
+        {
+            FrmUsuario abrir = new FrmUsuario();
+            abrir.Show();
+
+            abrir.lb_idTienda.Visible = false;
+            abrir.lb_idTienda.Enabled = false;
+
+            abrir.txtID_Tienda.Visible = false;
+            abrir.txtID_Tienda.Enabled = false;
+        }
+
+        private void picBoxApartados_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Bienvenido al sistema de control de inventario");
         }
     }
 }

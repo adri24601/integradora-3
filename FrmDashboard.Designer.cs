@@ -248,6 +248,7 @@
             picBoxApartados.SizeMode = PictureBoxSizeMode.Zoom;
             picBoxApartados.TabIndex = 21;
             picBoxApartados.TabStop = false;
+            picBoxApartados.Click += picBoxApartados_Click;
             // 
             // picBoxUsuario
             // 

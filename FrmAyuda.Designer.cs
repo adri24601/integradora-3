@@ -40,7 +40,7 @@
             btnProductos = new HartUI.Controls.cuiButton();
             btnInicio = new HartUI.Controls.cuiButton();
             panel2 = new Panel();
-            pictureBox1 = new PictureBox();
+            picBoxUsuario = new PictureBox();
             pictureBox5 = new PictureBox();
             label2 = new Label();
             lblTitulo = new Label();
@@ -74,7 +74,7 @@
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picBoxUsuario).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             panel8.SuspendLayout();
             cuiPanel5.SuspendLayout();
@@ -161,6 +161,7 @@
             btnCerrar.TextAlignment = StringAlignment.Center;
             btnCerrar.TextPadding = 12;
             btnCerrar.TextSpacing = 2;
+            btnCerrar.Click += btnCerrar_Click_1;
             // 
             // cuiButton3
             // 
@@ -198,6 +199,7 @@
             cuiButton3.TextAlignment = StringAlignment.Center;
             cuiButton3.TextPadding = 12;
             cuiButton3.TextSpacing = 2;
+            cuiButton3.Click += cuiButton3_Click;
             // 
             // btnVentas
             // 
@@ -235,6 +237,7 @@
             btnVentas.TextAlignment = StringAlignment.Center;
             btnVentas.TextPadding = 12;
             btnVentas.TextSpacing = 2;
+            btnVentas.Click += btnVentas_Click_1;
             // 
             // btnAyuda
             // 
@@ -272,6 +275,7 @@
             btnAyuda.TextAlignment = StringAlignment.Center;
             btnAyuda.TextPadding = 12;
             btnAyuda.TextSpacing = 2;
+            btnAyuda.Click += btnAyuda_Click_1;
             // 
             // btnProductos
             // 
@@ -309,6 +313,7 @@
             btnProductos.TextAlignment = StringAlignment.Center;
             btnProductos.TextPadding = 12;
             btnProductos.TextSpacing = 2;
+            btnProductos.Click += btnProductos_Click_1;
             // 
             // btnInicio
             // 
@@ -346,11 +351,12 @@
             btnInicio.TextAlignment = StringAlignment.Center;
             btnInicio.TextPadding = 12;
             btnInicio.TextSpacing = 2;
+            btnInicio.Click += btnInicio_Click;
             // 
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(49, 6, 158);
-            panel2.Controls.Add(pictureBox1);
+            panel2.Controls.Add(picBoxUsuario);
             panel2.Controls.Add(pictureBox5);
             panel2.Controls.Add(label2);
             panel2.Controls.Add(lblTitulo);
@@ -359,15 +365,16 @@
             panel2.Size = new Size(1518, 186);
             panel2.TabIndex = 1;
             // 
-            // pictureBox1
+            // picBoxUsuario
             // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(1266, 39);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(140, 117);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 5;
-            pictureBox1.TabStop = false;
+            picBoxUsuario.Image = (Image)resources.GetObject("picBoxUsuario.Image");
+            picBoxUsuario.Location = new Point(1266, 39);
+            picBoxUsuario.Name = "picBoxUsuario";
+            picBoxUsuario.Size = new Size(140, 117);
+            picBoxUsuario.SizeMode = PictureBoxSizeMode.Zoom;
+            picBoxUsuario.TabIndex = 5;
+            picBoxUsuario.TabStop = false;
+            picBoxUsuario.Click += picBoxUsuario_Click;
             // 
             // pictureBox5
             // 
@@ -378,6 +385,7 @@
             pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox5.TabIndex = 4;
             pictureBox5.TabStop = false;
+            pictureBox5.Click += pictureBox5_Click;
             // 
             // label2
             // 
@@ -741,7 +749,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picBoxUsuario).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             panel8.ResumeLayout(false);
             cuiPanel5.ResumeLayout(false);
@@ -793,7 +801,7 @@
         private Label label16;
         private Label label14;
         private Label label15;
-        private PictureBox pictureBox1;
+        private PictureBox picBoxUsuario;
         private Label label1;
         private PictureBox pictureBox3;
         private PictureBox pictureBox7;

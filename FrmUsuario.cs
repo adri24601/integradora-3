@@ -18,7 +18,7 @@ namespace integra_1
 
         private void FrmUsuario_Load(object sender, EventArgs e)
         {
-
+            CargarConfiguracionTienda();
         }
 
         private void btnConfiguracionTienda_Click(object sender, EventArgs e)
@@ -40,14 +40,15 @@ namespace integra_1
             using (OleDbConnection conexionBase = new OleDbConnection(seguirRuta))
             {
                 conexionBase.Open();
-                
-                string llenarTabla = @"UPDATE Tienda SET Nombre_Tienda = ?,
-                                                    Nombres_Propietario = ?, 
-                                                    AP_Propietario = ?, 
-                                                    AM_Propietario = ?, 
-                                                    Clave_Recuperacion = ?, 
-                                                    Usuario = ?,
-                                                    Contrasena = ? 
+
+                string llenarTabla = @"UPDATE Tienda SET 
+                                                          Nombre_Tienda = ?,
+                                                          Nombres_Propietario = ?,
+                                                          AP_Propietario = ?,
+                                                          AM_Propietario = ?,
+                                                          Clave_Recuperacion = ?,
+                                                          Usuario = ?,
+                                                          Contrasena = ?
                                                     WHERE Id_Tienda = ?";
 
                 OleDbCommand ejecutar = new OleDbCommand(llenarTabla, conexionBase);
@@ -61,10 +62,42 @@ namespace integra_1
                 ejecutar.Parameters.AddWithValue("@Contrasena", contrasena);
                 ejecutar.Parameters.AddWithValue("@Id_Tienda", idTienda);
 
-
                 ejecutar.ExecuteNonQuery();
+
+                MessageBox.Show("Se ha registrado la información");
+            }
+        }
+
+        private void CargarConfiguracionTienda()
+        {
+            string ruta = @"C:\Users\LPC\Desktop\REPOSITORIO 3\integradora boceto.accdb";
+
+            string seguirRuta = $@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={ruta}";
+
+            using (OleDbConnection conexionBase = new OleDbConnection(seguirRuta))
+            {
+                conexionBase.Open();
+
+                string consulta = "SELECT * FROM Tienda";
+
+                OleDbCommand ejecutar = new OleDbCommand(consulta, conexionBase);
+                OleDbDataReader lector = ejecutar.ExecuteReader();
+
+                if (lector.Read())
+                {
+                    txtID_Tienda.Text = lector["Id_Tienda"].ToString();
+                    txtNomTienda.Text = lector["Nombre_Tienda"].ToString();
+                    txtNombrePropietario.Text = lector["Nombres_Propietario"].ToString();
+                    txtAP_Propietario.Text = lector["AP_Propietario"].ToString();
+                    txtAM_Propietario.Text = lector["AM_Propietario"].ToString();
+                    txtClaveTienda.Text = lector["Clave_Recuperacion"].ToString();
+                    txtUsuarioTienda.Text = lector["Usuario"].ToString();
+                    txtContrasenaTienda.Text = lector["Contrasena"].ToString();
+                }
+
+                lector.Close();
             }
         }
 
     }
-}
+} 

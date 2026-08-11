@@ -50,7 +50,7 @@ namespace integra_1
                     tablaProductos.Columns["Marca_Producto"].ColumnName = "Marca";
                     tablaProductos.Columns["Precio_Producto"].ColumnName = "Precio";
                     tablaProductos.Columns["Cantidad_Producto"].ColumnName = "Cantidad";
-                    
+
                     dgvProductos.DataSource = tablaProductos;
 
 
@@ -203,6 +203,23 @@ namespace integra_1
             Form1 frm = new Form1();
             frm.Show();
             this.Hide();
+        }
+
+        private void picBoxUsuario_Click(object sender, EventArgs e)
+        {
+            FrmUsuario abrir = new FrmUsuario();
+            abrir.Show();
+
+            abrir.lb_idTienda.Visible = false;
+            abrir.lb_idTienda.Enabled = false;
+
+            abrir.txtID_Tienda.Visible = false;
+            abrir.txtID_Tienda.Enabled = false;
+        }
+
+        private void picBoxApartados_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Bienvenido al sistema de control de inventario");
         }
     }
 }

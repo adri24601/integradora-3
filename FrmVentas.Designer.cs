@@ -321,6 +321,7 @@
             picBoxUsuario.SizeMode = PictureBoxSizeMode.Zoom;
             picBoxUsuario.TabIndex = 12;
             picBoxUsuario.TabStop = false;
+            picBoxUsuario.Click += picBoxUsuario_Click;
             // 
             // picBoxApartados
             // 
@@ -331,6 +332,7 @@
             picBoxApartados.SizeMode = PictureBoxSizeMode.Zoom;
             picBoxApartados.TabIndex = 11;
             picBoxApartados.TabStop = false;
+            picBoxApartados.Click += picBoxApartados_Click;
             // 
             // label1
             // 

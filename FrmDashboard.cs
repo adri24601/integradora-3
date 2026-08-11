@@ -195,8 +195,15 @@ namespace integra_1
 
         private void picBoxUsuario_Click(object sender, EventArgs e)
         {
-            FrmUsuario frm = new FrmUsuario();
-            frm.Show();
+            FrmUsuario abrir = new FrmUsuario();
+            abrir.Show();
+
+            abrir.lb_idTienda.Visible = false;
+            abrir.lb_idTienda.Enabled = false;
+
+            abrir.txtID_Tienda.Visible = false;
+            abrir.txtID_Tienda.Enabled = false;
+
         }
 
 
@@ -349,6 +356,10 @@ namespace integra_1
 
         }
 
+        private void picBoxApartados_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Bienvenido al sistema de control de inventario");
+        }
     }
 }
 
