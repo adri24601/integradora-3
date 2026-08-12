@@ -455,6 +455,7 @@
             btnNoSesion.TabIndex = 3;
             btnNoSesion.Text = "No puedo iniciar sesión                          >                                    >";
             btnNoSesion.UseVisualStyleBackColor = false;
+            btnNoSesion.Click += btnNoSesion_Click;
             // 
             // btnGuardar
             // 
@@ -466,6 +467,7 @@
             btnGuardar.TabIndex = 5;
             btnGuardar.Text = " Error al guardar información                  > ";
             btnGuardar.UseVisualStyleBackColor = false;
+            btnGuardar.Click += btnGuardar_Click;
             // 
             // btnNoProducto
             // 
@@ -548,11 +550,13 @@
             // 
             label18.AutoSize = true;
             label18.BackColor = Color.FromArgb(197, 212, 235);
-            label18.Location = new Point(211, 345);
+            label18.Font = new Font("Segoe UI Symbol", 9F, FontStyle.Bold);
+            label18.ForeColor = SystemColors.ControlDarkDark;
+            label18.Location = new Point(215, 335);
             label18.Name = "label18";
-            label18.Size = new Size(69, 25);
+            label18.Size = new Size(130, 25);
             label18.TabIndex = 6;
-            label18.Text = "label18";
+            label18.Text = "10:00 - 16:00";
             // 
             // label12
             // 
@@ -572,7 +576,7 @@
             label17.BackColor = Color.FromArgb(197, 212, 235);
             label17.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
             label17.ForeColor = Color.MidnightBlue;
-            label17.Location = new Point(211, 305);
+            label17.Location = new Point(207, 294);
             label17.Name = "label17";
             label17.Size = new Size(211, 30);
             label17.TabIndex = 5;
@@ -584,31 +588,35 @@
             label13.BackColor = Color.FromArgb(197, 212, 235);
             label13.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
             label13.ForeColor = Color.MidnightBlue;
-            label13.Location = new Point(211, 95);
+            label13.Location = new Point(215, 95);
             label13.Name = "label13";
-            label13.Size = new Size(203, 30);
+            label13.Size = new Size(198, 30);
             label13.TabIndex = 1;
-            label13.Text = "Correo electrónico.";
+            label13.Text = "Correo electrónico";
             // 
             // label16
             // 
             label16.AutoSize = true;
             label16.BackColor = Color.FromArgb(197, 212, 235);
-            label16.Location = new Point(211, 248);
+            label16.Font = new Font("Segoe UI Symbol", 9F, FontStyle.Bold);
+            label16.ForeColor = SystemColors.ControlDarkDark;
+            label16.Location = new Point(211, 243);
             label16.Name = "label16";
-            label16.Size = new Size(69, 25);
+            label16.Size = new Size(175, 25);
             label16.TabIndex = 4;
-            label16.Text = "label16";
+            label16.Text = "+52 872 156 8527";
             // 
             // label14
             // 
             label14.AutoSize = true;
             label14.BackColor = Color.FromArgb(197, 212, 235);
-            label14.Location = new Point(223, 141);
+            label14.Font = new Font("Segoe UI Symbol", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label14.ForeColor = SystemColors.ControlDarkDark;
+            label14.Location = new Point(215, 141);
             label14.Name = "label14";
-            label14.Size = new Size(69, 25);
+            label14.Size = new Size(288, 25);
             label14.TabIndex = 2;
-            label14.Text = "label14";
+            label14.Text = "cafinventorysistem@gmail.com";
             // 
             // label15
             // 
@@ -675,6 +683,7 @@
             btnEliminar.TabIndex = 2;
             btnEliminar.Text = "  ¿Cómo eliminar un producto?              >";
             btnEliminar.UseVisualStyleBackColor = false;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // label5
             // 
@@ -698,6 +707,7 @@
             btnEditar.TabIndex = 1;
             btnEditar.Text = "  ¿Cómo editar un producto?                 >                     ";
             btnEditar.UseVisualStyleBackColor = false;
+            btnEditar.Click += btnEditar_Click;
             // 
             // btnAgregar
             // 
@@ -709,6 +719,7 @@
             btnAgregar.TabIndex = 0;
             btnAgregar.Text = "  ¿Cómo agregar un producto?              >";
             btnAgregar.UseVisualStyleBackColor = false;
+            btnAgregar.Click += btnAgregar_Click;
             // 
             // cuiPanel2
             // 

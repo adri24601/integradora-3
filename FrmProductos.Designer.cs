@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             button1Agregar = new Button();
             dgvProductos = new DataGridView();
             btnModificarProducto = new Button();
@@ -48,6 +48,7 @@
             label1 = new Label();
             btnEliminarProducto = new Button();
             panel3 = new Panel();
+            texBuscar = new HartUI.Controls.cuiTextBox();
             ((System.ComponentModel.ISupportInitialize)dgvProductos).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).BeginInit();
@@ -62,9 +63,9 @@
             button1Agregar.BackColor = Color.FromArgb(68, 192, 95);
             button1Agregar.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1Agregar.ForeColor = Color.White;
-            button1Agregar.Location = new Point(194, 260);
+            button1Agregar.Location = new Point(951, 300);
             button1Agregar.Name = "button1Agregar";
-            button1Agregar.Size = new Size(349, 86);
+            button1Agregar.Size = new Size(349, 66);
             button1Agregar.TabIndex = 0;
             button1Agregar.Text = "+ Agregar producto";
             button1Agregar.UseVisualStyleBackColor = false;
@@ -73,19 +74,19 @@
             // dgvProductos
             // 
             dgvProductos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = SystemColors.Control;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 10F);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = SystemColors.Control;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 10F);
+            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dgvProductos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dgvProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvProductos.Location = new Point(194, 413);
+            dgvProductos.Location = new Point(206, 411);
             dgvProductos.Name = "dgvProductos";
             dgvProductos.RowHeadersWidth = 62;
-            dgvProductos.Size = new Size(1106, 466);
+            dgvProductos.Size = new Size(1106, 388);
             dgvProductos.TabIndex = 3;
             dgvProductos.CellContentClick += dgvProductos_CellContentClick;
             dgvProductos.DataError += dgvProductos_DataError;
@@ -95,11 +96,11 @@
             btnModificarProducto.BackColor = Color.FromArgb(94, 167, 239);
             btnModificarProducto.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
             btnModificarProducto.ForeColor = Color.White;
-            btnModificarProducto.Location = new Point(572, 262);
+            btnModificarProducto.Location = new Point(463, 848);
             btnModificarProducto.Name = "btnModificarProducto";
-            btnModificarProducto.Size = new Size(349, 86);
+            btnModificarProducto.Size = new Size(193, 60);
             btnModificarProducto.TabIndex = 4;
-            btnModificarProducto.Text = "Modificar Producto";
+            btnModificarProducto.Text = "Modificar";
             btnModificarProducto.UseVisualStyleBackColor = false;
             btnModificarProducto.Click += btnModificarProducto_Click;
             // 
@@ -221,7 +222,7 @@
             btnProductos.DisabledState.CustomBorderColor = Color.DarkGray;
             btnProductos.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnProductos.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnProductos.FillColor = Color.SkyBlue;
+            btnProductos.FillColor = Color.FromArgb(0, 21, 137);
             btnProductos.Font = new Font("Segoe UI Symbol", 11F, FontStyle.Bold);
             btnProductos.ForeColor = Color.White;
             btnProductos.Location = new Point(68, 445);
@@ -303,17 +304,18 @@
             btnEliminarProducto.BackColor = Color.FromArgb(253, 77, 77);
             btnEliminarProducto.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
             btnEliminarProducto.ForeColor = Color.White;
-            btnEliminarProducto.Location = new Point(951, 264);
+            btnEliminarProducto.Location = new Point(206, 848);
             btnEliminarProducto.Name = "btnEliminarProducto";
-            btnEliminarProducto.Size = new Size(349, 82);
+            btnEliminarProducto.Size = new Size(204, 60);
             btnEliminarProducto.TabIndex = 7;
-            btnEliminarProducto.Text = "Eliminar Producto";
+            btnEliminarProducto.Text = "Eliminar ";
             btnEliminarProducto.UseVisualStyleBackColor = false;
             btnEliminarProducto.Click += btnEliminarProducto_Click;
             // 
             // panel3
             // 
             panel3.BackColor = Color.White;
+            panel3.Controls.Add(texBuscar);
             panel3.Controls.Add(dgvProductos);
             panel3.Controls.Add(panel2);
             panel3.Controls.Add(btnEliminarProducto);
@@ -323,6 +325,35 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(1520, 968);
             panel3.TabIndex = 8;
+            // 
+            // texBuscar
+            // 
+            texBuscar.BackgroundColor = Color.RoyalBlue;
+            texBuscar.Content = "";
+            texBuscar.FocusBackgroundColor = Color.RoyalBlue;
+            texBuscar.FocusImageTint = Color.White;
+            texBuscar.FocusOutlineColor = Color.FromArgb(255, 106, 0);
+            texBuscar.Font = new Font("Segoe UI Symbol", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            texBuscar.ForeColor = Color.White;
+            texBuscar.Image = Properties.Resources.lupa11;
+            texBuscar.ImageExpand = new Point(15, 15);
+            texBuscar.ImageOffset = new Point(8, 0);
+            texBuscar.Location = new Point(206, 300);
+            texBuscar.Margin = new Padding(4);
+            texBuscar.Multiline = false;
+            texBuscar.Name = "texBuscar";
+            texBuscar.NormalImageTint = Color.White;
+            texBuscar.OutlineColor = Color.FromArgb(128, 128, 128, 128);
+            texBuscar.Padding = new Padding(97, 17, 97, 0);
+            texBuscar.PasswordChar = false;
+            texBuscar.PlaceholderColor = Color.White;
+            texBuscar.PlaceholderText = "Buscar Id_Producto o nombre";
+            texBuscar.Rounding = new Padding(8);
+            texBuscar.Size = new Size(704, 66);
+            texBuscar.TabIndex = 8;
+            texBuscar.TextOffset = new Size(65, 0);
+            texBuscar.UnderlinedStyle = true;
+            texBuscar.ContentChanged += texBuscar_ContentChanged;
             // 
             // FrmProductos
             // 
@@ -367,5 +398,6 @@
         private Guna.UI2.WinForms.Guna2Button btnAyuda;
         private Guna.UI2.WinForms.Guna2Button btnVentas;
         private Panel panel3;
+        private HartUI.Controls.cuiTextBox texBuscar;
     }
 }

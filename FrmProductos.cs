@@ -224,5 +224,47 @@ namespace integra_1
         {
             MessageBox.Show("Bienvenido al sistema de control de inventario");
         }
+
+        private void texBuscar_ContentChanged(object sender, EventArgs e)
+        {
+            BuscarID();
+            BuscarNombre();
+        }
+
+        private void BuscarID()
+        {
+            dgvProductos.ClearSelection();
+
+            foreach (DataGridViewRow fila in dgvProductos.Rows)
+            {
+                if (fila.Cells["Id_Producto"].Value != null)
+                {
+                    if (fila.Cells["Id_Producto"].Value.ToString() == texBuscar.Text)
+                    {
+                        fila.Selected = true;
+                        dgvProductos.CurrentCell = fila.Cells["Id_Producto"];
+                        break;
+                    }
+                }
+            }
+        }
+
+        private void BuscarNombre()
+        {
+            dgvProductos.ClearSelection();
+
+            foreach (DataGridViewRow fila in dgvProductos.Rows)
+            {
+                if (fila.Cells["Nombre"].Value != null)
+                {
+                    if (fila.Cells["Nombre"].Value.ToString().ToLower().Contains(texBuscar.Text.ToLower()))
+                    {
+                        fila.Selected = true;
+                        dgvProductos.CurrentCell = fila.Cells["Id_Producto"];
+                        break;
+                    }
+                }
+            }
+        }
     }
 }

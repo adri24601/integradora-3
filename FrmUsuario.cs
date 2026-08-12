@@ -33,6 +33,48 @@ namespace integra_1
             string apellidoP = txtAP_Propietario.Text;
             string apellidoM = txtAM_Propietario.Text;
 
+            if (nomTienda == "")
+            {
+                MessageBox.Show("Ingresar el nombre de la tienda");
+                return;
+            }
+
+            if (clave == "")
+            {
+                MessageBox.Show("Ingresa la clave del producto");
+                return;
+            }
+
+            if (usuario == "")
+            {
+                MessageBox.Show("Ingresa nombre de usuario");
+                return;
+            }
+
+            if (contrasena == "")
+            {
+                MessageBox.Show("Ingresa la contraseña");
+                return;
+            }
+
+            if(nomPropietario == "")
+            {
+                MessageBox.Show("Ingresa el nombre del propietario");
+                return;
+            }
+
+            if(apellidoP == "")
+            {
+                MessageBox.Show("Ingresa apellido paterno del propietario");
+                return;
+            }
+
+            if(apellidoM == "")
+            {
+                MessageBox.Show("Ingresa apellido materno del propietario");
+                return;
+            }
+
             string ruta = @"C:\Users\LPC\Desktop\REPOSITORIO 3\integradora boceto.accdb";
 
             string seguirRuta = $@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={ruta}";

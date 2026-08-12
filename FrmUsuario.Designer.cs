@@ -316,7 +316,7 @@
             // 
             btnConfiguracionTienda.CheckButton = false;
             btnConfiguracionTienda.Checked = false;
-            btnConfiguracionTienda.CheckedBackground = Color.FromArgb(255, 106, 0);
+            btnConfiguracionTienda.CheckedBackground = Color.SkyBlue;
             btnConfiguracionTienda.CheckedForeColor = Color.White;
             btnConfiguracionTienda.CheckedImageTint = Color.White;
             btnConfiguracionTienda.CheckedOutline = Color.FromArgb(255, 106, 0);
@@ -324,7 +324,7 @@
             btnConfiguracionTienda.DialogResult = DialogResult.None;
             btnConfiguracionTienda.Font = new Font("Segoe UI Symbol", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnConfiguracionTienda.ForeColor = Color.White;
-            btnConfiguracionTienda.HoverBackground = Color.White;
+            btnConfiguracionTienda.HoverBackground = Color.SkyBlue;
             btnConfiguracionTienda.HoverForeColor = Color.DimGray;
             btnConfiguracionTienda.HoverImageTint = Color.DimGray;
             btnConfiguracionTienda.HoverOutline = Color.FromArgb(32, 128, 128, 128);
@@ -338,7 +338,7 @@
             btnConfiguracionTienda.NormalOutline = Color.FromArgb(64, 128, 128, 128);
             btnConfiguracionTienda.OutlineThickness = 1F;
             btnConfiguracionTienda.Padding = new Padding(12);
-            btnConfiguracionTienda.PressedBackground = Color.WhiteSmoke;
+            btnConfiguracionTienda.PressedBackground = Color.SkyBlue;
             btnConfiguracionTienda.PressedForeColor = Color.FromArgb(32, 32, 32);
             btnConfiguracionTienda.PressedImageTint = Color.FromArgb(32, 32, 32);
             btnConfiguracionTienda.PressedOutline = Color.FromArgb(64, 128, 128, 128);

@@ -233,5 +233,28 @@ namespace integra_1
         {
             MessageBox.Show("Bienvenido al sistema de control de inventario");
         }
+
+        private void texBuscar_ContentChanged(object sender, EventArgs e)
+        {
+            BuscarEmpresa();
+        }
+
+        private void BuscarEmpresa()
+        {
+            dgvProveedores.ClearSelection();
+
+            foreach (DataGridViewRow fila in dgvProveedores.Rows)
+            {
+                if (fila.Cells["Empresa"].Value != null)
+                {
+                    if (fila.Cells["Empresa"].Value.ToString().ToLower().Contains(texBuscar.Text.ToLower()))
+                    {
+                        fila.Selected = true;
+                        dgvProveedores.CurrentCell = fila.Cells["Id_Proveedor"];
+                        break;
+                    }
+                }
+            }
+        }
     }
 }

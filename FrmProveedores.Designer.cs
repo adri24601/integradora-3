@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             btnModificarProveedores = new Button();
             btnAgregarProveedor = new Button();
             dgvProveedores = new DataGridView();
@@ -48,6 +48,7 @@
             label1 = new Label();
             btnEliminar_Proveedor = new Button();
             btnInicio = new Panel();
+            texBuscar = new HartUI.Controls.cuiTextBox();
             ((System.ComponentModel.ISupportInitialize)dgvProveedores).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).BeginInit();
@@ -62,9 +63,9 @@
             btnModificarProveedores.BackColor = Color.FromArgb(94, 167, 239);
             btnModificarProveedores.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
             btnModificarProveedores.ForeColor = Color.White;
-            btnModificarProveedores.Location = new Point(589, 260);
+            btnModificarProveedores.Location = new Point(208, 847);
             btnModificarProveedores.Name = "btnModificarProveedores";
-            btnModificarProveedores.Size = new Size(349, 86);
+            btnModificarProveedores.Size = new Size(216, 56);
             btnModificarProveedores.TabIndex = 1;
             btnModificarProveedores.Text = "Modificar ";
             btnModificarProveedores.UseVisualStyleBackColor = false;
@@ -75,9 +76,9 @@
             btnAgregarProveedor.BackColor = Color.FromArgb(68, 192, 95);
             btnAgregarProveedor.Font = new Font("Segoe UI Symbol", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAgregarProveedor.ForeColor = Color.White;
-            btnAgregarProveedor.Location = new Point(208, 262);
+            btnAgregarProveedor.Location = new Point(968, 280);
             btnAgregarProveedor.Name = "btnAgregarProveedor";
-            btnAgregarProveedor.Size = new Size(349, 86);
+            btnAgregarProveedor.Size = new Size(346, 68);
             btnAgregarProveedor.TabIndex = 2;
             btnAgregarProveedor.Text = "+ Agregar proveedor";
             btnAgregarProveedor.UseVisualStyleBackColor = false;
@@ -86,19 +87,19 @@
             // dgvProveedores
             // 
             dgvProveedores.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = SystemColors.Control;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 10F);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvProveedores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Control;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 10F);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dgvProveedores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dgvProveedores.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvProveedores.Location = new Point(208, 412);
+            dgvProveedores.Location = new Point(208, 393);
             dgvProveedores.Name = "dgvProveedores";
             dgvProveedores.RowHeadersWidth = 62;
-            dgvProveedores.Size = new Size(1106, 466);
+            dgvProveedores.Size = new Size(1106, 407);
             dgvProveedores.TabIndex = 0;
             dgvProveedores.CellContentClick += dgvProveedores_CellContentClick;
             // 
@@ -304,9 +305,9 @@
             btnEliminar_Proveedor.BackColor = Color.FromArgb(253, 77, 77);
             btnEliminar_Proveedor.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
             btnEliminar_Proveedor.ForeColor = Color.White;
-            btnEliminar_Proveedor.Location = new Point(965, 260);
+            btnEliminar_Proveedor.Location = new Point(473, 847);
             btnEliminar_Proveedor.Name = "btnEliminar_Proveedor";
-            btnEliminar_Proveedor.Size = new Size(349, 86);
+            btnEliminar_Proveedor.Size = new Size(216, 56);
             btnEliminar_Proveedor.TabIndex = 5;
             btnEliminar_Proveedor.Text = "Eliminar ";
             btnEliminar_Proveedor.UseVisualStyleBackColor = false;
@@ -315,6 +316,7 @@
             // btnInicio
             // 
             btnInicio.BackColor = Color.White;
+            btnInicio.Controls.Add(texBuscar);
             btnInicio.Controls.Add(panel2);
             btnInicio.Controls.Add(btnEliminar_Proveedor);
             btnInicio.Controls.Add(dgvProveedores);
@@ -325,6 +327,35 @@
             btnInicio.Size = new Size(1513, 968);
             btnInicio.TabIndex = 6;
             btnInicio.Paint += btnInicio_Paint;
+            // 
+            // texBuscar
+            // 
+            texBuscar.BackgroundColor = Color.RoyalBlue;
+            texBuscar.Content = "";
+            texBuscar.FocusBackgroundColor = Color.RoyalBlue;
+            texBuscar.FocusImageTint = Color.White;
+            texBuscar.FocusOutlineColor = Color.FromArgb(255, 106, 0);
+            texBuscar.Font = new Font("Segoe UI Symbol", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            texBuscar.ForeColor = Color.White;
+            texBuscar.Image = Properties.Resources.lupa1;
+            texBuscar.ImageExpand = new Point(15, 15);
+            texBuscar.ImageOffset = new Point(8, 0);
+            texBuscar.Location = new Point(208, 280);
+            texBuscar.Margin = new Padding(4);
+            texBuscar.Multiline = false;
+            texBuscar.Name = "texBuscar";
+            texBuscar.NormalImageTint = Color.White;
+            texBuscar.OutlineColor = Color.FromArgb(128, 128, 128, 128);
+            texBuscar.Padding = new Padding(97, 18, 97, 0);
+            texBuscar.PasswordChar = false;
+            texBuscar.PlaceholderColor = Color.White;
+            texBuscar.PlaceholderText = "Buscar por empresa";
+            texBuscar.Rounding = new Padding(8);
+            texBuscar.Size = new Size(693, 68);
+            texBuscar.TabIndex = 6;
+            texBuscar.TextOffset = new Size(65, 0);
+            texBuscar.UnderlinedStyle = true;
+            texBuscar.ContentChanged += texBuscar_ContentChanged;
             // 
             // FrmProveedores
             // 
@@ -368,5 +399,6 @@
         private Label label3;
         private Guna.UI2.WinForms.Guna2Button btnCerrar;
         private Guna.UI2.WinForms.Guna2Button btnAyuda;
+        private HartUI.Controls.cuiTextBox texBuscar;
     }
 }

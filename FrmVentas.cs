@@ -27,9 +27,8 @@ namespace integra_1
             }
 
             // RUTA DE LA BASE DE DATSO
-            // Cualquier miembro puede visualizar la tabla
 
-            string ruta = Path.Combine(Application.StartupPath, "integradora boceto.accdb");
+            string ruta = @"C:\Users\LPC\Desktop\REPOSITORIO 3\integradora boceto.accdb";
 
             string cadenaConexion = $@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={ruta}";
 
@@ -51,8 +50,6 @@ namespace integra_1
                 {
                     if (fila.Cells["Nombre"].Value == null) continue;
 
-                    // Nota: Como en tu buscador usaste el ID del producto, necesitamos guardar el ID en alguna columna oculta 
-                    // o buscar por nombre. Lo ideal es que tu dgvCarrito tenga el ID a la mano.
                     string nombreProducto = fila.Cells["Nombre"].Value.ToString();
                     int cantidadVendida = Convert.ToInt32(fila.Cells["Cantidad"].Value);
 
@@ -104,7 +101,7 @@ namespace integra_1
 
             double totalPagar = 0;
 
-            // Recorremos la tabla gris fila por fila para dibujarla en el papel/PDF
+            // Recorrer la tabla gris fila por fila para dibujarla en el papel/PDF
             foreach (DataGridViewRow fila in dgvCarrito.Rows)
             {
                 if (fila.Cells["Nombre"].Value == null) continue;
@@ -137,25 +134,20 @@ namespace integra_1
         }
 
 
-        // Aquí es donde se "dibuja" el diseño del ticket
-
-
         private void btnAgregar_Producto_Venta_Click(object sender, EventArgs e)
         {
-            // 1. Validar que el usuario haya escrito algo en el cuadro de texto
             if (string.IsNullOrEmpty(txtAgregar_Id_Producto.Text))
             {
                 MessageBox.Show("Por favor escribe el ID de un producto.");
                 return;
             }
 
-            // 2. Tu ruta de la base de datos fija
-
-            string ruta = Path.Combine(Application.StartupPath, "integradora boceto.accdb");
+            string ruta = @"C:\Users\LPC\Desktop\REPOSITORIO 3\integradora boceto.accdb";
 
             string cadenaConexion = $@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source={ruta}";
 
-            string consulta = "SELECT Nombre_Producto, Precio_Producto, Cantidad_Producto FROM Productos WHERE Id_Producto = ?";
+            string consulta = "SELECT Id_Producto, Nombre_Producto, Precio_Producto, Cantidad_Producto " +
+                              "FROM Productos WHERE Id_Producto = ?";
 
             using (OleDbConnection conexion = new OleDbConnection(cadenaConexion))
             {
@@ -166,12 +158,21 @@ namespace integra_1
                     try
                     {
                         conexion.Open();
+
                         OleDbDataReader lector = comando.ExecuteReader();
 
                         if (lector.Read())
                         {
+                            int idProducto = Convert.ToInt32(lector["Id_Producto"]);
+
                             string nombre = lector["Nombre_Producto"].ToString();
-                            double precio = Convert.ToDouble(lector["Precio_Producto"]);
+
+                            string precioTexto = lector["Precio_Producto"].ToString();
+
+                            precioTexto = precioTexto.Replace("$", "");
+
+                            double precio = Convert.ToDouble(precioTexto);
+
                             int stockActual = Convert.ToInt32(lector["Cantidad_Producto"]);
 
                             if (stockActual <= 0)
@@ -180,14 +181,20 @@ namespace integra_1
                                 return;
                             }
 
-                            // 3. Insertar los datos directamente en las columnas de la tabla gris
                             int cantidad = 1;
-                            double subtotal = precio * cantidad;
-                            dgvCarrito.Rows.Add(nombre, precio, cantidad, subtotal);
 
-                            // 4. Actualizar la etiqueta del total acumulado
+                            double subtotal = precio * cantidad;
+
+                            dgvCarrito.Rows.Add(idProducto,
+                                                nombre,
+                                                precio,
+                                                cantidad,
+                                                subtotal);
+
                             ActualizarTotal();
+
                             txtAgregar_Id_Producto.Clear();
+
                             txtAgregar_Id_Producto.Focus();
                         }
                         else
@@ -202,6 +209,7 @@ namespace integra_1
                 }
             }
         }
+        
 
         private void ActualizarTotal()
         {

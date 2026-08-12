@@ -71,9 +71,9 @@
             btnAgregar_Venta.BackColor = Color.FromArgb(68, 192, 95);
             btnAgregar_Venta.Font = new Font("Segoe UI Symbol", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnAgregar_Venta.ForeColor = Color.White;
-            btnAgregar_Venta.Location = new Point(535, 444);
+            btnAgregar_Venta.Location = new Point(573, 434);
             btnAgregar_Venta.Name = "btnAgregar_Venta";
-            btnAgregar_Venta.Size = new Size(220, 51);
+            btnAgregar_Venta.Size = new Size(235, 49);
             btnAgregar_Venta.TabIndex = 0;
             btnAgregar_Venta.Text = "Agregar";
             btnAgregar_Venta.UseVisualStyleBackColor = false;
@@ -84,9 +84,9 @@
             btnImprimir_Ticket.BackColor = Color.RoyalBlue;
             btnImprimir_Ticket.Font = new Font("Segoe UI Symbol", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnImprimir_Ticket.ForeColor = Color.White;
-            btnImprimir_Ticket.Location = new Point(116, 802);
+            btnImprimir_Ticket.Location = new Point(904, 615);
             btnImprimir_Ticket.Name = "btnImprimir_Ticket";
-            btnImprimir_Ticket.Size = new Size(328, 69);
+            btnImprimir_Ticket.Size = new Size(317, 69);
             btnImprimir_Ticket.TabIndex = 1;
             btnImprimir_Ticket.Text = "Cobrar e imprimir Ticket";
             btnImprimir_Ticket.UseVisualStyleBackColor = false;
@@ -95,20 +95,21 @@
             // txtAgregar_Id_Producto
             // 
             txtAgregar_Id_Producto.BackColor = SystemColors.GradientInactiveCaption;
-            txtAgregar_Id_Producto.Location = new Point(116, 455);
+            txtAgregar_Id_Producto.Location = new Point(145, 445);
             txtAgregar_Id_Producto.Name = "txtAgregar_Id_Producto";
-            txtAgregar_Id_Producto.Size = new Size(314, 31);
+            txtAgregar_Id_Producto.Size = new Size(372, 31);
             txtAgregar_Id_Producto.TabIndex = 2;
             txtAgregar_Id_Producto.TextChanged += txtAgregar_Id_Producto_TextChanged;
             // 
             // dgvCarrito
             // 
+            dgvCarrito.BackgroundColor = SystemColors.Control;
             dgvCarrito.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvCarrito.Columns.AddRange(new DataGridViewColumn[] { Id_Producto, Nombre, Precio, Cantidad, Subtotal });
-            dgvCarrito.Location = new Point(116, 560);
+            dgvCarrito.Location = new Point(145, 550);
             dgvCarrito.Name = "dgvCarrito";
             dgvCarrito.RowHeadersWidth = 62;
-            dgvCarrito.Size = new Size(666, 66);
+            dgvCarrito.Size = new Size(663, 310);
             dgvCarrito.TabIndex = 3;
             dgvCarrito.CellContentClick += dgvCarrito_CellContentClick;
             // 
@@ -154,7 +155,7 @@
             lblTotal_a_Pagar.AutoSize = true;
             lblTotal_a_Pagar.Font = new Font("Segoe UI Historic", 14F, FontStyle.Bold);
             lblTotal_a_Pagar.ForeColor = Color.FromArgb(49, 62, 200);
-            lblTotal_a_Pagar.Location = new Point(497, 824);
+            lblTotal_a_Pagar.Location = new Point(904, 714);
             lblTotal_a_Pagar.Name = "lblTotal_a_Pagar";
             lblTotal_a_Pagar.Size = new Size(207, 38);
             lblTotal_a_Pagar.TabIndex = 4;
@@ -376,9 +377,9 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.grocery_cart2;
-            pictureBox1.Location = new Point(889, 288);
+            pictureBox1.Location = new Point(933, 260);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(524, 446);
+            pictureBox1.Size = new Size(370, 322);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 10;
             pictureBox1.TabStop = false;
@@ -388,7 +389,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI Historic", 14F, FontStyle.Bold);
             label4.ForeColor = Color.FromArgb(49, 62, 200);
-            label4.Location = new Point(110, 382);
+            label4.Location = new Point(145, 375);
             label4.Name = "label4";
             label4.Size = new Size(285, 38);
             label4.TabIndex = 8;
@@ -399,7 +400,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Symbol", 22F, FontStyle.Bold);
             label3.ForeColor = Color.FromArgb(49, 62, 200);
-            label3.Location = new Point(99, 255);
+            label3.Location = new Point(139, 248);
             label3.Name = "label3";
             label3.Size = new Size(331, 60);
             label3.TabIndex = 7;

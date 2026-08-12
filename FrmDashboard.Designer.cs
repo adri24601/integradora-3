@@ -445,6 +445,7 @@
             // 
             // texStockMinimo
             // 
+            texStockMinimo.BackColor = Color.FromArgb(197, 212, 235);
             texStockMinimo.BackgroundColor = Color.White;
             texStockMinimo.Content = "";
             texStockMinimo.FocusBackgroundColor = Color.White;
@@ -463,8 +464,8 @@
             texStockMinimo.OutlineColor = Color.FromArgb(128, 128, 128, 128);
             texStockMinimo.Padding = new Padding(23, 17, 23, 0);
             texStockMinimo.PasswordChar = false;
-            texStockMinimo.PlaceholderColor = Color.LightGray;
-            texStockMinimo.PlaceholderText = "Placeholder text..";
+            texStockMinimo.PlaceholderColor = Color.DimGray;
+            texStockMinimo.PlaceholderText = "";
             texStockMinimo.Rounding = new Padding(8);
             texStockMinimo.Size = new Size(258, 57);
             texStockMinimo.TabIndex = 12;
